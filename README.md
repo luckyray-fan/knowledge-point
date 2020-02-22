@@ -1,3 +1,5 @@
-# Headline
+# 该说的都说完了
 
-> An awesome project.
+> 只要生活愉快, 其他都 ok, 活得开心是世界第一目标
+
+> luckyray 自由自在!
