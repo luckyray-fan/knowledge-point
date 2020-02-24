@@ -7,7 +7,8 @@
 - javascript
   - [实现](javascript/implement)
   - [原理](javascript/principle)
-  - [ECMAScript](es6)
+  - [ECMAScript](javascript/es6)
+  - [对象与方法](javascript/method)
 - Nodejs
 - FrameWork
   - [vue](framework/vue)
