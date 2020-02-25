@@ -12,6 +12,8 @@
 
 首先取得对象的一个内部属性`[[class]]`, 根据该属性返回一个类似于`[object xxx]`的字符串, 因为如果直接`o.toString()`很有可能这个对象的方法被更改过, 所以用`call`来改变 this 指向更稳妥
 
+`Object.toString()`, 继承自 `Function.prototype.toString()`
+
 ### instanceof
 
 用来判断对象的具体类型, 通过循环对比原型链判断知道左边的变量的原型为 null, 然后由此有了原型继承
@@ -49,6 +51,8 @@ function new_instance_of(leftVaule, rightVaule) {
 ### 六大内置函数的继承
 
 可以看到所有的构造函数的 \_\_proto\_\_ 都指向了 Function 的原型对象, 所有原型对象的 \_\_proto\_\_ 都指向了 Object 的原型对象
+
+`Function.prototype` 是个函数, 但是继承自 `Object.prototype` 而非自身
 
 ![简单的说明](../source/js-p-2.jpg)
 
@@ -220,7 +224,8 @@ var c1 = create(o); //这样就继承o了
 | 构造函数调用 | 指向生成的新对象 |
 | 原型链调用 | 指向生成的对象 |
 | 箭头函数 | 没有自己的 this, 找上一个作用域的 |
-| dom 事件处理函数 | 一般是绑定事件的元素, 古老 ie 指向 widnow |  |
+| dom 事件处理函数 | 一般是绑定事件的元素, 古老 ie 指向 widnow |
+| setTimeout | 一般指向全局对象 |
 
 > [有机会认真看看](https://github.com/mqyqingfeng/Blog/issues/7)
 
@@ -229,6 +234,11 @@ var c1 = create(o); //这样就继承o了
 基本类型传的是本身, 对象传的是引用
 
 > [来源](https://juejin.im/entry/59b41b005188257e671b671c)
+
+### 形参实参
+
+- 形参: 定义时的参数
+- 实参: 运行时传入的参数
 
 ## 事件循环
 
@@ -289,8 +299,57 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 
 > [内部属性相关规范](http://es5.github.io/#x8.6.2)
 
+### 函数里有的
+
+| 名称 | 含义 |
+| --- | --- |
+| [[Call]] | 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个 this 值和一个包含通过调用表达式传递给函数的参数的列表 |
+
 ## 类数组
 
 指可以通过索引属性访问元素并且拥有 length 属性的对象, 类数组对象与数组的区别是类数组对象不能直接使用数组的方法。
 
-## 迭代器
+## 类型转换
+
+### 转换规则
+
+#### ToPrimitive
+
+将参数转为飞对象的基本值
+
+```javascript
+/**
+ * @obj 需要转换的对象
+ * @type 期望转换为的原始数据类型，可选
+ */
+ToPrimitive(obj, type);
+```
+
+type 可以是 number 或者 string
+
+- string
+  - 调用 obj 的 `toString` 方法, 如果为基本值返回
+  - 调用 obj 的 `valueOf` 方法
+- number
+  - `valueOf`
+  - `toString`
+- 参数为空
+  - obj 是 Date, type 设置为 String
+  - 否则设置为 Number
+
+#### toNumber
+
+#### toString
+
+### 运算隐式转换
+
+- `+`运算
+  - 左右取值进行 `ToPrimitive` 操作
+  - 若是存在 string 都转换为 string 进行拼接
+- ## `==` 抽象相等比较
+  - 存在对象执行 `ToPrimitive`
+  - 类型不同, 将其转为 number 来比较
+
+> [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚
+
+## 异步

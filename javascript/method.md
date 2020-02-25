@@ -11,8 +11,8 @@
 ### create()
 
 - 参数
-  - proto
-  - propertiesObject
+  - proto, 传入的原型对象
+  - propertiesObject, 原型对象中属性的特性
 - 返回值
   - 创建的对象
 
@@ -45,3 +45,14 @@
 ## for...of
 
 遍历可迭代对象的数据
+
+## Array
+
+### from()
+
+- 参数
+  - 类数组或可迭代对象
+- 返回值
+  - 新的浅拷贝的数组实例
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)

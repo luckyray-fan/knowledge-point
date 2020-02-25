@@ -10,5 +10,20 @@
 - apply call
 - 类数组
 - 继承
+- bind
 - promise 实现
 - class 继承
+- 箭头函数
+- 解构赋值
+- 深浅拷贝
+- 防抖节流扁平判断对象相等
+- 浏览器加载顺序
+- xss 攻击
+- 类型转换
+- 从输入 url 开始到最终渲染完成的过程
+- 性能优化
+- 工程化
+- 回流重绘
+- cookie session
+- csrf 网络劫持 hybrid api 调用
+- http tcp
