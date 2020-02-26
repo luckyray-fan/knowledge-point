@@ -1,5 +1,7 @@
 ## new 操作符
 
+---
+
 函数内部有两个不同的方法: `[[call]]和[[constructor]]`, 普通函数调用时, 执行`[[call]]`, 作为构造函数执行时, `[[constructor]]`被执行, 箭头函数, call, apply, bind 等内部都没有 `[[constructor]]`
 
 - 创建新的对象
@@ -11,6 +13,8 @@
 > [来源](https://juejin.im/post/5bde7c926fb9a049f66b8b52)
 
 ## bind 方法
+
+---
 
 返回一个绑定了 this 的原函数拷贝, 该函数执行时会用之前传入的第一个参数作为 this, 后续的参数作为实参, 可以使用 new
 
@@ -33,6 +37,8 @@ Function.prototype.bindF = function(context) {
 
 ## call 和 apply 方法
 
+---
+
 两者的第一个参数`thisArg`都是在`func`运行时指定的`this`, 使用提供的`this`和参数调用函数, 返回获得的值
 
 `apply`接收两个参数, 第二个参数是类数组也可以是对象, 后续参数忽略,`call`接收之后一系列参数, 因此只需实现`apply`即可
@@ -48,6 +54,8 @@ Function.prototype.applyF = function(thisArg, args) {
 > [来源](https://juejin.im/post/5bf6c79bf265da6142738b29#heading-5)
 
 ## promise
+
+---
 
 最直观的来看, 就是通过 `then` 链, 将回调嵌套铺平, 每一个 `then` 都会返回一个新的 `promise`
 

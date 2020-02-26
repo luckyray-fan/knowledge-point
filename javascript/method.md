@@ -1,5 +1,7 @@
 ## Object
 
+---
+
 ### Object.getOwnPropertyDescriptor()
 
 ### Object.defineProperties()
@@ -36,6 +38,8 @@
 
 ## for...in
 
+---
+
 以任意顺序遍历一个对象的除 `symbol` 外的可枚举属性, 包括原型上的
 
 如果仅迭代自身的属性, 使用 `hasOwnProperty()` 等
@@ -44,9 +48,13 @@
 
 ## for...of
 
+---
+
 遍历可迭代对象的数据
 
 ## Array
+
+---
 
 ### from()
 
@@ -56,3 +64,11 @@
   - 新的浅拷贝的数组实例
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+## 正则
+
+---
+
+找到一个不错的总结
+
+> [来源](https://juejin.im/post/59cc61176fb9a00a437b290b)

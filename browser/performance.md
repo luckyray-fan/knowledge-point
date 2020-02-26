@@ -12,9 +12,10 @@
 - 优化资源加载
 - 减少重绘回流
 - webpack 优化
+- 选择合适的元素与 api
+  - table 布局需要多次计算
+    > [来源](https://www.jianshu.com/p/e141d1543143)
 
-  > [来源](https://www.jianshu.com/p/e141d1543143)
-
-## 测试优化受益
+## 测试优化收益
 
 > [来源](https://www.zhihu.com/question/40505685) 内容很棒

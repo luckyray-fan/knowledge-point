@@ -1,5 +1,7 @@
 ## 从输入 url 到网页呈现的过程
 
+---
+
 - URL 输入
 - DNS 解析
 - TCP 连接
@@ -11,6 +13,8 @@
 > [来源](https://juejin.im/post/5b148a2ce51d4506965908d2)
 
 ## 浏览器渲染
+
+---
 
 - 处理 HTML 标记构建 DOM 树
 - 处理 CSS 标记并构建 CSSOM 树
@@ -55,4 +59,58 @@
 
 ## 回流重绘
 
-## cookie
+---
+
+- 回流, 当渲染树中部分元素的属性发生改变, 浏览器重新渲染的过程称为回流
+  - 页面首次渲染
+- 重绘, 元素样式改变不影响它在文档中的位置, 浏览器会将新样式赋予并重新绘制它
+
+现代浏览器对回流与重绘的优化: 维护一个队列, 把所有引起回流和重绘的操作放入队列中, 如果队列中的任务数量或者时间间隔到达一个阈值, 浏览器就将队列清空, 统一一次
+
+为了确保某些值是最精确的, 遇到部分操作会立刻清空队列:
+
+- width, height
+- getComputedStyle
+
+### 避免方法
+
+- CSS
+  - 避免 table 布局
+- JavaScript
+  - 一次性重写 style 属性
+  - 创建 documentFragment, 在其上面应用 dom 操作最后再添加到文档
+
+> [来源](https://juejin.im/post/5a9923e9518825558251c96a)
+
+### 监控回流重绘的方法
+
+在 chrome 的 more tools 中可以打开
+
+![](../source/browser-1.png)
+
+> [来源](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#rendering)
+
+## 浏览器一些默认操作
+
+---
+
+### 关闭浏览器
+
+- 清除临时 cookie
+
+## 跨域请求
+
+---
+
+发起请求的域与该请求指向的资源所在的域不一样, 也就是`协议+域名+端口号`
+
+通常浏览器会为了防止 csrf 攻击限制跨域请求
+
+现在也有 `同源策略` 限制不同源的 js 对 `document`对象的读取等
+
+### 请求方案
+
+- JSONP
+- CORS
+
+> [来源](https://www.jianshu.com/p/f880878c1398)

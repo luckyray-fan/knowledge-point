@@ -1,5 +1,7 @@
 ## 判断对象类型
 
+---
+
 ### typeof
 
 最初的实现中 js 中的值是由一个标识类类型的标签和实际数据表示的, 对象的类型标签为 0, 由于 null 代表空指针, 所以也是 0, typeof null 也因此返回 object, **若是想要清晰的判断**可以使用 `Object.prototype.toString`
@@ -37,6 +39,8 @@ function new_instance_of(leftVaule, rightVaule) {
 ```
 
 ## 原型
+
+---
 
 ### prototype 和 \_\_proto\_\_
 
@@ -153,6 +157,8 @@ var c1 = create(o); //这样就继承o了
 
 ## 数据类型
 
+---
+
 `Boolean, undefined, string, number, null, bigint, symbol, object`
 
 除了 object 前 7 种是基本类型, 既无对象也无方法
@@ -162,6 +168,8 @@ var c1 = create(o); //这样就继承o了
 `String, Number, BigInt, Boolean, Symbol(字面量基本类型)`, 包装对象的 valueof 方法返回基本类型的值
 
 ## 执行上下文
+
+---
 
 可执行代码共有三种, 全局, 函数, eval, 每当执行其中一种时, 就会创建一个执行上下文
 
@@ -184,6 +192,8 @@ var c1 = create(o); //这样就继承o了
 > [来源](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting) > [详细解释过程](https://github.com/mqyqingfeng/Blog/issues/5#issuecomment-305073897)
 
 ## 作用域
+
+---
 
 作用域 scope 包含当前可见的变量, 规范了如何查找变量, 内层作用域可以访问外层作用域
 
@@ -214,6 +224,8 @@ var c1 = create(o); //这样就继承o了
 
 ## this
 
+---
+
 当函数被调用时, 一个执行环境被创建, 环境中包括: 调用栈, 如何调用, 参数等, this 指向这样的变量对象
 
 | 场景 | 指向的对象 |
@@ -231,6 +243,8 @@ var c1 = create(o); //这样就继承o了
 
 ## 参数传递
 
+---
+
 基本类型传的是本身, 对象传的是引用
 
 > [来源](https://juejin.im/entry/59b41b005188257e671b671c)
@@ -241,6 +255,8 @@ var c1 = create(o); //这样就继承o了
 - 实参: 运行时传入的参数
 
 ## 事件循环
+
+---
 
 函数调用形成栈, 队列内的消息等待栈执行完毕后进入栈中
 
@@ -259,9 +275,13 @@ web worker 或者跨域的 iframe 都有自己的栈, 要通信需要 `postMessa
 
 ## 运算符优先级
 
+---
+
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
 ## 内部属性
+
+---
 
 内部属性定义了代码执行的行为, 但是没法通过代码直接访问, 一般用`[[]]`包了起来, 当然有要使用`[[prototype]]`的时候, 就可以用`Object.getPrototype()`来访问
 
@@ -307,9 +327,13 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 
 ## 类数组
 
+---
+
 指可以通过索引属性访问元素并且拥有 length 属性的对象, 类数组对象与数组的区别是类数组对象不能直接使用数组的方法。
 
 ## 类型转换
+
+---
 
 ### 转换规则
 
@@ -346,10 +370,12 @@ type 可以是 number 或者 string
 - `+`运算
   - 左右取值进行 `ToPrimitive` 操作
   - 若是存在 string 都转换为 string 进行拼接
-- ## `==` 抽象相等比较
+- `==` 抽象相等比较
   - 存在对象执行 `ToPrimitive`
   - 类型不同, 将其转为 number 来比较
 
 > [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚
 
 ## 异步
+
+---

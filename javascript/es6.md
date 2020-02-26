@@ -1,14 +1,20 @@
 ## symbol
 
+---
+
 一种基本数据类型, 仅用来作为对象属性的标识符, 从 `symbol()` 返回的值是唯一的
 
 ## 箭头函数
+
+---
 
 一般用于需要匿名函数的地方, 没有自己的`this`, `arguments`等
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ## 解构赋值
+
+---
 
 将值从对象或数组中取出, 依次赋值给其他对象
 
@@ -23,13 +29,19 @@ let { a } = { a: 1 };
 
 ## 展开语法
 
+---
+
 将数组或对象在语法层次上展开
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
 ## let & const
 
+---
+
 ## class
+
+---
 
 - 函数声明可以被提升, 类不行
 
