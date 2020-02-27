@@ -39,6 +39,12 @@ let { a } = { a: 1 };
 
 ---
 
+- 块级作用域
+- 没有变量提升和暂时性死区
+- 不能重复声明
+
+> [来源](https://www.cnblogs.com/fly_dragon/p/8669057.html)
+
 ## class
 
 ---

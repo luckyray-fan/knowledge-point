@@ -2,8 +2,8 @@
   - [浏览器](browser/browser)
   - [性能](browser/performance)
   - [dom](browser/dom)
-- HTML5
-- [CSS](css.md)
+- [HTML](html)
+- [CSS](css)
 - javascript
   - [实现](javascript/implement)
   - [原理](javascript/principle)

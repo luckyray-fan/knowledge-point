@@ -191,6 +191,8 @@ var c1 = create(o); //这样就继承o了
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting) > [详细解释过程](https://github.com/mqyqingfeng/Blog/issues/5#issuecomment-305073897)
 
+> [题目](https://segmentfault.com/q/1010000002886791)
+
 ## 作用域
 
 ---
@@ -222,16 +224,37 @@ var c1 = create(o); //这样就继承o了
 
 > [来源](https://github.com/mqyqingfeng/Blog/issues/9)
 
+### 立即执行函数
+
+利用运算符的优先级, 将相邻的 js 语句运算, 运算的同时也就执行定义的匿名函数
+
 ## this
 
 ---
 
 当函数被调用时, 一个执行环境被创建, 环境中包括: 调用栈, 如何调用, 参数等, this 指向这样的变量对象
 
+绑定规则有:
+
+- 默认, 独立调用
+- 隐式, 对象调用
+  - 隐式丢失
+    - 函数别名
+    - 参数传递, setTimeout 就是
+    - 间接引用
+
+```JavaScript
+(obj.f = obj.f)();//都相当于立即执行表达式, 将函数赋值后立刻执行
+(false || obj.f)();
+(1, obj.f)();
+```
+
+- 显示, call,apply,bind
+- new, 构造函数
+
 | 场景 | 指向的对象 |
 | --- | --- |
-| 普通调用函数 | 非严格 window,严格 undefined |
-| 对象调用 | 调用函数的对象 |
+| 普通调用函数 | 非严格 window,严格 undefined |  | 对象调用 | 调用函数的对象 |
 | call,apply,bind | 参数中的第一个值, 非严格模式下指定 undefined, null 为 window,指定基本值会转为其包装对象 |
 | 构造函数调用 | 指向生成的新对象 |
 | 原型链调用 | 指向生成的对象 |
@@ -239,13 +262,138 @@ var c1 = create(o); //这样就继承o了
 | dom 事件处理函数 | 一般是绑定事件的元素, 古老 ie 指向 widnow |
 | setTimeout | 一般指向全局对象 |
 
-> [有机会认真看看](https://github.com/mqyqingfeng/Blog/issues/7)
+> [来源](https://alexzhong22c.github.io/2017/08/07/js-this/) > [有机会认真看看](https://github.com/mqyqingfeng/Blog/issues/7)
+
+下面就是认真看的~~
+
+### 类型
+
+- 语言类型, 可以直接操作的, 就是基本类型
+- 规范类型, 算法描述语言结构的, 包括:
+  - Reference
+  - List
+  - Lexical Environment
+  - Environment Record, 现在也可以代替 es3 常说的变量对象 VO
+
+有关 this 要重点说一下 Reference, 用来解释 delete, typeof 和赋值等行为的
+
+由三个部分组成:
+
+- base value, 属性所在的对象或 Environment Record
+- referenced name, 属性名字
+- strict reference
+
+另外还有几个方法,参数为 Reference 类型:
+
+- `GetBase()`, 返回 reference 的 base value
+- `IsPropertyReference()`, 如果 base value 是对象就返回 true
+- `GetValue()`, 返回具体的值
+
+下面是确定 this 的取值的过程:
+
+- 计算 MemberExpression , 也就是`xxx.xxx()`中的`xxx.xxx`, 给 ref, 测试 ref
+- ref 是 Reference, 且 `IsPropertyReference()`为真, this 为 `GetBase()`
+- 若 base value 是 Environment Record 那么 this 值为`ImplicitThisValue()`, 也就是始终返回 undefined
+- 不是 Reference, this 为 undefined
+
+## js 执行过程
+
+---
+
+- 语法分析
+- 预编译阶段
+- 执行阶段
+
+### 语法分析
+
+加载代码完毕后, 此时分析语法是否正确, 比如 await 需要在 async 函数中
+
+### 预编译与执行
+
+- 进入全局环境, 预编译创建全局执行上下文, 推入事件循环所说的执行栈中, 进入执行阶段
+- 调用函数, 预编译创建函数执行上下文, 推入栈中, 进入执行阶段
+- 在函数内调用函数, 重复上一步操作
+- 若没有继续调用其他函数开始执行然后出栈
+- 全局执行上下文在标签页关闭时出栈
+
+**创建执行上下文的过程**
+
+- **变量对象**, 全局环境, window 就是变量对象
+  - 创建 arguments 对象, 仅在非箭头的函数环境
+  - 检查函数声明, 若没有与函数名相同的变量名则创建一个指向该函数地址的引用, 如果有就用该函数引用覆盖,arguments 的也会覆盖
+  - 检查变量声明, 如果没有就在变量对象以此变量名创建一个属性, 值为 undefined, 如果有就忽略这个变量声明
+
+```JavaScript
+function test(tem){
+  tem()
+  console.log(arguments) //在这里断点可以看到arguments[0]变成了函数引用
+  var tem = 1// 执行完这里 arguments[0] 又变成了 1, 可以看到 arguments[0] 和 变量对象中 tem 的值是同步的
+  function tem(){
+    console.log(tem)
+  }
+  console.log(tem)
+  return tem;
+}
+test(2)
+```
+
+> 进入执行阶段后, 变量对象 VO 变为 活动对象 AO
+
+- 建立作用域链, 由当前变量对象和上层的一系列活动对象组成
+- this 指向, 参考前面
+
+> [来源](https://heyingye.github.io/2018/03/19/js%E5%BC%95%E6%93%8E%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/)
+
+### 执行阶段
+
+之前浏览器那章也讲了相关线程, 这里说一下参与 js 执行的线程
+
+- js 引擎
+- 事件触发
+- 定时器触发
+- HTTP 异步请求
+
+先有几个概念:
+
+- 宏任务
+  - 同步任务
+  ```JavaScript
+  console.log(123)
+  ```
+  - 异步任务, 不直接进入 js 主线程, 等触发后, 相关线程将该任务推进任务队列, 等待主线程空闲时读取执行, 例如 Ajax, DOM, SetTimeout
+  ```JavaScript
+  setTimeout((res)=>{
+  console.log(123)
+  },0)
+  ```
+- 微任务, es6 和 node 环境中新出现的, 在同步任务执行完成后看是否有可执行的微任务, 然后再看任务队列, 主要有 promise, process.nextTick
+
+```JavaScript
+new Promise((res)=>{
+  console.log(123)
+})
+```
+
+在执行阶段, 代码的执行顺序为: `宏任务(同步) -> 微任务 -> 宏任务(异步`
+
+> [来源](https://heyingye.github.io/2018/03/26/js%E5%BC%95%E6%93%8E%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/) 这作者还行
 
 ## 参数传递
 
 ---
 
-基本类型传的是本身, 对象传的是引用
+基本类型传的是本身, 对象传的是引用, 如果函数内有相同名称的参数, 在此参数赋值之前不会改变传入的参数的内容
+
+```JavaScript
+function test(tem){
+  console.log(tem) // 2
+  console.log(arguments)
+  var tem = 1
+  console.log(tem) //1
+  return tem;
+}
+test(2)
+```
 
 > [来源](https://juejin.im/entry/59b41b005188257e671b671c)
 
@@ -335,11 +483,26 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 
 ---
 
+### valueOf() 与 toString()
+
 ### 转换规则
 
-#### ToPrimitive
+- 布尔
+  - false、undefinded、null、0、'' 为 false
+  - true、1、'somestring'、[Object] 为 true
+- ToNumber
 
-将参数转为飞对象的基本值
+  - string 转换相当于调用 `Number()`
+
+  ![](../source/js-p-5.webp)
+
+- ToString
+
+![](../source/js-p-4.webp)
+
+- ToPrimitive
+
+将对象转为非对象的基本值
 
 ```javascript
 /**
@@ -361,21 +524,46 @@ type 可以是 number 或者 string
   - obj 是 Date, type 设置为 String
   - 否则设置为 Number
 
-#### toNumber
-
-#### toString
-
 ### 运算隐式转换
 
 - `+`运算
-  - 左右取值进行 `ToPrimitive` 操作
+
+  - 对象进行 `ToPrimitive` 操作, 参数为空
   - 若是存在 string 都转换为 string 进行拼接
+  - 若是对象进行 `ToPrimitive` 操作没 string, 两边做 ToNumber 处理
+
+  ![](../source/js-p-3.png)
+
 - `==` 抽象相等比较
+
   - 存在对象执行 `ToPrimitive`
   - 类型不同, 将其转为 number 来比较
+  - null 与 undefined 相比为 true, 其他与之相比为 false
+  - 布尔类型转为数字 `true == '2'是false`
+    - true 转为 1, '2'变为 2
 
-> [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚
+- `!`, 布尔操作符, 将操作的值强制转换为布尔值并且取反
+
+  - 双感叹号用来取布尔值, 负负得正, 不改变原值的布尔判断
+
+  > [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚
+
+> [有趣的东西](https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true)
 
 ## 异步
 
 ---
+
+## 0.1+0.2 == 0.3
+
+js 使用 Number 类型表示数字, 使用 64 位来表示一个数字
+
+最大 Math.pow(2,53), 由于加法的实现需要先转换为二进制然后进行运算
+
+0.1 和 0.2 转为二进制会无限循环, 而尾数最大 52 位, 所以需要截掉后面的, 在这阶段失掉了精度
+
+对阶运算也会丢失精度
+
+可以用第三方库来解决精度问题
+
+> [来源](https://juejin.im/post/5b90e00e6fb9a05cf9080dff)

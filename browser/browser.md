@@ -114,3 +114,15 @@
 - CORS
 
 > [来源](https://www.jianshu.com/p/f880878c1398)
+
+## 事件
+
+### 如何阻止事件冒泡与取消默认事件
+
+- 阻止事件冒泡
+  - `e.stropPropagation()`
+- 取消默认事件
+  - `e.preventDefault()`
+  - `return false`
+
+> [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)

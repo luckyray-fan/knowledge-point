@@ -32,7 +32,7 @@
 - 感觉标题 2 和 3 差距不大所以做了点改动, 添加 hr 分割线和减小 h3 大小
 
   ```javascript
-  ^##(?!#)(.\*)(\n\n[^-])
+  ^##(?!#)(.*)(\n\n(?!---))
   ##$1
   ---$2
   ```
@@ -43,4 +43,8 @@
 - flex 布局
 - 浮动和清除浮动
 - cdn
+- 下面的都是很早就记下的, 过完一个删一个 ✨
 - [20 道面试题测下你前端基础如何](https://zhuanlan.zhihu.com/p/40991873)
+- [80% 应聘者都不及格的 JS 面试题](https://juejin.im/post/58cf180b0ce4630057d6727c)
+- [微信前端面试经历](https://github.com/livoras/blog/issues/4)
+- [酷狗音乐校招前端一面经历](https://mp.weixin.qq.com/s/PQ0E3UWYLcryXRKdKSg0OQ)
