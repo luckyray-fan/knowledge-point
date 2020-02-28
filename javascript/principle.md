@@ -153,7 +153,12 @@ var c1 = create(o); //这样就继承o了
 
 ### 继承方法比较
 
+- 原型继承, 不同子类实例会共享同一对象, 如果修改其内容其他实例获得的也是修改的, 并且创建子类实例的时候不能向超类构造函数传递参数
+- 组合继承, 每次都会调用两次超类的构造函数, 并且不同子类实例共享同一对象
+
 完美的是寄生继承, 子类都有各自的实例, 不会互相影响, 且共享了父类的方法
+
+> [来源](https://juejin.im/post/5bbca0c6f265da0aa35946b3)
 
 ## 数据类型
 
@@ -485,6 +490,17 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 
 ### valueOf() 与 toString()
 
+这两个方法可以在 `Object.prototype`上看到, 每个原型对象又都继承它, 通常会被改写, `Function.prototype`上便有覆盖的 `toString()` 函数, 因此所有构造函数由于继承了 `Function.prototype` 所以 `toString()` 都被改写了
+
+```JavaScript
+function F(){}
+Object.prototype.toString.call(F)//[Object Function]
+F.toString()//function F(){}
+```
+
+- toString(), 返回对象的字符串表示
+- valueOf(), 返回对象的字符串, 数值或布尔值表示, 一般情况下优先调用, 如一元操作符
+
 ### 转换规则
 
 - 布尔
@@ -542,13 +558,22 @@ type 可以是 number 或者 string
   - 布尔类型转为数字 `true == '2'是false`
     - true 转为 1, '2'变为 2
 
-- `!`, 布尔操作符, 将操作的值强制转换为布尔值并且取反
+- 一元运算符, 只有一个参数的操作符
 
-  - 双感叹号用来取布尔值, 负负得正, 不改变原值的布尔判断
+  - `+`, 尝试将操作数转为数字
+  - `!`, 布尔操作符, 将操作的值强制转换为布尔值并且取反
 
-  > [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚
+    - 双感叹号用来取布尔值, 负负得正, 不改变原值的布尔判断
 
-> [有趣的东西](https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true)
+  > [来源](https://juejin.im/post/5b076c006fb9a07aa43c9fda), 感觉没说清楚 [有趣的东西](https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true)
+
+  > 后续:
+  >
+  > - [JavaScript Unary Operators: Simple and Useful](https://scotch.io/tutorials/javascript-unary-operators-simple-and-useful)
+
+## 操作符
+
+- `||`
 
 ## 异步
 

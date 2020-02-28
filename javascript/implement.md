@@ -10,7 +10,21 @@
 - `[[prototype]]`链接到构造函数的`prototype`对象上
 - 若构造函数没有返回对象类型, 那么就返回这个新的对象
 
-> [来源](https://juejin.im/post/5bde7c926fb9a049f66b8b52)
+```JavaScript
+function objectN(){
+  var obj = new Object();
+  Constructor = [].shift.call(arguments)
+  obj.__proto__ = Constructor.prototype;
+  var res = Constructor.apply(obj,arguments)
+  return typeof res === 'object'?res:obj;
+}
+```
+
+如果用`Object.create(null)`, 因为返回的是一个没有继承自`Object`的对象, 所以没有`Object.prototype`上的`getter`属性, 所以此时`__proto__`就会被当做一个属性, 而不再拥有继承功能
+
+> [来源](https://juejin.im/post/5bde7c926fb9a049f66b8b52) 花里胡哨, 懒得看, 看以前的
+
+> [这个清楚](https://github.com/mqyqingfeng/Blog/issues/13)
 
 ## bind 方法
 

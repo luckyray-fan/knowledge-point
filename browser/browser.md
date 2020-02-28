@@ -16,11 +16,14 @@
 
 ---
 
-- 处理 HTML 标记构建 DOM 树
-- 处理 CSS 标记并构建 CSSOM 树
+- 处理 HTML 标记构建 DOM 树, 此时 document.readyState 为 loading
+- 处理 CSS 标记并构建 CSSOM 树, 等文档解析完成, readyState 变为 interactive
 - 将 DOM 与 CSSOM 合并成一个渲染树
 - 根据渲染树布局页面, 计算节点几何信息
 - 将节点绘制
+- 同步脚本都执行完成了, 触发 domContentLoaded 事件
+- 等所有内容载入并且异步脚本(defer 与 async)执行完, readyState 变为 complete,浏览器触发 window 上的 load 事件
+- 调用回调, 响应事件
 
 如果 DOM 或 CSSOM 被修改, 以上过程需要重复执行
 
@@ -44,6 +47,8 @@
 如果外部脚本时间长, 网页就会失去响应网页只会在 js 和 css 都下载完成后才开始绘制, css 和 js 并行下载, 但执行 js 需要等 css, 如果 css 放后面, dom 树构建完了, 渲染树才构建那么页面会闪跳一下, 因为此时会重新渲染页面
 
 > [来源](https://www.cnblogs.com/yingsong/p/6170780.html)
+
+> 这个 css 与 js 的实验不错 [JS 和 CSS 的位置对资源加载顺序的影响](https://juejin.im/entry/588036ac8fd9c50067ddbdbd)
 
 ### 所有内容的加载顺序
 
@@ -110,12 +115,27 @@
 
 ### 请求方案
 
-- JSONP
+- JSONP, 百度地图
 - CORS
 
 > [来源](https://www.jianshu.com/p/f880878c1398)
 
 ## 事件
+
+某个特定的有意义的瞬间, 然后传递出来, 这就是观察者模式下的事件
+
+### 事件委托
+
+### 事件冒泡捕获
+
+事件流描述的是从页面接收事件的顺序, IE 是事件冒泡, 网景是事件捕获
+
+- 冒泡, 从触发事件的元素逐渐向上传播直到 window
+- 捕获, 从 window 到触发事件的元素, 老版本浏览器不支持, 所以一般用冒泡
+
+DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶段
+
+> [来源](https://segmentfault.com/a/1190000012729080)
 
 ### 如何阻止事件冒泡与取消默认事件
 
@@ -126,3 +146,5 @@
   - `return false`
 
 > [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)
+
+## 浏览器缓存
