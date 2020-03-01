@@ -15,3 +15,10 @@ load 只触发在 window 上
 > [来源](https://stackoverflow.com/questions/12045440/difference-between-document-addeventlistener-and-window-addeventlistener)
 
 ## DOM 1 级和 DOM 2 级
+
+## localstorage 和 sessionstorage
+
+- localStorage html5 中新加入的技术
+- sessionStorage, 刷新页面或者关闭后就会被清空
+
+> [来源](https://jerryzou.com/posts/cookie-and-web-storage/)

@@ -102,6 +102,16 @@
 ### 关闭浏览器
 
 - 清除临时 cookie
+- 清除 sessionStorage
+
+### url 编码
+
+当 url 中存在非英文字母, 数字和某些标点符号时就会进行编码, 一般进行 % 替换
+
+- encodeURI, 编码完整 url, 不会编码`;/?@`等, 编码后输出 % 加上 utf-8 字符
+- encodeURIComponent, 会编码上部分的内容
+
+> [来源](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)
 
 ## 跨域请求
 
@@ -113,18 +123,44 @@
 
 现在也有 `同源策略` 限制不同源的 js 对 `document`对象的读取等
 
+### 同源策略
+
+浏览器基本都会使用这个策略, 具体措施如下:
+
+- DOM 层面, 限制不同源的 Document 对象或 js 脚本, 对当前对象的读取或设置属性
+- cookie 和 xmlHttpRequest, 禁止 ajax 直接发起跨域, ajax 不能携带不同源的 cookie
+- 但是带有 src 属性的标签例如`<script><iframe>`等可以从不同域加载
+- 其他插件如 flash 也有各自的同源策略
+
 ### 请求方案
 
 - JSONP, 百度地图
-- CORS
 
-> [来源](https://www.jianshu.com/p/f880878c1398)
+  - 非官方的跨域数据交互协议, 利用`<script>`等标签不受同源策略限制, 来实现数据跨域传输
+  - 与服务器约定好一个回调函数名, 服务器接收到请求后, 将返回一段会调用之前约定好的回调函数的 js, 传入的参数便是想要的数据
+  - 兼容性好, 但是只支持 GET
+
+- CORS, github
+  - cross-origin resource sharing, 是一个新的 w3c 标准, 新增一个 http 首部字段
+  - Access-Control-Allow-Origin, 响应中携带这的这个首部意味着服务器允许哪些域可以访问该资源
+  - cors 可以支持所有类型的 HTTP 请求
+    > [来源](https://www.jianshu.com/p/f880878c1398)
 
 ## 事件
 
 某个特定的有意义的瞬间, 然后传递出来, 这就是观察者模式下的事件
 
-### 事件委托
+一般用 `EventTarget.addEventListener()`, 将函数添加到调用它的 `EventTarget`的指定事件类型的事件监听器列表中
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)
+
+### 事件委托代理
+
+若有很多元素需要添加事件处理, 那么将会影响页面的性能, 所以在最外层的父元素上绑定一个事件进行处理, 然后判断触发事件的元素上的属性来判断如何执行, 如果要获取触发事件元素的父元素可以利用 `parentNode` 递归查找
+
+当然也有不适合使用事件委托的事件, 比如说 `mousemove, mouseover` 等
+
+> [来源](https://www.cnblogs.com/liugang-vip/p/5616484.html)
 
 ### 事件冒泡捕获
 
@@ -148,3 +184,30 @@ DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶
 > [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)
 
 ## 浏览器缓存
+
+重复利用文件, 提升性能
+
+### 缓存位置
+
+- Service Worker, 运行在浏览器背后的独立线程, 使用的传输协议为 HTTPS, 它与其他内置的缓存机制不同, 可以自由控制缓存
+  - 注册, 监听 install 事件
+  - 用户访问时可以通过拦截请求的方式查询是否存在缓存
+  - 如果没有命中缓存, 需要调用 fetch 来获取数据, 无论是从缓存中获取还是网络请求获取, 从 network 面板中看都会是从 service worker 中获取的内容
+- memory cache, 包含的是当前页面中已有的资源, 如样式, 脚本, 图片, 一旦关闭标签页内存中的缓存也就被释放了
+  - 若内存中有缓存就不会关心返回资源的 HTTP 头部字段 cache-control
+- disk cache, 硬盘中的缓存, 大文件一般在硬盘, 内存使用率高时也优先存入硬盘
+- push cache, http2 的内容, 当上面的都没有命中时会使用
+
+### 强缓存与协商缓存
+
+- 强缓存, 不关心资源是否更新, 通过两个头部字段实现
+  - Expires, 指定资源到期的时间, 等于`max-age+请求时间`, 作为 http1 的产物, 如果修改本地时间缓存失败
+  - cache-control, 在 http1.1 中用于控制网页缓存, 有多种指令可以控制从代理到客户端的缓存
+  - 两者同时存在优先 cache-control
+- 协商缓存, 在强制缓存失效后, 浏览器携带缓存标识请求服务器, 缓存标识生效, 返回 304 和 Not Modified, 失效, 返回 200 和请求结果, 通过两种头部字段实现
+  - last-modified, 第一次访问时会在响应中添加, 浏览器下一次请求该资源时, 检测到之前缓存的请求有这个 header, 就会添加 if-modified-since 字段, 值和 last-modified 一致, 如果服务器中该资源的最后修改时间没有变化, 返回 304, 大于的话就返回 200 和新的资源, 为了判断文件是否真的被修改, 在 http1.1 中出现了 ETag
+  - ETag, 返回当前资源文件的唯一标识, 只要资源有变化, 就会重新生成 Etag, 浏览器下次请求资源时, 会将之前的 Etag 的值放在 If-None-Match 字段中, 发往服务器比较
+  - 如果文件一秒内变了多次或者仅仅是打开查看了, 那么用 last-modified 就和期望行为不一致 , 而且如果采用了负载均衡, 不同服务器生成的 last-modified 也有可能不一致
+- 如果强制缓存生效直接缓存, 否则协商缓存, 如果服务器什么缓存也没设置, 浏览器可能会用响应头的 Date 减 last-modified 值的 10% 来作为缓存时间
+
+> [来源](https://www.jianshu.com/p/54cc04190252)

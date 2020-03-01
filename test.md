@@ -47,4 +47,8 @@
 - [20 道面试题测下你前端基础如何](https://zhuanlan.zhihu.com/p/40991873)
 - [80% 应聘者都不及格的 JS 面试题](https://juejin.im/post/58cf180b0ce4630057d6727c)
 - [微信前端面试经历](https://github.com/livoras/blog/issues/4)
-- [酷狗音乐校招前端一面经历](https://mp.weixin.qq.com/s/PQ0E3UWYLcryXRKdKSg0OQ)
+- [酷狗音乐校招前端一面经历](https://segmentfault.com/a/1190000016828125)
+- [9 个 offer，12 家公司，35 场面试，从微软到谷歌，应届计算机毕业生的 2012 求职之路 ](https://www.cnblogs.com/figure9/archive/2013/01/09/2853649.html), 这个偏算法研发, 不适合, 但是关于面试的经验可以
+- [2018 头条春招前端实习生面试题目总结](https://juejin.im/post/5adc5d2f51882567183eb4a9)
+- [鹅厂假前端实习鹅的实习日志](https://blog.csdn.net/u011748319/article/details/89062464) 和我一个学校的学长
+- [让 BAT Offer 不再难拿](https://www.lindongzhou.com/article/bat-offer)
