@@ -183,6 +183,16 @@ DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶
 
 > [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)
 
+## DOM 事件模型级数
+
+the document obect model, 作为规范定义了 html 的操作的编程接口
+
+- 0 级, 点击这个节点, 节点就执行 handler
+- 1 级, 规范化之前的做法
+- 2 级, 除了目标节点, 允许目标的祖先节点也有机会处理, 只有用`addeventlistener`才能
+
+> [来源](https://www.jianshu.com/p/75183574ada7)
+
 ## 浏览器缓存
 
 重复利用文件, 提升性能
@@ -210,4 +220,9 @@ DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶
   - 如果文件一秒内变了多次或者仅仅是打开查看了, 那么用 last-modified 就和期望行为不一致 , 而且如果采用了负载均衡, 不同服务器生成的 last-modified 也有可能不一致
 - 如果强制缓存生效直接缓存, 否则协商缓存, 如果服务器什么缓存也没设置, 浏览器可能会用响应头的 Date 减 last-modified 值的 10% 来作为缓存时间
 
-> [来源](https://www.jianshu.com/p/54cc04190252)
+### ajax 取消缓存
+
+- setRequestHeader("If-Modified-Since","0")
+- setRequestHeader("Cache-Control","no-cache")
+- 加个随机数, 浏览器认为 url 改变了就重新请求了
+  > [来源](https://www.jianshu.com/p/54cc04190252)

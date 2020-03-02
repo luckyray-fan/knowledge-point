@@ -122,9 +122,19 @@ flex 可以用来非常有效的布局, 对其并且描述空间在容器里的�
 
 设置为`border-box`, 此时盒子的宽高为 `padding+content+border`
 
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+
 ## bootstrap 栅格模型
 
 ## 实现布局
+
+### 定位
+
+**position** 属性:
+
+- relative, 相对于正常位置定位
+- absolute, 相对于值不为 static 的第一个父元素进行定位
+- fixed, 相对于浏览器窗口定位
 
 ### 三栏布局(左右两边固定宽度, 中间自适应)
 
@@ -189,3 +199,91 @@ setInterval 无法保证每隔一定时间一定执行, 所以有了这个 api �
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Selectors)
 
 ## 响应式
+
+指同一页面在不同屏幕尺寸下有不同的布局, 通过判断视口分辨率实现
+
+### 媒体查询
+
+选择屏幕大小分割点, 按照常见机型适配
+
+- 手机, <768px
+- 平板, >=768px
+- 桌面显示器, >=992px
+- 大屏幕, >=1200px
+
+```css
+@media screen and (min-width: 768px) {
+  body {
+    background: #ccc;
+  }
+}
+```
+
+### 百分比布局
+
+css 支持最大最小高, 可以将百分比和它结合, 同时还有 calc 属性可以计算
+
+**子元素的百分比相对应的**:
+
+- width,height 相对于子元素的直接父元素
+- top,bottom, 相对于默认定位的父元素的高度
+- left,right, 相对于默认定位的父元素的宽度
+- padding, margin 无论是垂直还是水平, 都相对于直接父元素的 width
+- border-radius, translate, background-size 相对于自身的宽度
+
+### rem 布局
+
+rem 相对于根元素的 font-size, 可以用 js 来动态控制
+
+### 视口单位
+
+设置 viewport vw,vh
+
+### 图片响应式
+
+目标是大小自适应, 选择不同分辨率的图片
+
+- max-width
+- srcset
+- background-image
+- picture 标签
+
+### 使用成型方案
+
+- flex 弹性布局
+- grid 网格布局
+- columns 栅格系统
+
+> [来源](https://juejin.im/post/5caaa230e51d452b672f9703)
+
+## css 模块化
+
+### link 和@import 区别
+
+link 属于 XHTML 标签, 页面加载时加载样式权重高于@import, @import 只能页面加载完后加载
+
+link 除了加载 css 还能定义 rss, 定义 rel 链接
+
+## css 使用案例
+
+- 禁用鼠标事件, pointer-events
+- 禁止用户选择, user-select
+- 条纹网络
+  - nth-child
+  - linear-gradient
+- 修改 chrome 记住密码后自动填充表单的黄色背景
+
+  ```css
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    background-color: rgb(250, 255, 189); /* #FAFFBD; */
+    background-image: none;
+    color: rgb(0, 0, 0);
+  }
+  ```
+
+- 让页面字体变清晰, 变细 `-webkit-font-smoothing: antialiased;`
+- 让 overflow:scroll 平滑滚动 `-webkit-overflow-scrolling: touch;`
+
+> [来源](https://juejin.im/post/5d8989296fb9a06b1f147070)

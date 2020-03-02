@@ -9,6 +9,13 @@
 
 ### url uri 区别
 
+- uri, uniform resource identifier, 统一资源标识符, 唯一的标识一个资源
+- url, uniform resource location, 统一资源定位符
+- urn, 统一资源名称, 命名资源但不指定如何定位资源
+- url 是 uri 的一部分
+
+> [来源](https://www.jianshu.com/p/ba15d066f777)
+
 ### url 结构分解
 
 - 整个 url 字符串部分
@@ -28,9 +35,12 @@
 
 ### 请求方法
 
-- GET
-- POST
-- PUT
+- GET, 从制定资源请求数据
+- POST, 向指定的 URI 提交要给处理的数据
+- PUT, 上传指定的 URI 表示
+- HEAD, 与 GET 相同, 但只返回 HTTP 报头
+- DELETE, 删除指令资源
+- OPTIONS, 返回服务器支持的 HTTP 方法
 
 #### post 与 get 区别
 

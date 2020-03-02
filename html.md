@@ -42,6 +42,8 @@
 
 仅通过标签名就能判断出其内容的标签, 让文档结构清晰, 搜索引擎更好的爬取, 方便其他设备解析
 
+即使没有样式情况下也以一种文档格式显示
+
 常用如下:
 
 - header
@@ -57,3 +59,32 @@
 - mark, 高亮标记一段文字, 就是加了`background-color`
 
 > [来源](https://segmentfault.com/a/1190000013901244)
+
+## HTML5
+
+HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,css3,JavaScript 等最新前端开发技术的综合
+
+- datalist, 提供自动完成的文本框
+- svg, 基于文本的图形语言, 可以绘制使用文本, 线, 点等的图形
+- canvas
+- manifest, 应用缓存
+- `<!DOCTYPE HTML>`, 规范浏览器的行为
+
+> [来源](https://www.jianshu.com/p/e6e714eff7d5) 质量不大行
+
+## src 与 href 区别
+
+- href, 指向网络资源所在的位置, 建立这个标签与外部资源之间的关系。
+- src, 指向的内容将会嵌入到文档中当前标签的位置
+
+> [来源](https://www.jianshu.com/p/dadbb8f8a952)
+
+## 空元素
+
+没有内容的 HTML 内容称为空元素, 空元素是在开始标签中关闭的
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%A9%BA%E5%85%83%E7%B4%A0)
+
+## iframe
+
+会阻塞主页面的 onload 事件, 搜索引擎无法解读, 不利于 seo, iframe 和主页面共享连接池, 而浏览器会对相同域的连接有限制

@@ -71,7 +71,14 @@ Function.prototype.applyF = function(thisArg, args) {
 
 ---
 
-最直观的来看, 就是通过 `then` 链, 将回调嵌套铺平, 每一个 `then` 都会返回一个新的 `promise`
+通过 `then` 链, 将回调嵌套铺平, 每一个 `then` 都会返回一个新的 `promise`
+
+**需要满足的行为**:
+
+- then 的执行一定在 promise 传入的函数之后
+- promise 中的函数执行完后调用 resolve 传入的参数会给到 then 中
+- 可以链式调用
+- then 的返回值决定链式调用中返回的 promise 的状态
 
 ```javascript
 const pend = 0;
@@ -190,6 +197,14 @@ function promise(fn) {
   };
   doResolve(fn, resolve, reject);
 }
+new promise(function(res) {
+  console.log(123);
+  res();
+}).then(function(res) {
+  console.log(456);
+});
 ```
 
-> [来源](https://zhuanlan.zhihu.com/p/58428287) [promise implemention](https://www.promisejs.org/implementing/)
+> [promise implemention](https://www.promisejs.org/implementing/)
+
+> [详细的行为](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)

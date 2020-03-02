@@ -134,7 +134,7 @@ function deepCopy(src) {
   }
   return res;
 }
-//JSON.parse(JSON.stringify(obj))
+//JSON.parse(JSON.stringify(obj)) 对部分属性如date无法很好地复制
 ```
 
 - 环
@@ -164,4 +164,24 @@ function deepCopy(src) {
 
 > [来源](https://juejin.im/post/5af13664f265da0ba266efcf)
 
+## 单页应用
 
+只有一张 web 页面的应用, 跳转仅刷新局部资源, 公共资源仅需加载一次
+
+### 前端路由
+
+通过特殊的 url 实现 spa 的刷新前进后退和 seo
+
+- 改变 url 不让浏览器向服务器发送请求
+- 可以监听到 url 的变化
+
+**实现方法:**
+
+- hash, 指 url 后的#号以及后面的字符, hash 的变化不会导致浏览器向服务器发送请求, 并且有个很方便的`hanshchange`事件, 可以监听到 url 变化
+- history, 通过监听来实现回调的注册
+  - 点击浏览器的前进或后退按钮
+  - 点击 a 标签
+  - 在 js 中触发`history.pushState()`
+  - 在 js 中触发`history.replaceState()`
+
+> [来源](https://juejin.im/post/5d2d19ccf265da1b7f29b05f)

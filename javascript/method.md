@@ -83,3 +83,9 @@
 找到一个不错的总结
 
 > [来源](https://juejin.im/post/59cc61176fb9a00a437b290b)
+
+## eval
+
+将传入的字符串当做 JavaScript 代码进行执行
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/eval)

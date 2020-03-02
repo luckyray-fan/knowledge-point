@@ -52,3 +52,8 @@
 - [2018 头条春招前端实习生面试题目总结](https://juejin.im/post/5adc5d2f51882567183eb4a9)
 - [鹅厂假前端实习鹅的实习日志](https://blog.csdn.net/u011748319/article/details/89062464) 和我一个学校的学长
 - [让 BAT Offer 不再难拿](https://www.lindongzhou.com/article/bat-offer)
+- 鉴于有不少不是知识点, 减少那部分的, 专注面试知识点
+- [前端开发中 79 条不可忽视的知识点汇总](https://juejin.im/post/5d8989296fb9a06b1f147070) **太多了**
+- 对于非实习的面经和知识点重视等级下降
+- 单页应用, 前端路由, 模块加载, dom 事件模型 0 级与 2 级
+- [https://www.nowcoder.com/discuss/69537?type=0&order=0&pos=452&page=1](https://www.nowcoder.com/discuss/69537?type=0&order=0&pos=452&page=1)
