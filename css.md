@@ -133,7 +133,7 @@ flex 可以用来非常有效的布局, 对其并且描述空间在容器里的�
 **position** 属性:
 
 - relative, 相对于正常位置定位
-- absolute, 相对于值不为 static 的第一个父元素进行定位
+- absolute, 相对于值不为 static 的第一个父元素的 margin 的外边缘进行定位
 - fixed, 相对于浏览器窗口定位
 
 ### 三栏布局(左右两边固定宽度, 中间自适应)
@@ -172,6 +172,8 @@ flex 可以用来非常有效的布局, 对其并且描述空间在容器里的�
 ## display 与 visibility
 
 display:none 的话, 不会保留物理空间, 此时会发生回流, visibility:hidden 仅仅是视觉上完全透明
+
+另外, visibility 不会触发事件, 但是 opacity 会
 
 ## 动画
 

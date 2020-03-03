@@ -185,3 +185,26 @@ function deepCopy(src) {
   - 在 js 中触发`history.replaceState()`
 
 > [来源](https://juejin.im/post/5d2d19ccf265da1b7f29b05f)
+
+## 异步
+
+- promise
+- async
+
+## 大数相加
+
+### 0.1+0.2 == 0.3
+
+js 使用 Number 类型表示数字, 使用 64 位来表示一个数字
+
+最大 Math.pow(2,53), 由于加法的实现需要先转换为二进制然后进行运算
+
+0.1 和 0.2 转为二进制会无限循环, 而尾数最大 52 位, 所以需要截掉后面的, 在这阶段失掉了精度
+
+对阶运算也会丢失精度
+
+可以用第三方库来解决精度问题
+
+> [来源](https://juejin.im/post/5b90e00e6fb9a05cf9080dff)
+
+> [js 处理大数相加](https://juejin.im/post/5d11bd7af265da1b8a4f2b27)

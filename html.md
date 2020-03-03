@@ -88,3 +88,10 @@ HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,c
 ## iframe
 
 会阻塞主页面的 onload 事件, 搜索引擎无法解读, 不利于 seo, iframe 和主页面共享连接池, 而浏览器会对相同域的连接有限制
+
+## xml xhtml html
+
+- xhtml 比 html 更严格
+- xml 用来数据传输定义
+
+> [来源](https://www.jianshu.com/p/9027f0b4c69c)

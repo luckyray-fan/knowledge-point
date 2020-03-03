@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/docsify/4.10.2/themes/vue.css" />
     <style>
       a {
         text-decoration: none;
@@ -19,6 +19,9 @@
       }
       h3 {
         font-size: 1.3rem;
+      }
+      .search input:focus {
+        box-shadow: none !important;
       }
     </style>
   </head>
@@ -34,9 +37,14 @@
         repo: 'https://github.com/luckyray-fan/knowledge-point',
         coverpage: true,
         loadSidebar: true,
-        subMaxLevel: 2
+        subMaxLevel: 2,
+        search: {
+          placeholder: '搜索文档',
+          noData: '没有找到!'
+        }
       };
     </script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="https://cdn.bootcss.com/docsify/4.10.2/docsify.min.js"></script>
+    <script src="https://cdn.bootcss.com/docsify/4.10.2/plugins/search.min.js"></script>
   </body>
 </html>

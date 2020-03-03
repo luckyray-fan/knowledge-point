@@ -69,3 +69,7 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 可用来图片编码
 
 > [来源](https://www.jianshu.com/p/f39a54826de5)
+
+### hash
+
+### UUID

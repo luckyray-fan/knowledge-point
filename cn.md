@@ -5,6 +5,14 @@
 - AAAA 记录, 解析到 ipv6 地址
   > [来源](https://itbilu.com/other/relate/EyxzdVl3.html)
 
+### 顶级域名
+
+- 顶级域名, `.com, .org等`
+- 二级域名, `baidu.com`, 如果从购买域名的角度来说, 这个也可以叫一级域名
+- 三级域名, `www.baidu.com`
+
+> [来源](https://www.zhihu.com/question/29998374)
+
 ## HTTP
 
 ### url uri 区别
@@ -12,7 +20,7 @@
 - uri, uniform resource identifier, 统一资源标识符, 唯一的标识一个资源
 - url, uniform resource location, 统一资源定位符
 - urn, 统一资源名称, 命名资源但不指定如何定位资源
-- url 是 uri 的一部分
+- url 是 uri 的一种
 
 > [来源](https://www.jianshu.com/p/ba15d066f777)
 
@@ -65,15 +73,54 @@
 - 4xx, 表示请求错误, 客户端的请求可能有问题
 - 5xx, 代表服务器处理请求的过程中有错误, 也可能是无法完成请求的处理
 
-### 报文字段
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
 
-### HTTPS
+### 报文字段
 
 ### HTTP 1.1
 
-- 持久连接
+- 持久连接, 本质上指的是 TCP 的长连接, 也就是说节省了 TCP 握手和挥手的时间
+
+### HTTP 2
+
+专注于性能, 最大的目标是用户和网站只用一个连接
+
+keep-alive 在域名分片下仍然需要建立多个连接, TCP 连接不断开但是只能传完一个再传下一个, http2 提供了多路传输即连接复用
+
+http1 解析依靠文本, http2 依靠二进制, 使用 encoder 缓存了 http1 中 cookie 和 use ragent
+
+> [来源](https://github.com/creeperyang/blog/issues/23)
+
+### 长短轮询
+
+长轮询指的是服务器收到请求并不马上返回, 而是等请求的数据有变化才返回, 这样客户端会自动挂起不继续发请求直到超时
+
+> [来源](https://www.jianshu.com/p/3fc3646fad80)
 
 ### cookie session
+
+cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响应头的 `set-cookie`设置
+
+一个页面可以有不同的域设置 cookie, 一个域可以有不同的 cookie, cookie 有基本的字段:
+
+- name, cookie 名称
+- value, cookie 值
+- domain, 可以访问此 cookie 的域名
+- path, 可以访问此 cookie 的页面路径
+- expires, cookie 超时时间, 不设置的话和 session 一起失效, 当浏览器关闭后消失
+- size, cookie 大小
+- http, 此 cookie 的 httponly 属性, 只能上传时带上该 cookie 而无法用`document.cookie`读取
+- secure, 设置是否只能通过 https 来传递此条 cookie
+
+> [来源](https://segmentfault.com/a/1190000004556040)
+
+**session 的生成过程:**
+
+- 生成全局唯一标识符, sessionid
+- 开辟数据存储空间, 可以在内存也可以为了稳定放在数据库
+- 将 sessionid 发送给客户端, 使用 http 头字段 set-cookie 字段
+
+**session 与 cookie 的区别:**
 
 - session 在服务端, cookie 在浏览器里
 - session 默认存放服务器的文件里而非内存
@@ -84,7 +131,25 @@
 
 ### http 与 https 的区别
 
+- http 通信用明文容易窃听
+- 不验证通信方身份, 会被伪装
+- 无法验证报文, 也许已经被纂改
+
+用 ssl 协议作为 http 的外壳, 成就了 https 协议
+
+使用两把密钥, 一把私有一把公开
+
+- 发送密文的一方使用对方的公开密钥加密, 对方收到后用自己的私钥解密
+- 证明公开密钥就是请求的服务端的, 可以使用数字证书认证机构和其他相关机关颁布的公开密钥证书
+
+- 客户端请求 https, 服务端发过来一套数字证书
+- 客户端验证证书, 客户端用证书中的公钥加密随机值传给服务端
+- 服务端解密客户端的随机值然后把内容通过该值进行对称加密传输过去
+- 此时双方获得了一般是 AES 的加密算法的对称密钥, 就可以正常开始通信了
+
 > [来源](https://book.douban.com/subject/25863515/)
+
+> [这个也清晰](https://zhuanlan.zhihu.com/p/32513816)
 
 ## TCP
 

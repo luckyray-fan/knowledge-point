@@ -12,6 +12,16 @@
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
+## 模板字符串
+
+最大的好处是可以换行, 以前用 webstorm 直接粘贴可以将换行的自动转为用加号相连的字符串, 改用 vscode 后知道这个超方便
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
+
+## 参数默认值
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
 ## 解构赋值
 
 ---
@@ -40,10 +50,12 @@ let { a } = { a: 1 };
 ---
 
 - 块级作用域
-- 没有变量提升和暂时性死区
+- 变量提升但不会初始化和暂时性死区
 - 不能重复声明
 
 > [来源](https://www.cnblogs.com/fly_dragon/p/8669057.html)
+
+> [let 是否有提升](https://zhuanlan.zhihu.com/p/28140450)
 
 ## class
 
@@ -95,7 +107,7 @@ class A {
 ```
 
 - 生成器方法
-- 静态成员, 在方法或属性名前加上 static, 能通过类名直接访问, 实例不行
+- 静态成员, 在方法或属性名前加上 static, 能通过类名直接访问
 - 继承, 可以继承表达式, 函数
 
 ```javascript

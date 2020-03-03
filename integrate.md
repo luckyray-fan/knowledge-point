@@ -15,6 +15,12 @@
 - 如何避免多次加载
 - 如何缓存
 
+### 浏览器加载模块
+
+浏览器对 ES Module 标准原生支持, 可以使用 `<script type="module">` 引入模块, 默认情况是 defer
+
+> [来源](https://juejin.im/post/5b430a4be51d451925627119)
+
 ### css 模块化
 
 ### 资源模块化

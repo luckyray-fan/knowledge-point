@@ -153,12 +153,16 @@ var c1 = create(o); //这样就继承o了
 
 ### 继承方法比较
 
-- 原型继承, 不同子类实例会共享同一对象, 如果修改其内容其他实例获得的也是修改的, 并且创建子类实例的时候不能向超类构造函数传递参数
+- 原型继承, 不同子类实例会共享同一对象, 如果修改属性其他实例获得的也是修改的, 并且创建子类实例的时候不能向超类构造函数传递参数
 - 组合继承, 每次都会调用两次超类的构造函数, 并且不同子类实例共享同一对象
 
 完美的是寄生继承, 子类都有各自的实例, 不会互相影响, 且共享了父类的方法
 
 > [来源](https://juejin.im/post/5bbca0c6f265da0aa35946b3)
+
+### 公有属性与私有属性
+
+定义在构造函数内的`this.x`就是私有的, 定义在原型对象上的是公有的
 
 ## 数据类型
 
@@ -467,6 +471,10 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 | [[writable]]     | 能否修改属性的值                        |
 | [[value]]        | 包含这个属性的数据值, 默认为 undefined  |
 
+### 可枚举性和所有权
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
+
 ### 访问器属性
 
 访问器属性也需要通过`Object.definePrototy()`来定义
@@ -589,6 +597,8 @@ type 可以是 number 或者 string
   >
   > - [JavaScript Unary Operators: Simple and Useful](https://scotch.io/tutorials/javascript-unary-operators-simple-and-useful)
 
+> [来点题目](https://juejin.im/post/5a7172d9f265da3e3245cbca)
+
 ## 操作符
 
 - `||`
@@ -596,20 +606,6 @@ type 可以是 number 或者 string
 ## 异步
 
 ---
-
-## 0.1+0.2 == 0.3
-
-js 使用 Number 类型表示数字, 使用 64 位来表示一个数字
-
-最大 Math.pow(2,53), 由于加法的实现需要先转换为二进制然后进行运算
-
-0.1 和 0.2 转为二进制会无限循环, 而尾数最大 52 位, 所以需要截掉后面的, 在这阶段失掉了精度
-
-对阶运算也会丢失精度
-
-可以用第三方库来解决精度问题
-
-> [来源](https://juejin.im/post/5b90e00e6fb9a05cf9080dff)
 
 ## 严格模式
 

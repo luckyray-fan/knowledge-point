@@ -42,7 +42,7 @@
 - rem 和 em 区别
 - flex 布局
 - 浮动和清除浮动
-- cdn
+- cdn, 自我介绍, 简历
 - 下面的都是很早就记下的, 过完一个删一个 ✨
 - [20 道面试题测下你前端基础如何](https://zhuanlan.zhihu.com/p/40991873)
 - [80% 应聘者都不及格的 JS 面试题](https://juejin.im/post/58cf180b0ce4630057d6727c)
@@ -56,4 +56,11 @@
 - [前端开发中 79 条不可忽视的知识点汇总](https://juejin.im/post/5d8989296fb9a06b1f147070) **太多了**
 - 对于非实习的面经和知识点重视等级下降
 - 单页应用, 前端路由, 模块加载, dom 事件模型 0 级与 2 级
-- [https://www.nowcoder.com/discuss/69537?type=0&order=0&pos=452&page=1](https://www.nowcoder.com/discuss/69537?type=0&order=0&pos=452&page=1)
+- [网易云音乐前端一面二面 hr 面](https://www.nowcoder.com/discuss/69537?type=0&order=0&pos=452&page=1)
+- 添加搜索功能, cdn 改成 bootcdn, 搜索功能 css focus 伪类更改样式
+- [字节跳动前端一面面经](https://www.nowcoder.com/discuss/373775?type=2)
+- [实习｜阿里前端实习生面经，收到录用 offer 撒花撒花](https://zhuanlan.zhihu.com/p/73723200)
+- 面试前在 codepen 中徒手写一份的 new, apply, debounce, 插入,快排
+  - 想好自我介绍, 做好简历, 有时间了把面试算法题再过一遍, 全排列
+- [字节跳动前端寒假实习面经](https://www.nowcoder.com/discuss/353684?type=post&order=time&pos=&page=2)
+- [面试记录总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.md#1-2019-3-25-%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%B7%98%E5%AE%9D%E4%B8%80%E9%9D%A2)
