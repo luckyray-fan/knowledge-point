@@ -60,7 +60,15 @@
 - 添加搜索功能, cdn 改成 bootcdn, 搜索功能 css focus 伪类更改样式
 - [字节跳动前端一面面经](https://www.nowcoder.com/discuss/373775?type=2)
 - [实习｜阿里前端实习生面经，收到录用 offer 撒花撒花](https://zhuanlan.zhihu.com/p/73723200)
-- 面试前在 codepen 中徒手写一份的 new, apply, debounce, 插入,快排
-  - 想好自我介绍, 做好简历, 有时间了把面试算法题再过一遍, 全排列
+- 面试前在 codepen 中徒手写一份的 new, apply, debounce, promise, flex 布局, 继承, class, 扁平化, reduce map
+  - 想好自我介绍, 做好简历, 有时间了把面试算法题再过一遍, 全排列, 插入,快排,二分查找
+  - 看简历上写的项目, vue 的生命周期, 缓存, 性能
 - [字节跳动前端寒假实习面经](https://www.nowcoder.com/discuss/353684?type=post&order=time&pos=&page=2)
 - [面试记录总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.md#1-2019-3-25-%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%B7%98%E5%AE%9D%E4%B8%80%E9%9D%A2)
+- [阿里前端实习面经](https://www.nowcoder.com/discuss/355875?type=post&order=time&pos=&page=1)
+- [春招前端实习面试记录(2019.3 ~ 2019.5) ](https://juejin.im/post/5cbbd2a0e51d456e8a12efaa) **太多之后再看**
+- [阿里云一面面经](https://www.nowcoder.com/discuss/360529)
+- webpack 打包过程与原理, 后面再了解
+- [字节跳动前端二面分享](https://www.nowcoder.com/discuss/375111)
+- [字节前端实习面经](https://www.nowcoder.com/discuss/355976?type=2)
+- 增加图片 zoom 插件

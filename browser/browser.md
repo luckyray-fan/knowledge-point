@@ -27,6 +27,21 @@
 
 如果 DOM 或 CSSOM 被修改, 以上过程需要重复执行
 
+### 图片加载闪烁
+
+如果图片不固定宽高, 那么浏览器首次加载渲染时会有闪动的问题
+
+img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方法有如下
+
+- 采用 padding 或者 margin 来撑开
+- 设定宽或高, 单独设置一个图片会自适应
+- 服务器传递宽高来设置, 在瀑布流中有应用
+- 使用遮罩图片
+
+> [来源](https://www.kancloud.cn/xiak/quanduan/245428)
+
+> [图片占位防闪烁](https://juejin.im/post/5b514e6a518825072f271173)
+
 ### defer 与 async
 
 这两个属性会改变 js 加载的阻塞形式, 当然他们对内联脚本无效
@@ -144,7 +159,10 @@
   - cross-origin resource sharing, 是一个新的 w3c 标准, 新增一个 http 首部字段
   - Access-Control-Allow-Origin, 响应中携带这的这个首部意味着服务器允许哪些域可以访问该资源
   - cors 可以支持所有类型的 HTTP 请求
-    > [来源](https://www.jianshu.com/p/f880878c1398)
+
+> [来源](https://www.jianshu.com/p/f880878c1398)
+
+> [九种跨域方法, 强啊](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
 
 ## 事件
 

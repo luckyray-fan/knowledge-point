@@ -21,9 +21,19 @@
 
 > [来源](https://juejin.im/post/5b430a4be51d451925627119)
 
-### css 模块化
+## css 模块化
+
+### css 预处理器
+
+sass 和 less, 赋予 css 更多可编程的特性, 简化开发
 
 ### 资源模块化
+
+## 工程化
+
+> [来源](https://juejin.im/post/58ac334e8d6d810058c103e0)
+
+> [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
 
 ## 组件化
 
@@ -45,3 +55,5 @@
 - 代码切割
 
 - 压缩, 减少打包体积
+
+## git

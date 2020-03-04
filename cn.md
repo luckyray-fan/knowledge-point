@@ -62,8 +62,16 @@
 
 ### 报文信息
 
-- 报文结构
+- 请求报文
+  - 第一行是方法, 路径, http 版本
+  - 然后是 headers
+  - 如果有数据的话会有请求体
 - 返回报文
+  - 第一行是 http 版本, 状态码, 状态信息
+  - headers
+  - 资源体
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview#HTTP_%E6%8A%A5%E6%96%87)
 
 ### 返回的状态码
 
@@ -76,6 +84,21 @@
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
 
 ### 报文字段
+
+- 缓存
+  - Expires
+  - Catche-Control
+  - Last-Modfied
+    - If-Not-Modfied-Since
+  - ETag
+    - If-None-Match
+- 内容
+  - Content-Length
+  - Content-Type
+    - 请求的时候可以设置为 multiple/form-data, 注意此时 hearder 的头需要指定与 formData 相同的 boundary, 最好把 formData 的 headers 直接赋值给它, 否则上传的文件无法识别
+  - Content-Disposition: 指示回复的内容该以何种形式展示
+
+> [来源](https://juejin.im/post/5ce0f3fdf265da1b86085782)
 
 ### HTTP 1.1
 
@@ -195,3 +218,9 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 从源站获取资源也就是回源, 因为每一步都可以缓存, 所以要清除缓存比较困难
 
 > [来源](https://juejin.im/entry/587c7a63128fe10057faf224)
+
+## 代理
+
+正向代理隐藏真实客户端, 反向代理隐藏服务端
+
+> [来源](https://www.zhihu.com/question/24723688)

@@ -151,6 +151,10 @@ function deepCopy(src) {
 
 > [来源](https://juejin.im/post/59716f15f265da6c4c500fc7)
 
+## reduce 模仿 map
+
+> [来源](https://juejin.im/post/5c0b7f03e51d452eec725729)
+
 ## 判断对象相等
 
 - NaN
@@ -191,7 +195,11 @@ function deepCopy(src) {
 - promise
 - async
 
-## 大数相加
+## 数字
+
+### 大数相乘
+
+小学乘法就行
 
 ### 0.1+0.2 == 0.3
 

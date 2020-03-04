@@ -14,7 +14,7 @@
 
 ## 生命周期
 
-![](../source/vue-1.jpg)
+<img src="../source/vue-1.jpg" alt="" width="480"/>
 
 ## diff 算法
 

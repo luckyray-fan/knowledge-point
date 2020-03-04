@@ -38,6 +38,8 @@ function new_instance_of(leftVaule, rightVaule) {
 }
 ```
 
+> [javascript 判断变量是否是数组（Array）](https://segmentfault.com/a/1190000004479306) instanceof 的缺点是没法处理不同 iframe 的判断
+
 ## 原型
 
 ---
@@ -581,6 +583,7 @@ type 可以是 number 或者 string
   - 存在对象执行 `ToPrimitive`
   - 类型不同, 将其转为 number 来比较
   - null 与 undefined 相比为 true, 其他与之相比为 false
+    - undefined 或 null 时，不作强制类型转换, 但是小于等于的操作符会把它转为 number, 所以会有下面的奇葩 ![](../source/js-p-6.jpg)
   - 布尔类型转为数字 `true == '2'是false`
     - true 转为 1, '2'变为 2
 

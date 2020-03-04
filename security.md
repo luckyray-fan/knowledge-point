@@ -73,3 +73,5 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 ### hash
 
 ### UUID
+
+### JWT
