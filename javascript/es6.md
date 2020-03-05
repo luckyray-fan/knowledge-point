@@ -13,12 +13,14 @@
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ## 模板字符串
+---
 
 最大的好处是可以换行, 以前用 webstorm 直接粘贴可以将换行的自动转为用加号相连的字符串, 改用 vscode 后知道这个超方便
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
 
 ## 参数默认值
+---
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 

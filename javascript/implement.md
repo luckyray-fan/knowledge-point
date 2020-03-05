@@ -68,6 +68,7 @@ Function.prototype.applyF = function(thisArg, args) {
 > [来源](https://juejin.im/post/5bf6c79bf265da6142738b29#heading-5)
 
 ## Object.create()
+---
 
 创建一个新对象, 对象的构造函数指向传入的值
 
@@ -224,6 +225,7 @@ new promise(function(res) {
 > [详细的行为](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
 
 ## class
+---
 
 ```JavaScript
 function test(){

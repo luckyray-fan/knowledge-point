@@ -603,6 +603,7 @@ type 可以是 number 或者 string
 > [来点题目](https://juejin.im/post/5a7172d9f265da3e3245cbca)
 
 ## 操作符
+---
 
 - `||`
 
@@ -611,6 +612,7 @@ type 可以是 number 或者 string
 ---
 
 ## 严格模式
+---
 
 `use strict`
 

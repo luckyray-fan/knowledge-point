@@ -1,5 +1,7 @@
 ## xss
 
+---
+
 Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie, sessionID 等
 
 ### 攻击形式
@@ -21,6 +23,8 @@ Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie, sessionID
 
 ## csrf
 
+---
+
 cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以用户名义发送恶意请求
 
 - 登录网站 A, 生成 cookie
@@ -38,6 +42,8 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 ## 流量劫持
 
+---
+
 执行中间人攻击, 例如污染中间链路设备, 可以更改 HTTP 内容, 污染 dns 解析等
 
 ### 解决方案
@@ -50,15 +56,24 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 ## sql 注入
 
+---
+
 登录注册的时候改变数据库
 
 > [来源](https://www.jianshu.com/p/078df7a35671)
 
 ## 常用编码
 
+---
+
 ### md5
 
-输入不定长度信息, 输出 128 bits 的算法
+输入不定长度信息, 输出 128 bits 16 字节的算法, 如果要找到相同的 md5 码需要计算 2^64 次
+
+- [**加盐**](https://blog.csdn.net/blade2001/article/details/6341078)
+  - 注册时, 密码和一个随机的 salt 值字符串连接然后 md5 散列
+  - 登录时, 密码和之前分配的 salt 连接然后 md5 散列, 看两个哈希值是否一致
+  - 可以防止通过哈希值利用 md5 散列值字典找到密码
 
 > [来源](https://zh.wikipedia.org/wiki/MD5)
 
@@ -72,6 +87,20 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 ### hash
 
+- SHA-1 哈希值, 生成 20 字节的消息摘要
+
+> [来源](https://zhuanlan.zhihu.com/p/37165658)
+
 ### UUID
 
+通用唯一标识码, 重复的几率接近为 0
+
+> [来源](https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%94%AF%E4%B8%80%E8%AF%86%E5%88%AB%E7%A0%81)
+
 ### JWT
+
+## 内存泄漏
+
+---
+
+指变量占用内存却没有回收

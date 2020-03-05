@@ -1,4 +1,5 @@
 ## meta 标签
+---
 
 元数据, 是关于数据的信息, 对于机器可读, 可用于浏览器或搜索引擎, 可携带的信息如下:
 
@@ -39,6 +40,7 @@
   > [来源](https://blog.csdn.net/yc123h/article/details/51356143)
 
 ## 语义化
+---
 
 仅通过标签名就能判断出其内容的标签, 让文档结构清晰, 搜索引擎更好的爬取, 方便其他设备解析
 
@@ -61,6 +63,7 @@
 > [来源](https://segmentfault.com/a/1190000013901244)
 
 ## HTML5
+---
 
 HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,css3,JavaScript 等最新前端开发技术的综合
 
@@ -73,6 +76,7 @@ HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,c
 > [来源](https://www.jianshu.com/p/e6e714eff7d5) 质量不大行
 
 ## src 与 href 区别
+---
 
 - href, 指向网络资源所在的位置, 建立这个标签与外部资源之间的关系。
 - src, 指向的内容将会嵌入到文档中当前标签的位置
@@ -80,16 +84,19 @@ HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,c
 > [来源](https://www.jianshu.com/p/dadbb8f8a952)
 
 ## 空元素
+---
 
 没有内容的 HTML 内容称为空元素, 空元素是在开始标签中关闭的
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%A9%BA%E5%85%83%E7%B4%A0)
 
 ## iframe
+---
 
 会阻塞主页面的 onload 事件, 搜索引擎无法解读, 不利于 seo, iframe 和主页面共享连接池, 而浏览器会对相同域的连接有限制
 
 ## xml xhtml html
+---
 
 - xhtml 比 html 更严格
 - xml 用来数据传输定义
@@ -97,6 +104,7 @@ HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,c
 > [来源](https://www.jianshu.com/p/9027f0b4c69c)
 
 ## 转义字符串
+---
 
 HTML 中`<>&`等有特殊含义不能直接使用, 如果想要再网页中显示, 需要使用转义字符串
 

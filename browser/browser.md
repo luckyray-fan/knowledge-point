@@ -18,7 +18,7 @@
 
 - 处理 HTML 标记构建 DOM 树, 此时 document.readyState 为 loading
 - 处理 CSS 标记并构建 CSSOM 树, 等文档解析完成, readyState 变为 interactive
-- 将 DOM 与 CSSOM 合并成一个渲染树
+- 将 DOM 与 CSSOM 合并成一个渲染树(CSSOM 没加载好之前浏览器一直是白屏)
 - 根据渲染树布局页面, 计算节点几何信息
 - 将节点绘制
 - 同步脚本都执行完成了, 触发 domContentLoaded 事件
@@ -26,6 +26,25 @@
 - 调用回调, 响应事件
 
 如果 DOM 或 CSSOM 被修改, 以上过程需要重复执行
+
+? [更快地构建 DOM: 使用预解析, async, defer 以及 preload](https://www.zcfy.cc/article/building-the-dom-faster-speculative-parsing-async-defer-and-preload-x2605-mozilla-hacks-8211-the-web-developer-blog)
+
+### 浏览器将标签转成 DOM 的过程
+
+- 编码, utf-8
+- 预解析, 找出需要下载的外部资源
+- 标记化, 使用状态机, 将标签解析为语法树
+- 构建树, 每解析一个标签就添加到 document 中, 对于此时不正确的构建, 如 video 拥有子元素由渲染引擎来处理
+  > [来源](https://segmentfault.com/a/1190000018730884)
+
+### 浏览器解析 css 的过程
+
+- 字符串到 Token
+- tokens 到 styleRule, 一个是选择器, 一个是属性
+- 生成哈希 map
+- 计算 css, 设置匹配节点
+
+> [来源](https://zhuanlan.zhihu.com/p/25380611)
 
 ### 图片加载闪烁
 
@@ -55,7 +74,7 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 - 一边下载 HTML 网页, 一边开始解析
 - 发现 \<script\>, 暂停解析, 将网页渲染交给 js 引擎, 但此时仍会识别脚本后面的资源, 进行预加载
-- 发现 link 标签, 与 js 并行下载, 但是会先加载 css
+- 如果 css 与 js 并行下载, 但是会先加载 css
 - 如果引用了外部脚本就下载后执行, 否则直接执行
 - 控制权还给渲染引擎
 
@@ -165,6 +184,7 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 > [九种跨域方法, 强啊](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
 
 ## 事件
+---
 
 某个特定的有意义的瞬间, 然后传递出来, 这就是观察者模式下的事件
 
@@ -202,6 +222,7 @@ DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶
 > [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)
 
 ## DOM 事件模型级数
+---
 
 the document obect model, 作为规范定义了 html 的操作的编程接口
 
@@ -212,6 +233,7 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
 > [来源](https://www.jianshu.com/p/75183574ada7)
 
 ## 浏览器缓存
+---
 
 重复利用文件, 提升性能
 
@@ -244,3 +266,8 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
 - setRequestHeader("Cache-Control","no-cache")
 - 加个随机数, 浏览器认为 url 改变了就重新请求了
   > [来源](https://www.jianshu.com/p/54cc04190252)
+
+## webstorage
+---
+
+> [来源](https://juejin.im/post/593d0c5d61ff4b006c8fec76)

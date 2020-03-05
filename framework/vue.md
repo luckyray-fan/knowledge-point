@@ -1,5 +1,7 @@
 ## 双向绑定原理
 
+---
+
 - 发布者-订阅者模式
 - 脏值检查, 当出现某些特定事件时检查数据变动
 - 数据劫持, `Object.defineProperty()`来劫持属性的`setter,getter`, 在数据变动时发布消息给订阅者
@@ -12,11 +14,25 @@
 
 > [来源](https://segmentfault.com/a/1190000006599500)
 
+## Object.defineProperty 的确定
+
+---
+
+- 一次递归所有属性
+- 没法监听 push
+- 对新增的属性监听不到
+
+> [来源](https://juejin.im/post/5e548134e51d45270531860f)
+
 ## 生命周期
+
+---
 
 <img src="../source/vue-1.jpg" alt="" width="480"/>
 
 ## diff 算法
+
+---
 
 渲染真实 DOM 的开销很大, 所以用真实 DOM 生成一棵虚拟 DOM, 然后 xuniDOM 数据改变后会生成一棵 Vnode, 然后 Vnode 和之前的 Vnode 比较, 发现有不同的地方直接修改在**真实的 DOM**上
 
@@ -27,6 +43,8 @@
 > [来源](https://github.com/aooy/blog/issues/2)
 
 ## 组件间通信
+
+---
 
 组件实例的作用域是相互独立的, 不同组件的数据无法互相引用, 针对不同关系比如, 父子, 兄弟, 隔代祖先等关系有不同的通信方式
 

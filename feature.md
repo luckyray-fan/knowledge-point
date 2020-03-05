@@ -1,4 +1,5 @@
 ## 请求发送
+---
 
 ### ajax 原生请求
 
@@ -20,6 +21,7 @@ var data = await dataJson.json();
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## 防抖节流
+---
 
 在输入框等事件中, 减少触发函数的频率
 
@@ -53,6 +55,7 @@ function throttle(fn, wait) {
 > [来源](https://juejin.im/post/5b8de829f265da43623c4261)
 
 ## 去重
+---
 
 去除数组中重复的元素
 
@@ -98,6 +101,7 @@ function unique(arr) {
 > [来源](https://segmentfault.com/a/1190000016418021)
 
 ## 深浅拷贝
+---
 
 基本数据类型存在栈内, 且不可变, 基本类型的比较式基于值的比较
 
@@ -143,6 +147,7 @@ function deepCopy(src) {
 > [来源](https://juejin.im/post/59ac1c4ef265da248e75892b) 楼上那个不太行 [更好点的](https://juejin.im/post/5b235b726fb9a00e8a3e4e88)
 
 ## 扁平化
+---
 
 - 递归
 - toString, 如果元素都是数字
@@ -152,10 +157,28 @@ function deepCopy(src) {
 > [来源](https://juejin.im/post/59716f15f265da6c4c500fc7)
 
 ## reduce 模仿 map
+---
+
+map 有两个参数, 一个是回调函数, 还有一个可选的 this 如果没传 this 非严格模式下就是 window
+
+```JavaScript
+Array.prototype.mapF = function(fn,thisArg){
+  return function(arr){
+    //去掉判断fn和arr
+    if(arr.length === 0) return [];
+    var res = new Array(arr.length);
+    return arr.reduce(function(acc,cur,idx){
+      res[idx] = fn.call(thisArg,cur,idx,arr)
+      return res;
+    },res)
+  }
+}
+```
 
 > [来源](https://juejin.im/post/5c0b7f03e51d452eec725729)
 
 ## 判断对象相等
+---
 
 - NaN
 - undefined
@@ -163,12 +186,14 @@ function deepCopy(src) {
 > [来源](https://github.com/mqyqingfeng/Blog/issues/41)
 
 ## 函数柯里化
+---
 
 实现多参函数, 只传递一部分参数来调用它, 让它返回一个函数来处理剩下的参数
 
 > [来源](https://juejin.im/post/5af13664f265da0ba266efcf)
 
 ## 单页应用
+---
 
 只有一张 web 页面的应用, 跳转仅刷新局部资源, 公共资源仅需加载一次
 
@@ -191,11 +216,13 @@ function deepCopy(src) {
 > [来源](https://juejin.im/post/5d2d19ccf265da1b7f29b05f)
 
 ## 异步
+---
 
 - promise
 - async
 
 ## 数字
+---
 
 ### 大数相乘
 
