@@ -1,7 +1,7 @@
 - 浏览器
   - [浏览器](browser/browser)
   - [性能](browser/performance)
-  - [dom](browser/dom)
+  - [浏览器相关 Api](browser/dom)
 - [HTML](html)
 - [CSS](css)
 - javascript

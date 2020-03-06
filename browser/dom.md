@@ -28,3 +28,9 @@ load 只触发在 window 上
 - sessionStorage, 刷新页面或者关闭后就会被清空
 
 > [来源](https://jerryzou.com/posts/cookie-and-web-storage/)
+
+## BOM
+
+浏览器对象模型
+
+> [来源](https://segmentfault.com/a/1190000013426834?utm_source=channel-hottest)
