@@ -309,6 +309,18 @@ var c1 = create(o); //这样就继承o了
 - 若 base value 是 Environment Record 那么 this 值为`ImplicitThisValue()`, 也就是始终返回 undefined
 - 不是 Reference, this 为 undefined
 
+## js 内存回收
+
+---
+
+在定义时便完成了内存分配
+
+- 垃圾回收, 使用引用的方式
+  - 引用计数垃圾收集, 会有循环引用内存泄露的问题
+  - 标记清除算法, 将对象定义为是否可以获得
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management)
+
 ## js 执行过程
 
 ---
@@ -603,6 +615,7 @@ type 可以是 number 或者 string
 > [来点题目](https://juejin.im/post/5a7172d9f265da3e3245cbca)
 
 ## 操作符
+
 ---
 
 - `||`
@@ -612,6 +625,7 @@ type 可以是 number 或者 string
 ---
 
 ## 严格模式
+
 ---
 
 `use strict`

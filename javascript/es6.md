@@ -2,6 +2,33 @@
 
 ---
 
+- ES6, 全都熟悉哈哈
+  - 类
+  - 模块化
+  - 箭头函数
+  - 参数默认值
+  - 模板字符串
+  - 解构赋值
+  - spread 操作符
+  - 对象属性简写
+  - promise
+  - let const
+- ES7
+  - includes
+  - 指数操作符, 相对于`Math.pow()`
+- ES8
+  - await
+  - `Object.getOwnPropertyDescriptors()`返回自身属性的所有描述符
+- ES9
+  - Rest, 将剩余参数变为数组
+  - 正则反向断言
+- ES10
+  - flat 函数
+  - 新的基本类型 `BigInt`
+  - 更精确的 `Function.prototype.toString()`
+
+**只写了用过的**
+
 > [来源](https://juejin.im/post/5ca2e1935188254416288eb2)
 
 ## symbol
@@ -135,3 +162,25 @@ class A extends B {
 babel 中的继承实现也就是寄生组合类
 
 > [来源](https://mp.weixin.qq.com/s?__biz=MzI4MDYyNjQ1OA==&mid=2247483956&idx=1&sn=adc1ec7ae4cd3f01728fdcb43a38690f&chksm=ebb4d641dcc35f57cd2bf66ba9819874cf300108884700bf3d6a1410c18c0ed4ff3d90d10a8f#rd)
+
+## set map weakmap
+
+---
+
+- set, 类数组
+- map, 键值对, 键可以不是字符串
+- weakmap, 仅支持对象作为键值, 并且弱引用
+
+> [来源](https://juejin.im/post/5acc57eff265da237f1e9f7c)
+
+> [ES6 系列之 WeakMap](https://segmentfault.com/a/1190000015774465)
+
+## 迭代器与生成器
+
+---
+
+## await
+
+---
+
+> [来源](https://juejin.im/post/5e5f52fce51d4526ea7efdec)

@@ -1,4 +1,5 @@
 ## DNS
+
 ---
 
 - CNAME, 一个域名解析到另一个域名
@@ -22,6 +23,7 @@
 > [来源](https://www.jianshu.com/p/7c7ea420cee8)
 
 ## HTTP
+
 ---
 
 ### url uri 区别
@@ -123,6 +125,12 @@ http1 解析依靠文本, http2 依靠二进制, 使用 encoder 缓存了 http1 
 
 > [来源](https://github.com/creeperyang/blog/issues/23)
 
+### HTTP3
+
+用 UDP 代替 TCP, 快速网页传输
+
+> [来源](https://zh.wikipedia.org/wiki/HTTP/3)
+
 ### HTTP1 , 1.1, 2.0 区别
 
 > [来源](https://www.jianshu.com/p/be29d679cbff)
@@ -187,7 +195,10 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 
 > [这个也清晰](https://zhuanlan.zhihu.com/p/32513816)
 
+> [有关数据证书与 CA 的一篇文章](https://www.barretlee.com/blog/2016/04/24/detail-about-ca-and-certs/)
+
 ## TCP
+
 ---
 
 ### TCP 和 UDP 的区别
@@ -226,6 +237,7 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 > [来源](https://juejin.im/post/5e527c58e51d4526c654bf41#heading-55)
 
 ## cdn
+
 ---
 
 内容分发网络, 可以获取资源通过最靠近用户的服务器, 从缓存或者源站获得资源
@@ -235,6 +247,7 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 > [来源](https://juejin.im/entry/587c7a63128fe10057faf224)
 
 ## 代理
+
 ---
 
 正向代理隐藏真实客户端, 反向代理隐藏服务端
@@ -242,6 +255,7 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 > [来源](https://www.zhihu.com/question/24723688)
 
 ## websocket
+
 ---
 
 建立在 TCP 上属于双向通信, 热更新也就是 file watcher 加上 websocket 搞定的

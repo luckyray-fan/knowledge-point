@@ -57,6 +57,13 @@ sass 和 less, 赋予 css 更多可编程的特性, 简化开发
 
 ---
 
+### plugin loader
+
+- loader, 转换器, 将 A 文件进行编译成 B 文件, A.less 到 A.css
+- plugin, 丰富了 webpack, 在 loader 结束后, 通过监听 webpack 的各种事件来完成一些功能
+
+> [来源](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/308)
+
 ### 开发环境
 
 - 热更新

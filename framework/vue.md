@@ -14,15 +14,26 @@
 
 > [来源](https://segmentfault.com/a/1190000006599500)
 
-## Object.defineProperty 的确定
+## Object.defineProperty 的缺点
 
 ---
 
 - 一次递归所有属性
-- 没法监听 push
-- 对新增的属性监听不到
+- 数组没法监听 push, 所以改写了 push 方法, 但是直接赋值更改没法监听, 所以有`$setItem()`
+- 对新增的属性监听不到, 所以有内置的 set 方法
 
 > [来源](https://juejin.im/post/5e548134e51d45270531860f)
+
+## Observer & Dep & Watch
+
+---
+
+- Observer, 为所有数据添加监听器 Dep
+- Dep, data 中每个对象和子对象, 当绑定的数据有更改的时候, `dep.notify()`方法被调用, 通知`watcher`
+- Compile, 对每个元素的指令进行扫描和解析, 根据模板替换数据以及绑定相应的更新函数
+- watcher, 连接 Observer 和 Compile 的桥梁, 当 Compile 解析指令时会生成`watcher`并给它绑定一个 update 方法, 并添加到当前正在解析的指令所依赖的对象的 Dep 对象上
+
+> [来源](https://segmentfault.com/a/1190000006599500)
 
 ## 生命周期
 
