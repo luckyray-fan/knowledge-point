@@ -2,7 +2,7 @@
 
 ---
 
-- 发布者-订阅者模式
+- 发布者-订阅者模式, 手动执行 api 触发发布事件
 - 脏值检查, 当出现某些特定事件时检查数据变动
 - 数据劫持, `Object.defineProperty()`来劫持属性的`setter,getter`, 在数据变动时发布消息给订阅者
 
@@ -41,11 +41,22 @@
 
 <img src="../source/vue-1.jpg" alt="" width="480"/>
 
+- beforeCreate
+- created
+- beforeMount
+- mounted
+- beforeUpdate
+- updated
+- beforeDestroy
+- destroyed
+
+> [详解 vue 生命周期](https://segmentfault.com/a/1190000011381906)
+
 ## diff 算法
 
 ---
 
-渲染真实 DOM 的开销很大, 所以用真实 DOM 生成一棵虚拟 DOM, 然后 xuniDOM 数据改变后会生成一棵 Vnode, 然后 Vnode 和之前的 Vnode 比较, 发现有不同的地方直接修改在**真实的 DOM**上
+渲染真实 DOM 的开销很大, 所以用真实 DOM 生成一棵虚拟 DOM, 然后虚拟 DOM 数据改变后会生成一棵 Vnode, 然后 Vnode 和之前的 Vnode 比较, 发现有不同的地方直接修改在**真实的 DOM**上
 
 也就是解析代码生成了 AST, 抽象语法树
 

@@ -104,3 +104,7 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 ---
 
 指变量占用内存却没有回收
+
+## SSL 剥离攻击
+
+> [来源](https://zh.wikipedia.org/wiki/HTTP%E4%B8%A5%E6%A0%BC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8)

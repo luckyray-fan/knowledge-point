@@ -321,6 +321,16 @@ var c1 = create(o); //这样就继承o了
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management)
 
+## js 在 v8 中的执行流程
+
+语言的解析基本都差不多
+
+- 源代码 token 化
+- 转为语法树
+- 生成字节码并执行
+
+> [来源](https://juejin.im/post/5df1ed1f6fb9a015fd69b78d)
+
 ## js 执行过程
 
 ---
@@ -509,6 +519,8 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 | [[scope]]            | 作用域链                                |
 | [[FunctionLocation]] | 函数的位置                              |
 | [[prototype]]        | \_\_proto\_\_, 指向构造函数的 prototype |
+| [[constructor]]      | 构造函数                                |
+| [[call]]             | 调用函数                                |
 
 > [内部属性相关规范](http://es5.github.io/#x8.6.2)
 
@@ -633,3 +645,5 @@ type 可以是 number 或者 string
 - 不能给全局对象随意赋值
 - 不能使用 arguments.callee
 - 函数没有调用者的 this 是 null 而非 window
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)

@@ -68,6 +68,7 @@ Function.prototype.applyF = function(thisArg, args) {
 > [来源](https://juejin.im/post/5bf6c79bf265da6142738b29#heading-5)
 
 ## Object.create()
+
 ---
 
 创建一个新对象, 对象的构造函数指向传入的值
@@ -94,6 +95,14 @@ Object.createF = function(o){
 - promise 中的函数执行完后调用 resolve 传入的参数会给到 then 中
 - 可以链式调用
 - then 的返回值决定链式调用中返回的 promise 的状态
+
+**执行行为:**
+
+- 将函数传入 promise, 然后调用`doResolve()`, 直接开始执行, 当遇到异步后从`doResolve()`返回开始执行`then()`函数
+- 在`then`中, 在新的 promise 中调用`doResolve()`, 在执行到`self.done()`的时候, 将传入的`onFulfilled,onReject`函数用`setTimeout()`推迟到下个事件循环, 然后返回新的 promise, 在此 promise 基础上开始执行下一个`then`
+- 所有的`then`执行完毕, 返回到最开始的`self.done()`, 执行`handle()`, 如果此时状态为`P`, 就纷纷 push 入前一个 promise 的 handlers 队列
+- 最开始的 promise 中的异步执行完毕, 执行`resolve()`, 然后执行`fulfill()`, 将状态改变, 并触发 handlers 队列中的函数, 此时进入第一个`then`的第一个参数`onFulfilled`函数的执行, 将返回的值传入`resolve`, 如果返回的是一个值就将这个`then`返回的 promise 的 state 置为`F`, 重复此步骤
+- 如果返回的值是一个 promise, 那么在`resolve()`中
 
 ```javascript
 const pend = 0;
@@ -215,16 +224,29 @@ function promise(fn) {
 new promise(function(res) {
   console.log(123);
   res();
-}).then(function(res) {
-  console.log(456);
-});
+})
+  .then(function(res) {
+    console.log(456);
+    return new promise(function(res) {
+      console.log(789);
+      res();
+    });
+  })
+  .then(function(res) {
+    console.log(111213);
+  });
 ```
 
 > [promise implemention](https://www.promisejs.org/implementing/)
 
 > [详细的行为](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
 
+> [ building a promise library incrementally ](https://github.com/kriskowal/q/blob/v1/design/README.md)
+
+> [BAT 前端经典面试问题：史上最最最详细的手写 Promise 教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
+
 ## class
+
 ---
 
 ```JavaScript

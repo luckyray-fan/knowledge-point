@@ -5,7 +5,18 @@
 - CNAME, 一个域名解析到另一个域名
 - A 记录, 解析到 ipv4 地址
 - AAAA 记录, 解析到 ipv6 地址
-  > [来源](https://itbilu.com/other/relate/EyxzdVl3.html)
+
+> [来源](https://itbilu.com/other/relate/EyxzdVl3.html)
+
+### DNS 解析顺序
+
+- 浏览器 DNS 缓存, 本地 DNS 缓存, HOSTS 文件, 指定的 DNS 服务器缓存
+- 询问根服务器 .com 域名服务器
+- 询问.com 服务器`baidu.com`ip 地址
+
+> [来源](https://blog.csdn.net/qq_32252957/article/details/82991880)
+
+> [在浏览器地址栏输入一个 URL 后回车，背后会进行哪些技术步骤](https://www.zhihu.com/question/34873227/answer/518086565)
 
 ### 顶级域名
 
@@ -108,6 +119,9 @@
   - Content-Type
     - 请求的时候可以设置为 multiple/form-data, 注意此时 hearder 的头需要指定与 formData 相同的 boundary, 最好把 formData 的 headers 直接赋值给它, 否则上传的文件无法识别
   - Content-Disposition: 指示回复的内容该以何种形式展示
+- 地址
+  - Host, 请求的服务器的域名
+  - Origin, 发起请求的域名
 
 > [来源](https://juejin.im/post/5ce0f3fdf265da1b86085782)
 
@@ -124,6 +138,10 @@ keep-alive 在域名分片下仍然需要建立多个连接, TCP 连接不断开
 http1 解析依靠文本, http2 依靠二进制, 使用 encoder 缓存了 http1 中 cookie 和 use ragent
 
 > [来源](https://github.com/creeperyang/blog/issues/23)
+
+> [HTTP2 详解](https://juejin.im/post/5b88a4f56fb9a01a0b31a67e)
+
+> [一文读懂 HTTP/2 及 HTTP/3 特性](https://blog.fundebug.com/2019/03/07/understand-http2-and-http3/)
 
 ### HTTP3
 
@@ -173,7 +191,7 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 
 > [来源](https://juejin.im/post/5aa783b76fb9a028d663d70a)
 
-### http 与 https 的区别
+### HTTPs
 
 - http 通信用明文容易窃听
 - 不验证通信方身份, 会被伪装
@@ -203,7 +221,11 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 
 ### TCP 和 UDP 的区别
 
-面向连接的可靠传输层协议, 能控制发包速度和自动重发
+TCP 三次握手, 四次挥手, 是面向连接的可靠传输层协议, 能控制发包速度和自动重发
+
+UDP 传输不建立连接, 可以短时间向大量客户机发送数据
+
+> [来源](https://zhuanlan.zhihu.com/p/24860273)
 
 ### TCP 三次握手的过程
 

@@ -43,6 +43,10 @@
 
 一般用于需要匿名函数的地方, 没有自己的`this`, `arguments`等
 
+- 没有 this, arguments, 使用外层作用域的, 使用 call 和 apply 时 this 仍然指向外层的
+- 因为没有`[[constructor]]`内部属性, 和 new 一起用会报错
+- 没有 prototype 属性
+
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ## 模板字符串
@@ -179,8 +183,50 @@ babel 中的继承实现也就是寄生组合类
 
 ---
 
+### Iterator
+
+迭代器作为一种特殊对象, 拥有专门的`next`方法, 每次调用都返回一个结果对象, 该对象有两个属性`value和done`, 迭代器还会保存一个内部指针, 用来指向当前集合中值的位置
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+
+### Generator
+
+generator 函数可以交出函数的执行权, 暂停执行
+
+```JavaScript
+function* gen(x){
+  var y = yield x+2;
+  return y;
+}
+var g = gen(1);
+g.next();
+g.next();
+```
+
+在上方, 调用该函数, 会返回一个内部指针(即遍历器)g, 每次调用 next, 都会返回一个对象, 表示当前的阶段
+
+> [来源](http://www.ruanyifeng.com/blog/2015/04/generator.html)
+
 ## await
 
 ---
 
-> [来源](https://juejin.im/post/5e5f52fce51d4526ea7efdec)
+await 必须是在 async 函数中使用, async 函数会返回一个 promise
+
+await 会等待 promise 的状态变为`resovled`然后取出此时的值返回
+
+await 的异步处理, 可以在 promise 的后方加上 catch, 也可以用`try...catch`
+
+如果 await 后的表达式不是 promise, await 会将其转为 promise 并等待其执行完成
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/Async_await)
+
+## proxy
+
+---
+
+对 proxy 的实例化需要两个参数, target 代表需要被代理的对象, handlers 代表对该代理对象的各种操作行为处理
+
+早期可以用 getter, setter, 但是每个代理属性都要编写对应的 getter, setter, 而且需要存在一个存储真实值的键, 否则会递归溢出
+
+> [来源](https://segmentfault.com/a/1190000015009255)

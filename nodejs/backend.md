@@ -26,7 +26,7 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 作为两种 API 模型, GraphQL 是为了改进 Rest 而出现的
 
-- rest, 核心思想是资源, 每个资源能用一个 URL 来表示
+- rest, 核心思想是资源, 每个网址代表一个资源
 - GraphQL, 资源的描述信息与其获取方式相分离
 
 > [来源](https://www.jianshu.com/p/2ad286397f7a)

@@ -80,4 +80,6 @@
 - 调查一下 百度阿里腾讯 字节跳动美团滴滴的内推和招聘信息
 - 重点复习一面
 - [how browsers work](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
-- [字节跳动前端实习面经（3 面 + HR）](https://www.nowcoder.com/discuss/372363)
+- [字节跳动前端实习面经（3 面 + hr）](https://www.nowcoder.com/discuss/372363)
+- 加了一个 favicon
+- vue 生命周期, 设计模式, mvc, http, 四次挥手

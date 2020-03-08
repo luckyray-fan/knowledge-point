@@ -6,6 +6,8 @@
 
 可以用于实现全局的登录窗口, 遮罩层等
 
+惰性加载指的是, 只有当需要用到实例的时候才创建实例
+
 ```JavaScript
 var singleton = function(fn) {
     var instance;
@@ -19,14 +21,7 @@ var createMask = function(){
     var mask = document.createElement('div');
     // 设置样式
     mask.style.position = 'fixed';
-    mask.style.top = '0';
-    mask.style.right = '0';
-    mask.style.bottom = '0';
-    mask.style.left = '0';
-    mask.style.opacity = 'o.75';
-    mask.style.backgroundColor = '#000';
-    mask.style.display = 'none';
-    mask.style.zIndex = '98';
+    // 省略...
     document.body.appendChild(mask);
     // 单击隐藏遮罩层
     mask.onclick = function(){
@@ -37,10 +32,6 @@ var createMask = function(){
 document.getElementById('btn').onclick = function() {
     var oMask = singleton(createMask)();
     oMask.style.display = 'block';
-    var oLogin = singleton(createLogin)();
-    oLogin.style.display = 'block';
-    var w = parseInt(oLogin.clientWidth);
-    var h = parseInt(oLogin.clientHeight);
 }
 ```
 

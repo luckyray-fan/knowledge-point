@@ -1,30 +1,38 @@
-## 指标
-
----
-
-## 标准
-
----
-
-> [来源](https://www.jianshu.com/p/e141d1543143)
-
 ## 优化手段
 
 ---
 
-- 减少请求数量
-- 减少资源大小
-- 优化网络连接
-- 优化资源加载
-- 减少重绘回流
-- webpack 优化
-- 选择合适的元素与 api
-  - table 布局需要多次计算
-    > [来源](https://www.jianshu.com/p/e141d1543143)
+- 网络
+  - 合并请求
+  - 域名拆分, 使用 cdn, DNS 预解析
+  - 开启 Gzip, 压缩文件, 使用 webp 格式的图片, 按需加载
+  - keep-alive, HTTP2
+  - 使用缓存
+- 资源加载
+  - webpack
+    - 按需加载
+  - preload 加速本页面, prefetch 加速下一页面
+  - 懒加载, 预加载
+- 渲染与执行
+  - CSS 放 head, js 放 body
+  - 异步 script, 动态加载 script
+  - DOM 查询缓存, fragment 批量操作
+  - 使用切换 class 操作 css
+  - 事件代理
+  - 更好的 API
+    - css 选择器
+    - requestAnimationFrame
 
-## 测试优化收益
+> [来源](https://www.cnblogs.com/xiaohuochai/p/9178390.html)
 
----
+> [未来性能的方向(可能)](https://www.infoq.cn/article/B2gg4ZULH4oNlv8AHCrM)
+
+### 测试优化收益
+
+- 合并请求, 减少 tcp 握手
+- 域名拆分, 增加浏览器请求数量, 但是 dns 解析会多点时间
+- 开 Gzip, 浏览器性能可能受影响
+- keep-alive, 减少 tcp, 但是服务器负载变大并且易遭受攻击
 
 > [来源](https://www.zhihu.com/question/40505685) 内容很棒
 
@@ -38,6 +46,7 @@
 - 减少 http 请求数量
 - 图片用雪碧图, 大图用懒加载
 - 使用异步脚本, 动态创建脚本
+- 后端渲染
 
 > [来源](https://juejin.im/post/5de4fd9c518825434771d163)
 

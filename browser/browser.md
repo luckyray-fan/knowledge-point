@@ -16,6 +16,15 @@
 
 ---
 
+- 下载文档, 边下载边预解析需要下载的资源
+- 文档下载完成(如果不是下载完成的话就没法知道闭合的标签内的元素), 解析文档, 遇到 script 标签, 如果内联执行其内容, 如果不是, 并且没有 defer, async 标签, 暂停解析, 等待下载完成后执行 script
+- 如果此时还有 css 在下载, 由于浏览器安全解析策略, 会 js 和 html 都暂停等待 cssom 的构成
+- 所有同步 js 执行完毕, dom 树和 cssom 树合并为渲染树, 节点开始绘制
+- 如果后面又遇到了 css 标签, 重新加载 cssom 然后与 dom 合并渲染树, 所以此时会闪烁一下
+- 触发 DomContentLoaded 事件
+
+**以上是我的猜测:**
+
 - 处理 HTML 标记构建 DOM 树, 此时 document.readyState 为 loading
 - 处理 CSS 标记并构建 CSSOM 树, 等文档解析完成, readyState 变为 interactive
 - 将 DOM 与 CSSOM 合并成一个渲染树(CSSOM 没加载好之前浏览器一直是白屏)
@@ -27,15 +36,18 @@
 
 如果 DOM 或 CSSOM 被修改, 以上过程需要重复执行
 
-? [更快地构建 DOM: 使用预解析, async, defer 以及 preload](https://www.zcfy.cc/article/building-the-dom-faster-speculative-parsing-async-defer-and-preload-x2605-mozilla-hacks-8211-the-web-developer-blog)
+> [更快地构建 DOM: 使用预解析, async, defer 以及 preload](https://www.zcfy.cc/article/building-the-dom-faster-speculative-parsing-async-defer-and-preload-x2605-mozilla-hacks-8211-the-web-developer-blog)
+
+> [深入浅出浏览器渲染原理 ](https://github.com/ljianshu/Blog/issues/51)
 
 ### 浏览器将标签转成 DOM 的过程
 
-- 编码, utf-8
+- 编码, 将字节数据转为字符串
 - 预解析, 找出需要下载的外部资源
 - 标记化, 使用状态机, 将标签解析为语法树
 - 构建树, 每解析一个标签就添加到 document 中, 对于此时不正确的构建, 如 video 拥有子元素由渲染引擎来处理
-  > [来源](https://segmentfault.com/a/1190000018730884)
+
+> [来源](https://segmentfault.com/a/1190000018730884)
 
 ### 浏览器解析 css 的过程
 
@@ -74,8 +86,9 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 - 一边下载 HTML 网页, 一边开始解析
 - 发现 \<script\>, 暂停解析, 将网页渲染交给 js 引擎, 但此时仍会识别脚本后面的资源, 进行预加载
-- 如果 css 与 js 并行下载, 但是会先加载 css
+- 如果 css 与 js 并行下载, 遇到 js 执行的情况, 会暂停 html 解析, js 执行, 先加载 css
 - 如果引用了外部脚本就下载后执行, 否则直接执行
+
 - 控制权还给渲染引擎
 
 如果外部脚本时间长, 网页就会失去响应网页只会在 js 和 css 都下载完成后才开始绘制, css 和 js 并行下载, 但执行 js 需要等 css, 如果 css 放后面, dom 树构建完了, 渲染树才构建那么页面会闪跳一下, 因为此时会重新渲染页面
@@ -183,7 +196,10 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 > [九种跨域方法, 强啊](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
 
+> [mdn](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+
 ## 事件
+
 ---
 
 某个特定的有意义的瞬间, 然后传递出来, 这就是观察者模式下的事件
@@ -222,6 +238,7 @@ DOM2 级规定事件流, 有捕获阶段, 处于目标阶段, 和事件冒泡阶
 > [来源](http://caibaojian.com/javascript-stoppropagation-preventdefault.html)
 
 ## DOM 事件模型级数
+
 ---
 
 the document obect model, 作为规范定义了 html 的操作的编程接口
@@ -233,6 +250,7 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
 > [来源](https://www.jianshu.com/p/75183574ada7)
 
 ## 浏览器缓存
+
 ---
 
 重复利用文件, 提升性能
@@ -268,6 +286,7 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
   > [来源](https://www.jianshu.com/p/54cc04190252)
 
 ## webstorage
+
 ---
 
 > [来源](https://juejin.im/post/593d0c5d61ff4b006c8fec76)
