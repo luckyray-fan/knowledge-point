@@ -81,7 +81,7 @@ HTML 的第五个版本, 14 年完成的标准制定, 广义上包含了 html5,c
 - datalist, 提供自动完成的文本框
 - svg, 基于文本的图形语言, 可以绘制使用文本, 线, 点等的图形
 - canvas
-- manifest, 应用缓存
+- manifest, 应用缓存, **可用于离线缓存**
 - `<!DOCTYPE HTML>`, 规范浏览器的行为
 
 > [来源](https://www.jianshu.com/p/e6e714eff7d5) 质量不大行

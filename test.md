@@ -82,4 +82,7 @@
 - [how browsers work](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
 - [字节跳动前端实习面经（3 面 + hr）](https://www.nowcoder.com/discuss/372363)
 - 加了一个 favicon
-- vue 生命周期, 设计模式, mvc, http, 四次挥手
+- vue 生命周期, 设计模式, mvc, http, 四次挥手, 跨域
+- **看到新的好文章把它内联, 并点出来是新增的, 而不是把链接放在最后面**
+- 找一个新增的表情然后给一个特定字符, 然后写一个 docsify 的插件?你不嫌麻烦我嫌哈哈哈
+- 安全, 编程问题

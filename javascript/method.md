@@ -2,6 +2,17 @@
 
 ---
 
+### isprototypeof()
+
+- 参数
+  - obj, 在该对象的原型链上搜寻
+- 返回值
+  - boolean, 表示调用对象是否在另一个对象的原型链上
+
+用来查看构造函数的继承情况
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
+
 ### Object.getOwnPropertyDescriptor()
 
 ### Object.defineProperty()
@@ -18,6 +29,11 @@
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 ### getPrototype
+
+- 参数
+  - obj, 对象
+- 返回值
+  - 对象的构造函数的 prototype
 
 ### setPrototyOf
 
@@ -51,7 +67,7 @@
 
 ---
 
-以任意顺序遍历一个对象的除 `symbol` 外的可枚举属性, 包括原型上的
+以任意顺序遍历一个对象的除 `symbol` 外的可枚举属性, **包括原型上的**
 
 如果仅迭代自身的属性, 使用 `hasOwnProperty()` 等
 

@@ -41,6 +41,48 @@ document.getElementById('btn').onclick = function() {
 
 ---
 
+也就是我们常用的事件, 订阅事件与发布事件, 双向绑定的方法之一
+
+```JavaScript
+const Ovserve = (function(){
+let message = {};
+return {
+  on:function(type,fn){
+    if(!message[type]){
+      message[type] = [fn]
+    }else{
+      message[type].push(fn)
+    }
+  },
+  subscribe:function(type,args){
+    if(!message[type])return;
+    let events = {
+      type:type,
+      args:args||{}
+    },
+    let i = 0, len = message[type].length;
+    for(;i<len;i++){
+      message[type][i].call(this,events)
+    }
+  },
+  off:function(type,fn){
+    if(message[type]){
+      let i = message[type].length-1;
+      for(;i>=0;i--){
+        message[type][i] === fn&&message[type].splice(i,1)//这种串联写法还挺有意思的= =
+      }
+    }
+  }
+}
+})()
+Observe.on('say', function (data) {
+  console.log(data.args.text);
+})
+Observe.subscribe('say', { text : 'hello world' } )
+```
+
+> [来源](https://juejin.im/post/5bce9a35f265da0abd355715)
+
 ## 架构
 
 ---
@@ -60,6 +102,6 @@ document.getElementById('btn').onclick = function() {
 
 ### mvvm
 
-将 presenter 改名为 viewModel, 基本与 mvp 一致, 不过它采用双向绑定, view 的变动自动反映在 viewModel
+view 与 model 之间没有关系, 通过 viewmodel 将二者连接, view 的渲染和 model 的变动同步
 
 > [来源](https://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html)

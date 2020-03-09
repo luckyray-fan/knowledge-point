@@ -99,8 +99,25 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 > [来源](https://zhuanlan.zhihu.com/p/43493165)
 
+### 连接
+
+- 内连接
+- 左右连接, 选择左右都有的, 并且包括左边(左连接)或右边(右连接)的, 如果没有值在该列上置 NULL
+
+```sql
+select * from a_table a left join b_table b on a.a_id = b.b_id
+```
+
+> [来源](https://blog.csdn.net/plg17/article/details/78758593)
+
 ## 心跳包
 
 ---
 
 每隔一定时间给服务器发消息告诉服务器这个客户端还活着
+
+## 守护进程
+
+作为一种独立运行在后台的进程, 能周期性的执行某些任务, 让程序独立于命令行, 成为一种服务
+
+> [来源](https://www.zhihu.com/question/38609004/answer/202859302)

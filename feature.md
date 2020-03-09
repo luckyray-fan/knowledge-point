@@ -7,6 +7,12 @@
 ```javascript
 var xhr = new XMLHttpRequest();
 xhr.open('get', './xxx?' + args, async);
+xhr.onreadystatechange = function() {
+  //onload
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    //do something xhr.responseText
+  }
+};
 xhr.send();
 ```
 

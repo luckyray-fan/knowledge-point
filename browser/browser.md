@@ -188,15 +188,30 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
   - 兼容性好, 但是只支持 GET
 
 - CORS, github
+
   - cross-origin resource sharing, 是一个新的 w3c 标准, 新增一个 http 首部字段
   - Access-Control-Allow-Origin, 响应中携带这的这个首部意味着服务器允许哪些域可以访问该资源
   - cors 可以支持所有类型的 HTTP 请求
+
+- postMessage, html5 xmr2 中的 api, 可用于跨域操作解决
+  - 页面和打开的新窗口的数据传递
+  - 页面和嵌套的 iframe 消息传递
 
 > [来源](https://www.jianshu.com/p/f880878c1398)
 
 > [九种跨域方法, 强啊](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
 
 > [mdn](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+
+### 跨域方式优缺点
+
+- jsonp
+  - 能支持老浏览器
+  - 只能使用 get 请求, 错误处理机制不完善
+- cors
+  - 能用所有 http 的请求方式
+
+> [来源](https://www.zhihu.com/question/41992168/answer/217903179)
 
 ## 事件
 
@@ -261,9 +276,9 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
   - 注册, 监听 install 事件
   - 用户访问时可以通过拦截请求的方式查询是否存在缓存
   - 如果没有命中缓存, 需要调用 fetch 来获取数据, 无论是从缓存中获取还是网络请求获取, 从 network 面板中看都会是从 service worker 中获取的内容
-- memory cache, 包含的是当前页面中已有的资源, 如样式, 脚本, 图片, 一旦关闭标签页内存中的缓存也就被释放了
+- memory cache, 包含的是当前页面中已有的资源, 如样式, 脚本, 图片, 一旦关闭标签页内存中的缓存也就被释放了, 刷新当前标签页会有
   - 若内存中有缓存就不会关心返回资源的 HTTP 头部字段 cache-control
-- disk cache, 硬盘中的缓存, 大文件一般在硬盘, 内存使用率高时也优先存入硬盘
+- disk cache, 硬盘中的缓存, 大文件一般在硬盘, 内存使用率高时也优先存入硬盘, 第一次打开新标签有缓存
 - push cache, http2 的内容, 当上面的都没有命中时会使用
 
 ### 强缓存与协商缓存
@@ -283,10 +298,18 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
 - setRequestHeader("If-Modified-Since","0")
 - setRequestHeader("Cache-Control","no-cache")
 - 加个随机数, 浏览器认为 url 改变了就重新请求了
-  > [来源](https://www.jianshu.com/p/54cc04190252)
+
+> [来源](https://www.jianshu.com/p/54cc04190252)
+
+> [缓存的最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)
 
 ## webstorage
 
 ---
+
+- cookie
+- localstorage, sessionstorage
+- websql, sqlite3
+- indexdb
 
 > [来源](https://juejin.im/post/593d0c5d61ff4b006c8fec76)

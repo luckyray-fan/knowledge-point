@@ -2,7 +2,7 @@
 
 ---
 
-Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie, sessionID 等
+Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie 等
 
 ### 攻击形式
 
@@ -40,7 +40,7 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 > [来源](https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)
 
-## 流量劫持
+## 会话劫持
 
 ---
 
@@ -74,8 +74,17 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
   - 注册时, 密码和一个随机的 salt 值字符串连接然后 md5 散列
   - 登录时, 密码和之前分配的 salt 连接然后 md5 散列, 看两个哈希值是否一致
   - 可以防止通过哈希值利用 md5 散列值字典找到密码
+  - 可以防止拖库后用彩虹表反推出来
 
 > [来源](https://zh.wikipedia.org/wiki/MD5)
+
+> [加盐密码保存的最通用方法是？](https://www.zhihu.com/question/20299384)
+
+### 彩虹表
+
+能够反推 hash 值的一种算法
+
+> [来源](https://www.jianshu.com/p/732d9d960411)
 
 ### base64
 
@@ -105,6 +114,11 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 指变量占用内存却没有回收
 
-## SSL 剥离攻击
+## HSTS
+
+HTTP 严格传输安全(HTTP Strict Transport Security), 让浏览器强制使用 HTTPS 来与网站通信
+
+- 当用户使用 http 访问网站时, 浏览器应自动将 http 改为 https(前提是有过一次连接)
+- 如果服务器的 ca 证书失效, 用户不能忽视浏览器警告访问网站
 
 > [来源](https://zh.wikipedia.org/wiki/HTTP%E4%B8%A5%E6%A0%BC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8)
