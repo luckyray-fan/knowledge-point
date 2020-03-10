@@ -8,13 +8,12 @@
 
 ---
 
-- 网络
+- 网络资源加载
   - 合并请求
   - 域名拆分, 使用 cdn, DNS 预解析
   - 开启 Gzip, 压缩文件, 使用 webp 格式的图片, 按需加载
   - keep-alive, HTTP2
-  - 使用缓存
-- 资源加载
+  - 使用缓存, 开 expires
   - webpack
     - 按需加载
   - preload 加速本页面, prefetch 加速下一页面
@@ -24,9 +23,9 @@
   - 异步 script, 动态加载 script
   - DOM 查询缓存, fragment 批量操作
   - 使用切换 class 操作 css
-  - 事件代理
+  - 事件代理, 防抖节流
   - 更好的 API
-    - css 选择器
+    - css 选择器, 硬件加速
     - requestAnimationFrame
 
 > [来源](https://www.cnblogs.com/xiaohuochai/p/9178390.html)

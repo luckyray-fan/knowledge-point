@@ -64,6 +64,14 @@
 
 > [来源](https://github.com/aooy/blog/issues/2)
 
+### 虚拟 dom
+
+- 用对象来模拟 dom 结构, 构建一棵虚拟的语法树, 在对比完 diff 后根据更改改变原 dom
+- 缺点是有上限, 无论如何也没有真实 dom 操作快
+- 优点是下限, 可以防止过多的 dom 操作拖慢性能
+
+> [来源](https://juejin.im/post/5d36cc575188257aea108a74)
+
 ## 组件间通信
 
 ---

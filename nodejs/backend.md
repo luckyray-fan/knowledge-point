@@ -1,3 +1,5 @@
+## express
+
 ## 爬虫
 
 ---
@@ -16,9 +18,32 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 ---
 
-用于解决白屏和 seo 问题, 浏览器直接拿到服务器渲染的最终 HTML
+用于解决白屏和 seo 问题, 浏览器和服务器共同运行一个获得 HTML 的函数
+
+- 该函数必须要判断环境来决定使用 DOM 或 global, process 等
+- 选择库的时候也需要支持两端, 如 axios, lodash
+- 此时加快首屏, 可只渲染最开始的部分, 后面的让浏览器去渲染
 
 > [来源](https://juejin.im/post/5c821dc45188257e1f2915b1)
+
+### 同构实践
+
+从 vue 的文档有以下优点
+
+- SEO
+- 更快的内容达到时间, 不用等待 js 都完成下载并执行, 可以更快的看到完整渲染的页面
+
+但是需要在 nodejs 下渲染, 服务器负载也会增大, 所以要适当使用缓存策略
+
+如果内容(time to content)到达时间很重要, 那么有必要上同构
+
+由于没有动态更新, 所有的声明周期钩子函数中, 中有`beforeCreated 和 created`会在服务端渲染, 其他生命周期只能在客户端执行
+
+> [来源](https://ssr.vuejs.org/zh/)
+
+### 预渲染
+
+> [来源](https://tech.meituan.com/2018/11/15/first-contentful-paint-practice.html)
 
 ## GraphQL 和 RESTful 的比较
 

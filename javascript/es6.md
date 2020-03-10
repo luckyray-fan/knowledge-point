@@ -98,6 +98,36 @@ let { a } = { a: 1 };
 
 > [let 是否有提升](https://zhuanlan.zhihu.com/p/28140450)
 
+### babel 处理
+
+babel 需要用 var 来定义 let 并且仍然维护块作用域
+
+```JavaScript
+if(true){//但是应该报错的暂时性死区被编译成功了, 重复声明则在语法检查阶段就报错
+  let a = 1;
+  console.log(a)
+}
+console.log(a)
+//==>被转换成
+"use strict"
+if(true){
+  var _a = 1;
+  console.log(_a);
+}
+console.log(a)
+//- -- -- -- -- - - --
+const a = 1;
+a = 2;
+//==>被转换成
+function _readOnlyError(name) {
+  throw new Error('"' + name + '" is read-only');
+}
+var a = 1;
+a = (_readOnlyError("a"), 2);
+```
+
+> [来源](https://bambielli.com/til/2017-04-04-let-transpilation/) 就讲了块作用域...
+
 ## class
 
 ---

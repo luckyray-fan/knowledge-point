@@ -1,3 +1,12 @@
+## 移动端与 PC 端的区别
+
+- 触摸事件, 弹出输入键盘
+- 布局自适应, 手机分辨率适配
+- 动画性能
+- 考虑移动端的网速
+
+> [来源](https://www.cnblogs.com/zhuzhenwei918/p/6790859.html)
+
 ## 移动端触摸事件
 
 **事件定义与分类:**
@@ -18,6 +27,12 @@
   - swipe
 
 > [来源](https://www.cnblogs.com/imwtr/p/5882166.html)
+
+### 以前 click 会延迟 300ms 的原因
+
+因为触发 touchstart, touchmove, touchend 后会有 300ms 才触发 click
+
+解决方法, touchend 之后 preventDefault 然后使用`document.createElement()`在该元素上触发 click
 
 ## Flutter
 

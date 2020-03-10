@@ -2,7 +2,20 @@
 
 ---
 
-使用
+- 立即执行, 环境判断
+- jquery 无 new
+
+```JavaScript
+jQuery = function(selector){
+  return new jQuery.fn.init(selector);
+}
+jQuery.fn.init.prototype = jQuery.fn;
+```
+
+- 存储全局变量
+- jquery.extend 和 jquery.fn.extend
+
+> [来源](https://luckyray-fan.github.io/2019/10/06/jquery-study/) 嘿嘿, 以前写的, 搜集的资料都在里面, 我就不再去找了
 
 ## axios
 

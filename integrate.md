@@ -57,6 +57,22 @@ sass 和 less, 赋予 css 更多可编程的特性, 简化开发
 
 ---
 
+- 初始化参数, 从配置文件和命令行中读取合并
+- 开始编译, 由参数初始化 compiler, 加载所有插件
+- 从入口开始调用所有 loader 对模块进行编译, 再由模块到模块, 递归直到所有依赖都经过了 loader 处理
+- 根据之前的依赖关系, 组装成一个个 chunk, 再根据配置转换为有具体路径的文件
+- 插件在这之中根据事件来执行
+
+> [来源](https://juejin.im/entry/5b0e3eba5188251534379615)
+
+### 按需加载 代码分割
+
+- 更改 webpack 打包语法, 加上`chunkFilename`, 指定基础路径`publicPath`
+- 使用`import()`语法
+- 如果要让后面引用出来的文件可读, 可以使用注释的语法
+
+> [来源](https://juejin.im/post/5bf61082f265da616a474b5c)
+
 ### plugin loader
 
 - loader, 转换器, 将 A 文件进行编译成 B 文件, A.less 到 A.css

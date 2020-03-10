@@ -207,6 +207,22 @@ Array.prototype.mapF = function(fn,thisArg){
 
 实现多参函数, 只传递一部分参数来调用它, 让它返回一个函数来处理剩下的参数
 
+```JavaScript
+function sum (...args) {
+    function fn(...newArgs) {
+        return sum(...args, ...newArgs)//两个数组被转为了参数
+    }
+  	// 当最后返回函数的时候, 由类型转换, fn 对象自动调用toString
+    fn.toString = () => {
+        return args.reduce((a, b) => {
+            return a + b
+        })
+    }
+
+    return fn
+}
+```
+
 > [来源](https://juejin.im/post/5af13664f265da0ba266efcf)
 
 ## 单页应用
@@ -214,6 +230,11 @@ Array.prototype.mapF = function(fn,thisArg){
 ---
 
 只有一张 web 页面的应用, 跳转仅刷新局部资源, 公共资源仅需加载一次
+
+- 前后端分离, 服务端只需要根据 ajax 给出数据即可, 用户体验好, 因为一直在一个页面内加载, 速度快, 有桌面应用的体验感
+- SEO, 前进后端和历史都需要 js 来控制, 白屏
+
+> [来源](https://www.zhihu.com/question/20792064)
 
 ### 单页应用 seo
 
