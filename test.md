@@ -88,3 +88,16 @@
 - 安全, 编程问题
 - babel 处理, express 框架, ssr 实践, 301, 302
 - 将一面记录一下, 准备二面
+- 每天 commit 提交给一个名字, 别一个劲今天的份哈哈 🤣
+- 想要找一种不错的数据可视化, 写思维导图的工具或库, 找了, 没有理想的
+
+---
+
+**以下是会更新的**
+
+- 开始堆积比较深入的文章了, 类别为**等不知道什么时候有空的有空再来看的文章**
+  - [css 硬件加速](http://localhost:3000/#/browser/performance?id=css-%e7%a1%ac%e4%bb%b6%e5%8a%a0%e9%80%9f)
+  - [浏览器渲染](http://localhost:3000/#/browser/browser?id=%e6%b5%8f%e8%a7%88%e5%99%a8%e6%b8%b2%e6%9f%93)
+  - [直播](http://localhost:3000/#/cn?id=rtmp)
+
+---

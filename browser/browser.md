@@ -40,6 +40,8 @@
 
 > [深入浅出浏览器渲染原理 ](https://github.com/ljianshu/Blog/issues/51)
 
+> [Inside look at modern web browser](https://developers.google.com/web/updates/2018/09/inside-browser-part1) 掘金有相关翻译, 搜索现代浏览器揭秘即可, 等不知道什么时候有空的有空再来看
+
 ### 浏览器将标签转成 DOM 的过程
 
 - 编码, 将字节数据转为字符串

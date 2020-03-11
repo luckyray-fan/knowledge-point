@@ -113,6 +113,8 @@
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
 
+- [301, 302 应用场景](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/249)
+
 ### 报文字段
 
 - 缓存
@@ -336,3 +338,41 @@ UDP 对实时性要求严格时, 可以用自定义重传机制, 能将延迟降
 Socks5 能支持 UDP, ipv6, 所以能看直播
 
 > [来源](https://sexywp.com/socks-protocol.htm)
+
+## 直播
+
+---
+
+- 推流到源站
+- cdn 节点从源站拉流
+- 客户端播放从 cdn 节点拉流
+
+### rtmp
+
+rtmp 指的是 Real Time Messaging Protocal 实时消息传输协议, 基于 TCP
+
+rtmp 协议中, 视频必须是 H264 编码, 音频必须是 AAC 或 MP3 编码, 一般用 flv 格式封包
+
+但是, 现在 rtmp 不支持浏览器且 Adobe 弃用了 flash, rtmp 协议也不再更新, 现有另外的推送协议支持
+
+微信小程序将腾讯视频云的 liteavsdk 嵌入到微信内部实现的, 然后通过`<live-pusher> 和 <live-player>`两个标签将 SDK 内部的音视频能力开放出来。所以小程序的标签起到了开发者 API 的作用，而内部的 SDK 则是真正用来实现音视频功能。具体可以看[打通小程序音视频和 webRTC](https://cloud.tencent.com/developer/article/1115258)
+
+> [直播推流实现 RTMP 协议的一些注意事项](https://www.jianshu.com/p/00aceabce944)
+
+> [如何真正让小程序,WebRTC 和 APP 互通连麦直播](https://www.jianshu.com/p/db1c3c24c4f0)
+
+### HLS
+
+Http Live Streaming 是 apple 公司定义的基于 http 的流媒体实时传输协议
+
+原理是将整个流分为多个小的文件来下载, 每次只下载几个, 服务端会根据最新的直播数据生成新的小文件, 客户端就依次下载就行, 分段推送, 所以 hls 延迟高于普通的流媒体直播协议
+
+传输内容包括: m3u8 描述文件, ts 媒体文件, ts 媒体文件中的视频必须是 h264 编码, 音频 aac 或 mp3
+
+### webrtc
+
+web real time communication, 源自网页即时通信, 支持浏览器进行实时语音, 视频对话的开源协议, google, mozilla, opera 都推动其成为标准
+
+webrtc 基于 srtp 和 udp, 可以实现点对点通信, 通信双方延时低, 可以连麦
+
+> [以上均来源于](https://www.zhihu.com/question/26038990)

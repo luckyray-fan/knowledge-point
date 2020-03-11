@@ -83,3 +83,23 @@
 - `vuex`
 
 > [来源](https://juejin.im/post/5cde0b43f265da03867e78d3)
+
+## vue 与 MVVM 的关系
+
+---
+
+在一个组件文件中:
+
+- view, template, dom
+- model, data, plain JavaScript Objects
+- viewModel, vue
+
+```JavaScript
+let vm = new Vue({
+  el:'#a'
+})
+```
+
+可以看出, vue 专注于 vm 的部分, 用双向绑定完成
+
+> [来源](https://juejin.im/post/5b2f0769e51d45589f46949e)

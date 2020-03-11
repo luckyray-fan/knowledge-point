@@ -21,5 +21,7 @@
 - [功能实现](feature)
 - [算法](algorithm)
 - [操作系统](os)
-- [面试记录](interview/index)
+- 面试
+  - [记录](interview/index)
+  - [笔试之类的题目](interview/write)
 - [发展历程](test)
