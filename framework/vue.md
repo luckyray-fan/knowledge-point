@@ -1,3 +1,38 @@
+## 单页应用
+
+---
+
+只有一张 web 页面的应用, 跳转仅刷新局部资源, 公共资源仅需加载一次
+
+- 前后端分离, 服务端只需要根据 ajax 给出数据即可, 用户体验好, 因为一直在一个页面内加载, 速度快, 有桌面应用的体验感
+- SEO, 前进后端和历史都需要 js 来控制, 白屏
+
+> [来源](https://www.zhihu.com/question/20792064)
+
+### 单页应用 seo
+
+服务端 ssr
+
+> [来源](https://juejin.im/post/5c42fdd36fb9a049b07da6dc)
+
+### 前端路由
+
+路由其实就是针对路径和函数的映射, 通过特殊的 url 实现 spa 的刷新前进后退和 seo
+
+- 改变 url 不让浏览器向服务器发送请求
+- 可以监听到 url 的变化
+
+**实现方法:**
+
+- hash, 指 url 后的#号以及后面的字符, hash 的变化不会导致浏览器向服务器发送请求, 并且有个很方便的`hanshchange`事件, 可以监听到 url 变化
+- history, 通过监听来实现回调的注册
+  - 点击浏览器的前进或后退按钮
+  - 点击 a 标签
+  - 在 js 中触发`history.pushState()`
+  - 在 js 中触发`history.replaceState()`
+
+> [来源](https://juejin.im/post/5d2d19ccf265da1b7f29b05f)
+
 ## 双向绑定原理
 
 ---
@@ -103,3 +138,7 @@ let vm = new Vue({
 可以看出, vue 专注于 vm 的部分, 用双向绑定完成
 
 > [来源](https://juejin.im/post/5b2f0769e51d45589f46949e)
+
+## vue-router
+
+> [来源](https://zhuanlan.zhihu.com/p/37730038)

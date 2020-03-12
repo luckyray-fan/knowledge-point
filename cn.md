@@ -238,6 +238,28 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 
 > [这个也清晰](https://zhuanlan.zhihu.com/p/32513816)
 
+#### 证书与 CA
+
+如果使用的证书没有 CA 签证, 或者未在浏览器受信用的 CA 签证, 会被提示连接的链接不是私密链接
+
+**数据证书生成过程:**
+
+- CA 用 RSA 产生一对公私钥
+- 生成一个包括: 公钥内容, 签发者 ID, 有效期等的文件
+- 用 hash 算法对文件计算得到 hash 值
+- 使用私钥对 hash 值进行 RSA 加密, 得到签名信息
+- 将之前的文件内容和签名信息连起来得到数字证书
+
+**数据证书验证过程:**
+
+- 使用文件内容中指定的 hash 算法对文件内容进行计算, 得到 hash 值
+- 用文件内容中的公钥解密之前私钥加密的签名信息, 这个应该和文件生成的 hash 值相同
+- 如果相同就证明没有被纂改
+
+如何避免自签发证书, 那就是内置 CA 的根证书
+
+> [数字证书的原理是什么](https://www.zhihu.com/question/24294477/answer/74783418)
+
 > [有关数据证书与 CA 的一篇文章](https://www.barretlee.com/blog/2016/04/24/detail-about-ca-and-certs/) CA - Certificate authority
 
 ## TCP
@@ -328,6 +350,13 @@ UDP 对实时性要求严格时, 可以用自定义重传机制, 能将延迟降
 ---
 
 建立在 TCP 上属于双向通信, 热更新也就是 file watcher 加上 websocket 搞定的
+
+[优点如下](https://juejin.im/post/5bcad1326fb9a05cda779d0b#heading-10):
+
+- 双向通信, 数据包头部较小
+- 二进制支持
+- 没有同源限制
+- 与 HTTP 兼容不错, 默认端口为 80 和 443, 握手阶段采用 HTTP, 能够使用代理服务器
 
 > [来源](https://www.ruanyifeng.com/blog/2017/05/websocket.html)
 

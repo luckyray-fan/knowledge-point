@@ -41,7 +41,7 @@ document.getElementById('btn').onclick = function() {
 
 ---
 
-也就是我们常用的事件, 订阅事件与发布事件, 双向绑定的方法之一
+也就是我们常用的事件, 订阅事件与发布事件, 双向绑定的方法之一, 常见应用有 Nodejs 中的 [eventemitter](https://juejin.im/post/5c199c0ae51d452f6028a072), 安卓里的 [eventbus](https://www.liujiaweb.com/242.html)
 
 ```JavaScript
 const Ovserve = (function(){

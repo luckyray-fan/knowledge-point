@@ -37,3 +37,23 @@
 - 切换页目录以使用新的地址空间
 - 切换内核栈
 - 切换硬件上下文
+
+## 字符编码
+
+### utf8 与 gbk 区别
+
+notepad 中的 ansi 一般指的是电脑的默认编码, 中文一般是 gbk
+
+为了兼容编码, 有了统一编码表, 名为 unicode, utf-8 中的英文并未使用双字节存储而是单字节
+
+最长是有四个字节, 一般汉语是三个字节, 判断几个字节作为一个字符可以通过第一个字节来判断
+
+> [来源](https://www.jianshu.com/p/a5b847ea4bab)
+
+### utf8 与 utf16
+
+> [来源](https://juejin.im/post/5e1577836fb9a0482973912d)
+
+### emoji 与 iconfont 区别
+
+> [来源](https://www.cnblogs.com/batsing/p/emoji_iconfont.html)

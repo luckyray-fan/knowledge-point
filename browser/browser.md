@@ -158,7 +158,7 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 当 url 中存在非英文字母, 数字和某些标点符号时就会进行编码, 一般进行 % 替换
 
 - encodeURI, 编码完整 url, 不会编码`;/?@`等, 编码后输出 % 加上 utf-8 字符
-- encodeURIComponent, 会编码上部分的内容
+- encodeURIComponent, 会编码上部分的内容, [可以用于 cookie 编码](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie) 因为 cookie 中不允许存在逗号, 分号, 空格
 
 > [来源](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)
 

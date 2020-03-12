@@ -138,6 +138,8 @@ absolute 会让元素跳出文档流, 也就是说相当于没有这个元素
 
 > [来源](https://zhuanlan.zhihu.com/p/41516699)
 
+> [彻底搞懂 CSS 层叠上下文、层叠等级、层叠顺序、z-index](https://juejin.im/post/5b876f86518825431079ddd6)
+
 ## 字体单位
 
 ---

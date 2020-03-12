@@ -78,6 +78,10 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 > [来源](https://www.jianshu.com/p/2ad286397f7a)
 
+### restful
+
+> [来源](https://www.zhihu.com/question/28557115)
+
 ## 服务端缓存 redis
 
 ---
@@ -177,10 +181,34 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 ---
 
-每隔一定时间给服务器发消息告诉服务器这个客户端还活着
+每隔一定时间给服务器发消息告诉服务器这个客户端还活着, 常用在 websocket 中
 
 ## 守护进程
+
+---
 
 作为一种独立运行在后台的进程, 能周期性的执行某些任务, 让程序独立于命令行, 成为一种服务
 
 > [来源](https://www.zhihu.com/question/38609004/answer/202859302)
+
+## buffer stream
+
+### buffer
+
+用来操作 binary data streams
+
+一定时间内系统处理的数据是有上限与下限的, buffer 就是数据的等待区域
+
+拿视频举例, 视频流的数据充满 buffer 然后发送给进程, 播放器播放, 如果 buffer 没有充满, 播放器就会 loading, 流会在这个过程中自动创建 buffer
+
+### stream
+
+简单来说就是将在空间里被移动的一系列数据, 也就是说, 有许多数据要处理, 但是没必要等数据全部准备好再处理
+
+实现的方法是将大的数据切割成一个个小块来发送
+
+常见的文件数据流就是这样, 下载文件时, 将数据 pipe 到 writestream 中
+
+> [来源](https://cnodejs.org/topic/5a49077f8230827a18293be0)
+
+> [深入理解 Stream 和 Buffer](https://billyhu.com/post/learning-stream-and-buffer/)
