@@ -74,7 +74,7 @@
 - [字节前端实习面经](https://www.nowcoder.com/discuss/355976?type=2)
 - 增加图片 zoom 插件
 - [腾讯-csig-imweb 团队-一面](https://messiahhh.github.io/blog/frontend/#%E8%85%BE%E8%AE%AF-csig-imweb%E5%9B%A2%E9%98%9F-%E4%B8%80%E9%9D%A2) 问项目我就没了, 哪有什么上线项目啊 😂
-- - [ ] [2017 年阿里、腾讯前端实习面试总结](https://zhuanlan.zhihu.com/p/26528397)
+- - [x] [2017 年阿里、腾讯前端实习面试总结](https://zhuanlan.zhihu.com/p/26528397)
 - 好的, 明天就想想简历和自我介绍吧 2020.3.5, 今天 miko 生日, お誕生日おめでとう! miko 世界いちのかわいい!
 - 然后把编程题过一下
 - 调查一下 百度阿里腾讯 字节跳动美团滴滴的内推和招聘信息
@@ -106,3 +106,5 @@
   - JavaScript 正则迷你书
 
 ---
+
+- 一句话能说明白的别用两句话啊啊啊啊, 文绉绉的 😤

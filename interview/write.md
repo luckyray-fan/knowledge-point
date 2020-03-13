@@ -1,6 +1,83 @@
 ## 有趣的题目们
 
+### 闭包
+
+#### 判断输出
+
+```JavaScript
+// 写出下面这段代码打印的结果
+   var result = [];
+   var a = 3;
+   var total = 0;
+   function foo(a) {
+     var i = 0;
+     for (; i < 3; i++) {
+       result[i] = function() {
+         total += i * a;
+         console.log(total);
+       }
+     }
+   }
+
+   foo(1);
+   result[0]();
+   result[1]();
+   result[2]();
+   // 3, 6, 9
+```
+
 ### promise
+
+#### 判断输出
+
+```JavaScript
+// 写出下面这段代码打印的结果
+   async function async1() {
+     console.log('async1 start');
+     await async2();
+     console.log('async1 end');
+   }
+
+   async function async2() {
+     console.log('async2 start');
+     return new Promise((resolve, reject) => {
+       resolve();
+       console.log('async2 promise');
+     })
+   }
+
+   console.log('script start');
+
+   setTimeout(function() {
+     console.log('setTimeout');
+   }, 0);
+
+   async1();
+
+   new Promise(function(resolve) {
+     console.log('promise1');
+     resolve();
+   }).then(function() {
+     console.log('promise2');
+   }).then(function() {
+     console.log('promise3');
+   });
+
+   console.log('script end');
+
+
+   // 答案
+  //  script start
+  //  async1 start
+  //  async2 start
+  //  async2 promise
+  //  promise1
+  //  script end
+  //  promise2
+  //  promise3
+  //  async1 end
+  //  setTimeout
+```
 
 #### LazyMan
 
@@ -15,7 +92,15 @@
 
 ### 实现
 
-### js 判断元素坐标
+#### css 实现开关样式
+
+通过 label 的 for 属性来控制 input 的 checked, 凭此来控制样式
+
+> [来源](https://juejin.im/post/5d270f76f265da1bbf69482f)
+
+#### 直播点赞按钮冒泡
+
+#### js 判断元素坐标
 
 > [来源](https://juejin.im/post/5be03f4fe51d45053a454e69)
 

@@ -80,16 +80,33 @@ sass 和 less, 赋予 css 更多可编程的特性, 简化开发
 
 > [来源](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/308)
 
-### 开发环境
+### 环境
 
-- 热更新
-- sourcemap
+- 开发环境
+  - 热更新
+  - sourcemap
+- 生产环境
+  - 代码切割
+  - 压缩, 减少打包体积
 
-### 生产环境
+### sourcemap
 
-- 代码切割
+sourcemap 能定位 bug
 
-- 压缩, 减少打包体积
+- 字符的行列号一一对应
+
+  > `mappings: "输出文件行位置|输出文件列位置|输入文件名|输入文件行号|输入文件列号,....."`
+
+- 不输出文件的行号, 每换一行用`;`来代替
+- 提取输出文件名, 记录它在数组中的索引
+- 将文件的变量名, 函数名作为数组, 提取索引值
+- 将记录绝对位置改为相对前一个字符的位置
+- VLQ 编码分割记录, 用逗号连接
+  - 每一个对应的位置转换为二进制
+  - 二进制每六位来分割, 第一个六位的最后一位代表正负, 每一位的第一位代表是否延续
+  - 这些六位组用 base64 转换
+
+> [来源](https://juejin.im/post/5d0790996fb9a07f0052dbbb)
 
 ## git
 
@@ -108,3 +125,14 @@ sass 和 less, 赋予 css 更多可编程的特性, 简化开发
 - 更改文件内容后会重复上面的步骤
 
 > [来源](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
+
+## 异常监测
+
+---
+
+- 错误拦截, `window.onerror`, 然后对收集到的错误扔进队列等待上报
+- 跨域问题
+
+> [来源](https://zhuanlan.zhihu.com/p/26085642)
+
+> [前端异常监控解决方案研究](https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/)

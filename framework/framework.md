@@ -36,3 +36,10 @@ jQuery.fn.init.prototype = jQuery.fn;
 > [来源](https://juejin.im/post/5abca877f265da238155b6bc)
 
 ## react vue jquery angularjs 不同的使用场景
+
+- jquery, 提供了兼容的能力, 作为一个工具库, 拥有诸如文档处理, 事件处理, ajax 等工具
+- vue, 提取 angular 中优秀的部分, 制作的轻量框架, [来源](https://zh.wikipedia.org/wiki/Vue.js#%E5%8E%86%E5%8F%B2)
+- angular, 适用于大型项目
+- react, 跨平台, 组件化
+
+> [来源](https://www.jianshu.com/p/1a348132ba2a)

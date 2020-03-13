@@ -439,3 +439,9 @@ link 除了加载 css 还能定义 rss, 定义 rel 链接
   - padding-bottom
 
 > [来源](https://segmentfault.com/a/1190000006631310)
+
+## css 变量
+
+通过使用`--xxx:abc`的语法, 可以通过`var(--xxx)`来使用值 abc, 这个变量可以在父元素及子元素中使用
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
