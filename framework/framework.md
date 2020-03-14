@@ -35,6 +35,8 @@ jQuery.fn.init.prototype = jQuery.fn;
 
 > [来源](https://juejin.im/post/5abca877f265da238155b6bc)
 
+> [小白必看，JSBridge 初探](https://juejin.im/post/5e5248216fb9a07cb0314fc9)
+
 ## react vue jquery angularjs 不同的使用场景
 
 - jquery, 提供了兼容的能力, 作为一个工具库, 拥有诸如文档处理, 事件处理, ajax 等工具

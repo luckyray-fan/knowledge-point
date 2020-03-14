@@ -43,7 +43,7 @@ function quickSort(arr){
 
 ---
 
-### sum
+### n 项和为 sum
 
 ### 两数之和
 

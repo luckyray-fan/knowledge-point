@@ -251,6 +251,8 @@ await 的异步处理, 可以在 promise 的后方加上 catch, 也可以用`try
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/Async_await)
 
+> [Babel 如何转换 async-await 至 ES5](https://blog.rexskz.info/how-babel-transform-async-await-to-es5.html)
+
 ## proxy
 
 ---

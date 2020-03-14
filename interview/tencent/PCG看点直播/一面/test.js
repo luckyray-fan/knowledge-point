@@ -66,3 +66,45 @@ function bigIntAdd(x, y) {
   return arr;
 }
 console.log(bigIntAdd(2 ** 53, 1));
+
+//LazyMan
+
+class LazyMan {
+  constructor(name) {
+    this.name = name;
+    this.taskList = [];
+    this.taskList.push(()=>{
+      console.log(this.name)
+    })
+    this.run()
+  }
+  run(){
+    setTimeout(()=>{
+      for(var i = 0;i<this.taskList.length;i++){
+         var fn = this.taskList.shift()
+         await fn.call(this)
+      }
+    },0)
+  }
+  sleep(ms) {
+    this.taskList.push(async ()=>{
+      await new Promise((res)=>{
+        setTimeout(res,ms)
+      })
+    });
+    return this;
+  }
+  eat(some) {
+    console.log(some);
+    return this;
+  }
+  sleepFirst(ms){
+    this.taskList.unshift(()=>{
+      await new Promise((res)=>{
+        setTimeout(res,ms*1000);
+      })
+      console.log('wakeup after'+ms*1000);
+    })
+    return this;
+  }
+}

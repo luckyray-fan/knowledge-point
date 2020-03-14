@@ -28,7 +28,45 @@
 
 ### promise
 
+#### 实现 shedule 调度
+
+实现并发限制, 保证同时运行的任务最多有两个
+
+```javascript
+// 实现一个带并发限制的异步调度器Scheduler，保证同时运行的任务最多有两个。完善代码中Scheduler类，使得以下程序能正确输出
+class Scheduler {
+  add(promiseCreator) {
+    // TODO
+  }
+  // TODO
+}
+const timeout = (time) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+const scheduler = new Scheduler();
+const addTask = (time, order) => {
+  scheduler.add(() => timeout(time)).then(() => console.log(order));
+};
+
+addTask(1000, '1');
+addTask(500, '2');
+addTask(300, '3');
+addTask(400, '4');
+// output: 2 3 1 4
+// 一开始，1、2两个任务进入队列
+// 500ms时，2完成，输出2，任务3进队
+// 800ms时，3完成，输出3，任务4进队
+// 1000ms时，1完成，输出1
+// 1200ms时，4完成，输出4
+```
+
 #### 判断输出
+
+- promise 构造函数传入的先执行, 遇到 then 放入微任务
+- await 的函数直接执行, 遇到 promise 将执行后的放入微任务, await 相当于采用了 `promise.resolve()`
+
+> [来源](https://segmentfault.com/q/1010000016147496)
 
 ```JavaScript
 // 写出下面这段代码打印的结果
@@ -92,9 +130,13 @@
 
 ### 实现
 
+#### 百度输入框
+
 #### css 实现开关样式
 
 通过 label 的 for 属性来控制 input 的 checked, 凭此来控制样式
+
+也可以用 hover 伪属性来控制, 动画依靠 transition
 
 > [来源](https://juejin.im/post/5d270f76f265da1bbf69482f)
 
@@ -150,6 +192,26 @@ function coordinate(e) {
   div.style.top = e.clientY + 'px';
 }
 ```
+
+### 海量 IP 寻找出现最多的一个
+
+- 大文件转为小文件, 多线程
+- hash map
+- 堆排序
+
+> [来源](https://www.zhihu.com/question/25652393#5)
+
+### js 实现
+
+#### 类与继承
+
+- 创建一个 Person 类，其包含公有属性 name 和私有属性 age 以及公有方法 setAge ；创建一个 Teacher 类，使其继承 Person ，并包含私有属性 studentCount 和私有方法 setStudentCount 。
+
+#### 计算英文文章中出现最多的单词和次数
+
+#### 二进制加法
+
+> [来源](http://zouyang1230.com/blog/archives/805)
 
 #### 版本号
 

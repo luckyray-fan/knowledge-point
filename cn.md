@@ -18,6 +18,15 @@
 
 > [在浏览器地址栏输入一个 URL 后回车，背后会进行哪些技术步骤](https://www.zhihu.com/question/34873227/answer/518086565)
 
+### DNS TTL
+
+time to live, 即域名解析记录在 dns 服务器中的留存时间
+
+- 增大 ttl, 节约域名解析时间
+- 减少, 可以避免更换域名时的不可访问时间过长
+
+> [来源](https://jaminzhang.github.io/dns/DNS-TTL-Understanding-and-Config/)
+
 ### 顶级域名
 
 - 顶级域名, `.com, .org等`
@@ -53,7 +62,7 @@
 - 主机部分
 - 端口部分
 - 路径部分
-- 查询部分
+- 查询部分, 以`?`开始, 通过`&`来连接不同的参数
 - 锚点
 
 > [来源](https://www.cnblogs.com/be-saber/p/4734951.html)
