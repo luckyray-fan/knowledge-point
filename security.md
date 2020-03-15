@@ -42,8 +42,11 @@ cross-site request forgery, 跨站请求伪造, 俗话说就是盗用身份, 以
 - cookie hashing
 - 验证码
 - token, 就是隐藏一个 token, 提交时要带上它, 其实这些防爬虫也用
+- [samesite strict](https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
 
 > [来源](https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)
+
+> [【网络安全】CSRF 攻击详解](https://www.cnblogs.com/54chensongxia/p/11693666.html) 关于如何防范攻击更为详细
 
 ## 会话劫持
 

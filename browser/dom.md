@@ -24,7 +24,7 @@ load 只触发在 window 上
 
 ---
 
-- localStorage html5 中新加入的技术
+- localStorage html5 中新加入的技术, 如果不被清除能一直使用
 - sessionStorage, 刷新页面或者关闭后就会被清空
 
 > [来源](https://jerryzou.com/posts/cookie-and-web-storage/)
@@ -34,6 +34,10 @@ load 只触发在 window 上
 浏览器对象模型, 针对的是浏览器, 能够控制浏览器的行为
 
 > [来源](https://segmentfault.com/a/1190000013426834?utm_source=channel-hottest)
+
+### 方法
+
+- [`setImmediate`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setImmediate), 相当于`setTimeout(fn,0)`完成后续任务后立即执行
 
 ### BOM 与 DOM 的区别
 
@@ -45,6 +49,8 @@ load 只触发在 window 上
 ### 请求发送
 
 ---
+
+cors 跨域的话, 字段带上 withCredentials 就能把当前的域的 cookie 带上
 
 #### ajax 原生请求
 

@@ -1,3 +1,19 @@
+## 浏览器
+
+---
+
+### 浏览器结构
+
+> [来源](https://developers.google.com/web/updates/2018/09/inside-browser-part1) 掘金有相关翻译, 搜索现代浏览器揭秘即可, 等不知道什么时候有空的有空再来看 )
+
+### chrome 采用多进程的原因
+
+- 线程共享内存, 但一崩全崩
+
+牺牲了多进程切换的性能, 和新建进程吃掉的大量内存换来的稳定性
+
+> [来源](https://www.zhihu.com/question/368712837/answer/1040392109)
+
 ## 从输入 url 到网页呈现的过程
 
 ---
@@ -12,6 +28,8 @@
 
 > [来源](https://juejin.im/post/5b148a2ce51d4506965908d2)
 
+> [当你在浏览器输入 google.com 并按下回车后发生了什么？](https://zhuanlan.zhihu.com/p/28262282)
+
 ## 浏览器渲染
 
 ---
@@ -23,7 +41,7 @@
 - 如果后面又遇到了 css 标签, 重新加载 cssom 然后与 dom 合并渲染树, 所以此时会闪烁一下
 - 触发 DomContentLoaded 事件
 
-**以上是我的猜测:**
+包含各种事件的话如下
 
 - 处理 HTML 标记构建 DOM 树, 此时 document.readyState 为 loading
 - 处理 CSS 标记并构建 CSSOM 树, 等文档解析完成, readyState 变为 interactive
@@ -40,11 +58,11 @@
 
 > [深入浅出浏览器渲染原理 ](https://github.com/ljianshu/Blog/issues/51)
 
-> [Inside look at modern web browser](https://developers.google.com/web/updates/2018/09/inside-browser-part1) 掘金有相关翻译, 搜索现代浏览器揭秘即可, 等不知道什么时候有空的有空再来看
+> [这个有数据有分析, 很可以的](https://juejin.im/entry/584e3aa72f301e005732b332)
 
 ### 浏览器将标签转成 DOM 的过程
 
-- 编码, 将字节数据转为字符串
+- 编码, 将字节数据转为字符串, 根据 content-type 判断编码, 如果没有就猜测, 如果 meta 指定了就用 meta 的, [来自](https://www.zhihu.com/question/58504211)
 - 预解析, 找出需要下载的外部资源
 - 标记化, 使用状态机, 将标签解析为语法树
 - 构建树, 每解析一个标签就添加到 document 中, 对于此时不正确的构建, 如 video 拥有子元素由渲染引擎来处理
@@ -168,8 +186,6 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 发起请求的域与该请求指向的资源所在的域不一样, 也就是`协议+域名+端口号`
 
-通常浏览器会为了防止 csrf 攻击限制跨域请求
-
 现在也有 `同源策略` 限制不同源的 js 对 `document`对象的读取等
 
 ### 同源策略
@@ -195,15 +211,20 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
   - Access-Control-Allow-Origin, 响应中携带这的这个首部意味着服务器允许哪些域可以访问该资源
   - cors 可以支持所有类型的 HTTP 请求
 
-- postMessage, html5 xmr2 中的 api, 可用于跨域操作解决
+- postMessage, html5 xmr2 中的 api, 可用于跨域操作解决, 完全不同源的情况下使用
+
   - 页面和打开的新窗口的数据传递
   - 页面和嵌套的 iframe 消息传递
+
+- 如果仅是二级域名不同, 可以用`document.domain`来读取到 cookie, 另外服务器也可以指定`.exampl.com`来读取 cookie
 
 > [来源](https://www.jianshu.com/p/f880878c1398)
 
 > [九种跨域方法, 强啊](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
 
 > [mdn](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+
+> [浏览器同源政策及其规避方法](https://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
 
 ### 跨域方式优缺点
 

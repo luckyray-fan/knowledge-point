@@ -472,6 +472,23 @@ web worker 或者跨域的 iframe 都有自己的栈, 要通信需要 `postMessa
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
 
+> [详解 JavaScript 中的 Event Loop（事件循环）机制](https://zhuanlan.zhihu.com/p/33058983)
+
+### node 与浏览器的区别
+
+node 的表现与浏览器差不多, 但是它依靠 v8 来解释 js, 用 libuv 引擎来实际执行
+
+node 中事件循环的顺序, 执行完下面六个阶段算一个 tick
+
+- timer, 检查定时器队列, 如 setTimeout
+- IO callback, 执行系统调用错误, 比如网络通信错误
+- idle, prepare, 仅在 node 内部使用
+- poll, 获取新的 IO 事件, 适当条件 node 将阻塞于此
+- check, 执行 setImmediate 的回调
+- close callbacks, 执行 socket 的 close 事件回调
+
+> [来源](http://lynnelv.github.io/js-event-loop-nodejs)
+
 ## 运算符优先级
 
 ---
