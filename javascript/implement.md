@@ -65,7 +65,7 @@ Function.prototype.applyF = function(thisArg, args) {
 };
 ```
 
-> [来源](https://juejin.im/post/5bf6c79bf265da6142738b29#heading-5)
+> [来源](https://juejin.im/post/5bf6c79bf265da6142738b29#heading-2)
 
 ## Object.create()
 

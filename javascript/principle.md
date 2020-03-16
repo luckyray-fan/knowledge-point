@@ -129,7 +129,7 @@ function p() {
   this.x = 1;
 }
 function c() {
-  p.call(this); //继承私有
+  p.call(this); //继承实例属性
 }
 function inheritPrototype(sub, sup) {
   var prototype = Object.create(sup.prototype); //继承原型链
