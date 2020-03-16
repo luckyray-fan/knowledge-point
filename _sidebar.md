@@ -19,11 +19,11 @@
 - [安全](security)
 - [设计模式](designpattern)
 - [功能实现](feature)
-- [算法](algorithm)
 - [操作系统](os)
 - [开发工具](develop)
 - 面试
   - [记录](interview/index)
   - [笔试之类的题目](interview/write)
   - [可能的回答](interview/nothing)
+  - [算法](interview/algorithm)
 - [发展历程](test)

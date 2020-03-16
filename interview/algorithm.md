@@ -39,15 +39,31 @@ function quickSort(arr){
 
 哈希, 二叉树
 
-## 常见面试题
+## 树
 
----
+### 树的遍历
+
+深度遍历前中后序, 广度遍历层次遍历
+
+> [来源](https://charlesliuyx.github.io/2018/10/22/%E3%80%90%E7%9B%B4%E8%A7%82%E7%AE%97%E6%B3%95%E3%80%91%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C)
+
+### 判断对称二叉树
+
+递归, 取出左右节点的值如果不同返回 false, 最后一层一层返回上来
+
+> [来源](https://leetcode-cn.com/problems/symmetric-tree/solution/javascript-di-gui-si-lu-he-shi-xian-by-xin-tan/)
+
+## 杂项?
+
+### 合并乱序区间
 
 ### n 项和为 sum
 
 ### 两数之和
 
 ### 第 k 个数
+
+### 进制转换
 
 ### 洗牌算法
 

@@ -284,6 +284,7 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
 - 0 级, 点击这个节点, 节点就执行 handler
 - 1 级, 规范化之前的做法
 - 2 级, 除了目标节点, 允许目标的祖先节点也有机会处理, 只有用`addeventlistener`才能
+- 3 级, 增加了 Xpath 和加载保存模块, 也补充了一些新的事件
 
 > [来源](https://www.jianshu.com/p/75183574ada7)
 

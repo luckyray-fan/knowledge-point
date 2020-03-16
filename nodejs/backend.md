@@ -96,9 +96,35 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 > [来源](https://www.zhihu.com/question/19730582)
 
+## 多进程
+
+使用 cluster 模块来处理 cpu 密集型的任务, 使用`.on('message')`让父子进程通信
+
+> [来源](https://www.ibm.com/developerworks/cn/opensource/os-cn-nodejs-practice/index.html)
+
+### cluster 与 child_process
+
+cluster 底层使用 child_process 实现
+
+> [来源](弱弱地问一下，cluster 和 child_process 的使用场景)
+
+> [nodejs 中的子进程，深入解析 child_process 模块和 cluster 模块](https://segmentfault.com/a/1190000016169207)
+
 ## 多线程
 
 ---
+
+node 使用两种线程, eventloop 的主线程和 worker pool 中的辅助线程
+
+工作池产生并处理单独的线程, 然后将任务结果放入事件循环中的队列, 一般用于负责异步 I/O 操作, 主要是与系统磁盘和网络的交互, 如 `fs` 或 `crypto` 等模块使用, 由 `libuv` 实现
+
+当调用相关模块如 `fs` 时会自动使用工作池中的一个线程来执行
+
+在 node10.5 之后可以使用`worker_threads`模块来创建多线程
+
+> [来源](https://segmentfault.com/a/1190000018660861)
+
+> [Node.js 的多线程](https://www.jianshu.com/p/6f63b87ba6f0)
 
 ### 多线程与下载
 
@@ -139,9 +165,13 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 > [来源](https://www.lishuaishuai.com/nodejs/1167.html?soure=jj)
 
-## createServer
+## 网络模块
 
 ---
+
+> [来源](http://zhenhua-lee.github.io/node/socket.html)
+
+### createServer
 
 建立一个线程, 监听端口, 如果有请求就调用传入的回调函数
 
@@ -212,3 +242,7 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 > [来源](https://cnodejs.org/topic/5a49077f8230827a18293be0)
 
 > [深入理解 Stream 和 Buffer](https://billyhu.com/post/learning-stream-and-buffer/)
+
+## crypto 加密
+
+> [来源](https://segmentfault.com/a/1190000016706501)
