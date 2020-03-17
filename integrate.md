@@ -141,3 +141,19 @@ sourcemap 能定位 bug
 > [来源](https://zhuanlan.zhihu.com/p/26085642)
 
 > [前端异常监控解决方案研究](https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/)
+
+## typescript
+
+短期理解就是提供了各种类型吧
+
+> [来源](https://ts.xcatliu.com/)
+
+## css 预处理语言
+
+使用变量循环继承等语法, 拓展了 css 的逻辑性
+
+- [less](https://juejin.im/post/5a2bc28f6fb9a044fe464b19)
+- sass
+- stylus
+
+偏好 pug 和 stylus

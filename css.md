@@ -182,6 +182,7 @@ flex 可以用来非常有效的布局, 对其并且描述空间在容器里的�
 - flex-direction, 设定主轴方向
 - justify-content, 分配主轴空间
 - align-self, 分配交叉轴空间
+- flex-wrap, 让 flex 内的子元素可以多行排列
 
 ### 适用场景
 

@@ -304,3 +304,127 @@ function sum (...args) {
 ### 功劳不同的人分蛋糕
 
 > [来源](https://www.zhihu.com/question/23762948)
+
+### 博弈
+
+> 腾讯
+
+100 个人轮流拿书，最少 1 本最多 5 本，你先拿，怎么确保你一定赢
+
+> [如何在取硬币游戏中必胜？（有关尼姆博弈）](https://www.zhihu.com/question/29910524)
+
+### 帽子颜色
+
+> 抖音
+
+岛上有群人，各自戴着红帽子或者白帽子，但都不知道自己帽子颜色，只有知道自己帽子颜色，第二天才能出岛，这时候有个人进来说了句“你们之中至少有一个人戴了顶红帽子” 问岛上的人最后的离开情况
+
+# 算法
+
+> 这里就面试题原题
+
+## 排序
+
+---
+
+v8 底层是插入排序加快速排序, 数组长度在一定长度下用插入
+
+> [来源](https://segmentfault.com/q/1010000007133473)
+
+### 快排
+
+> 很多公司都考过
+
+- 找到该数组的基准点, 创建左右空数组
+- 遍历数组比较基准点, 小的左边, 大的右边
+- 递归左右数组
+
+```JavaScript
+function quickSort(arr){
+  if(arr.length<=1)return arr;
+  var left = [],
+  right = [],
+  pivot = arr[0]
+  for(var i = 0;i<arr.length;i++){
+    if(arr[i]<pivot){
+      left.push(arr[i])
+    }else{
+      right.push(arr[i])
+    }
+  }
+  return quickSort(left).concat([pivot],quickSort(right))
+}
+```
+
+## 查找
+
+---
+
+哈希, 二叉树
+
+## 树
+
+### 树的遍历
+
+> 字节跳动
+
+深度遍历前中后序, 广度遍历层次遍历
+
+> [来源](https://charlesliuyx.github.io/2018/10/22/%E3%80%90%E7%9B%B4%E8%A7%82%E7%AE%97%E6%B3%95%E3%80%91%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C)
+
+### 判断对称二叉树
+
+> 字节跳动
+
+递归, 取出左右节点的值如果不同返回 false, 最后一层一层返回上来
+
+> [来源](https://leetcode-cn.com/problems/symmetric-tree/solution/javascript-di-gui-si-lu-he-shi-xian-by-xin-tan/)
+
+## 杂项?
+
+### n 项和为 sum
+
+就是求一下全排列然后对比一下是否相同, 当然也有优化的方法, 比如排序然后从左到右取, 再优化可以是二分法
+
+### 两数之和
+
+用一个对象保存数据然后, 然后一遍循环找出来
+
+### 第 k 个数
+
+排序然后取第 k 个就好了`nlogn`, 然后优化是, 冒泡取 `n*k`, 堆`nlogk`
+
+> [来源](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/shu-zu-zhong-de-di-kge-zui-da-yuan-su-by-leetcode/)
+
+### 进制转换
+
+> 字节跳动
+
+所谓进制呢, 每一个位都代表不同的大小, 个位十位百位千位本质上就是 10<sup>0</sup> 10<sup>1</sup> 之类的
+
+- 其他位转为十进制
+  - 例如: `1010`, 1 在 8 位上, `1*8+0*4+1*2+0*1=10`
+- 十进制转为其他位, 短除法
+
+> [来源](https://www.zhihu.com/question/20993504)
+
+### 洗牌算法
+
+shuffle~, 以前写一个小游戏, 蜘蛛纸牌也用过, 不过没有写结尾的动效, 因为没有用它玩到过结尾 😆
+
+**目的:**
+
+- 公平的将牌的位置进行交换
+  - 一个长度为 n 的数组有`n!`中可能的排列, 所以应该给出这`n!`个数组中可能的任意一种, 这才公平
+  - 也就是说每个元素出现在每个位置的概率是相等的
+
+```JavaScript
+for(var i = len-1;i>=0;i--){// 经典的概率论,
+  let tem = arr[i],
+  random = Math.random()*i;
+  arr[i] = arr[random];
+  arr[random] = tem;
+}
+```
+
+> [来源](https://www.zhihu.com/question/27547892/answer/1064577220)

@@ -1,3 +1,7 @@
+## 常见使用
+
+- 进制转换, Number.prototype.toString
+
 ## Object
 
 ---
@@ -107,3 +111,7 @@
 将传入的字符串当做 JavaScript 代码进行执行
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/eval)
+
+## toString
+
+- [Number.prototype.toString()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/toString), 指定数字到字符串的转换基数, 2 到 36, 如果大于 10 会用字母来表示

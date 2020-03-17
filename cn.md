@@ -89,7 +89,7 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
 - PUT, 上传指定的 URI 表示
 - HEAD, 与 GET 相同, 但只返回 HTTP 报头
 - DELETE, 删除指定资源
-- OPTIONS, 返回服务器支持的 HTTP 方法
+- OPTIONS, 返回服务器支持的 HTTP 方法, [还有 cors 预检请求](https://cloud.tencent.com/developer/article/1046663)
 
 #### post 与 put 区别
 
@@ -219,6 +219,7 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 - size, cookie 大小
 - http, 此 cookie 的 httponly 属性, 只能上传时带上该 cookie 而无法用`document.cookie`读取
 - secure, 设置是否只能通过 https 来传递此条 cookie
+- [samesite](https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html), 如果目标网站不同源无论什么请求都不会带上 cookie
 
 > [来源](https://segmentfault.com/a/1190000004556040)
 
@@ -332,9 +333,12 @@ UDP 对实时性要求严格时, 可以用自定义重传机制, 能将延迟降
 
 **目的是:** 客户端和服务端都断开连接, 两端都不浪费资源等待, 要发送的数据全发完
 
-- 为什么要等待, 防止之后启用了相同端口的新应用接收到无用的信息
+- 为什么要等待 2MSL, 防止之后启用了相同端口的新应用接收到无用的信息
+  - MSL, 最大存活时间, A 去向 ACK 和来向 FIN 的时间相加, 保证服务端收到了消息
 - 为什么是四次不是三次, 防止服务端有报文没有发送完
 - 为什么客户端还要发送 Ack, 为了让服务端直到客户端收到了 FIN, 防止因为网络故障服务端没有收到
+
+> [来源](https://www.zhihu.com/question/67013338)
 
 ### TCP 超时重传
 

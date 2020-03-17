@@ -121,3 +121,7 @@ html 语义化
 前端模块化
 
 > 从时间线的发展上来说, 首先是 commonJs, 最初用于 node, 同步加载, 输出的是值的拷贝, 为了解决同步加载问题, 有 requirejs 使用的 amd, 异步加载, 但是没法按需加载, 所以又有了 seaJs 的 CMD 规范, 支持按需加载, 发展到 es6 有了综合的一个统一规范了, 就是常见的 import
+
+cookie 相关
+
+> cookie 有 name 属性标识, value 代表自身的值, security 标识仅用在 https, http-only 无法用 js 读取, expires 标识最大生存时间, domain 和 path 标识其生成的域名与路径, chrome 还有 samesite, 如果不同源无论什么请求都不带上 cookie, cookie 与 session 的区别是, 一个在客户端一个在服务端, cookie 存储 sessionid, sessionid 标明这个 session
