@@ -126,7 +126,9 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
 - 2xx, 代表请求已经成功被服务器接收处理了
 - 3xx, 代表客户端采取进一步操作才能完成请求, 这些状态码用来重定向, 重定向地址在本次响应的 Location 中指明
 - 4xx, 表示请求错误, 客户端的请求可能有问题
+  - 499, 客户端主动断开连接, 可能是跨域请求被拦截, [也可能是服务器被攻击](https://segmentfault.com/q/1010000004193105)
 - 5xx, 代表服务器处理请求的过程中有错误, 也可能是无法完成请求的处理
+  - [504 bad gateway](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/504), 代理服务器的上游没法在规定时间内给出响应
 
 比较清晰具体的也可以看[菜鸟教程里的](https://www.runoob.com/http/http-status-codes.html)
 

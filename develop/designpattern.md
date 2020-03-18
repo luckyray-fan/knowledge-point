@@ -1,6 +1,8 @@
-## 单例
+## 设计模式
 
----
+--
+
+### 单例
 
 确保一个类仅有一个实例, 并提供访问它的全局访问点
 
@@ -37,9 +39,7 @@ document.getElementById('btn').onclick = function() {
 
 > [来源](https://segmentfault.com/a/1190000012842251) 讲得很好
 
-## 观察者模式
-
----
+### 观察者模式
 
 也就是我们常用的事件, 订阅事件与发布事件, 双向绑定的方法之一, 常见应用有 Nodejs 中的 [eventemitter](https://juejin.im/post/5c199c0ae51d452f6028a072), 安卓里的 [eventbus](https://www.liujiaweb.com/242.html)
 
@@ -83,6 +83,10 @@ Observe.subscribe('say', { text : 'hello world' } )
 
 > [来源](https://juejin.im/post/5bce9a35f265da0abd355715)
 
+### 策略模式
+
+> [来源](https://juejin.im/entry/59e565f35188250989512689)
+
 ## 架构
 
 ---
@@ -92,6 +96,14 @@ Observe.subscribe('say', { text : 'hello world' } )
 - view, 视图, 接收交互控制 controller
 - controller, 完成业务逻辑, 操作 model
 - model, 使用数据更新 view
+
+#### mvc 实践
+
+突然特别想写一个油猴脚本, 所以应用一下
+
+> [来源](https://www.jianshu.com/p/648c5d9dacaa)
+
+> [前端 MVC、MVVM 的简单实现](https://juejin.im/post/5a8d5621f265da4e732ed872)
 
 ### mvp
 

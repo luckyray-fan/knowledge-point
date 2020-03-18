@@ -75,9 +75,18 @@ IPC, inter-process communication
 
 ## 字符编码
 
+### 常见乱码
+
+- 烫烫烫, c 系语言中数组没初始化就输出了, 未初始化的栈内存为 0xcc, 这个是中断指令, debug 的情况下执行此处会停下来
+- 屯屯屯, malloc 申请堆内存后没有初始化, 然后输出这里
+- 锟斤拷, unicode 字符集转 gbk, 有些字没法显示, 就用占位符来表示, 然后这些对应到 gbk 就是这个了
+- 锘锘锘, 用一些标记来表示这个字节流是 UTF 编码, 又称 BOM, Byte Order Mark, 转为 GBk 时出现
+
+> [来源](https://blog.csdn.net/sinat_27382047/article/details/72810390)
+
 ### utf8 与 gbk 区别
 
-notepad 中的 ansi 一般指的是电脑的默认编码, 中文一般是 gbk
+notepad 与 windows 记事本中的 ansi 一般指的是电脑的默认编码, 中文一般是 gbk
 
 为了兼容编码, 有了统一编码表, 名为 unicode, utf-8 中的英文并未使用双字节存储而是单字节
 

@@ -1,3 +1,8 @@
+## 常见使用
+
+- [插入 domstring 到 dom 中](https://stackoverflow.com/questions/7327056/appending-html-string-to-the-dom), `Element.insertAdjacentHTML()`
+- [将 html 解析为 dom](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMParser), `DOMParser()​​`
+
 ## 加载完毕事件
 
 ---
