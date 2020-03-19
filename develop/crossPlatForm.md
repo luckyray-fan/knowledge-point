@@ -40,17 +40,37 @@ chrome 原团队成员提出的跨平台的方案, 一套程序等于全平台
 
 > [来源](https://hicc.me/flutter-for-frontend-engineer/)
 
+### dart
+
+> [来源](https://www.zhihu.com/question/268004898/answer/434687563)
+
 ## Hybrid
 
 混合模式应用开发, 利用 jsbridge 拥有调用原生系统的能力, 能快速开发, 不是很依靠发布新版本来更新
 
 > [来源](https://juejin.im/post/5b4ff3bee51d4519721b9986)
 
+## webassembly
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/WebAssembly)
+
 ## pwa
 
 progressive web apps, 渐进式 web 应用, 就是跨平台可离线工作的 web 应用程序
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
+
+## serverless
+
+> [来源](https://juejin.im/post/5d42945ff265da03a715b2f0)
+
+## 微前端
+
+> [来源](https://tech.meituan.com/2018/09/06/fe-tiny-spa.html)
+
+## react native
+
+> [来源](https://www.zhihu.com/question/27852694)
 
 ## 小程序
 

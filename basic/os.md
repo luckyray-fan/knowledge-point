@@ -69,9 +69,11 @@ IPC, inter-process communication
 ### 多线程提升效率
 
 - 多核, 能实际提升效率
-- 单核, 并不能提升效率, 使用多线程此时是为了协调 io, 响应用户, 播放音乐等
+- 单核, 并不能提升效率, 使用多线程此时是为了协调 io, 响应用户, 播放音乐, 还可以提高并发等
 
 > [来源](https://www.zhihu.com/question/25652393)
+
+> [多线程是否能加快处理速度](https://blog.csdn.net/zollty/article/details/53944539)
 
 ## 字符编码
 

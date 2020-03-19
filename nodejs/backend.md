@@ -100,7 +100,7 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 cluster 底层使用 child_process 实现
 
-> [来源](弱弱地问一下，cluster 和 child_process 的使用场景)
+> [来源](https://cnodejs.org/topic/5a68cd779d371d4a059eedd1)
 
 > [nodejs 中的子进程，深入解析 child_process 模块和 cluster 模块](https://segmentfault.com/a/1190000016169207)
 

@@ -14,6 +14,10 @@
 - 框架与库
   - [vue](framework/vue)
   - [常见框架](framework/framework)
+- 最佳实践
+  - [语法](practice/method)
+  - [功能](practice/feature)
+  - [浏览器](practice/dom)
 - 开发
   - [工程化](develop/integrate)
   - [开发工具与插件](develop/develop)

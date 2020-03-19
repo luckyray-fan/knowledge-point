@@ -157,3 +157,18 @@ sourcemap 能定位 bug
 - stylus
 
 偏好 pug 和 stylus
+
+## 前端技术的发展
+
+- jq
+- angular, react
+- vue
+- gulp, webpack
+- pwa, flutter, rn
+- serverless, webassembly, 微前端
+
+### css 发展
+
+- 纯手写
+- var, @import
+- 预处理器

@@ -1,10 +1,21 @@
 ## 常见使用
 
 - 进制转换, Number.prototype.toString
+- 遍历属性`for in`, 遍历数组数据`for of`, 如果属性不想要原型链上的用`hasOwnProperty()`, [来源](https://juejin.im/post/5aea83c86fb9a07aae15013b)
+- 去重, `Array.from(new Set(arr))`
+- [字符与 ascii 编码转换](https://www.jianshu.com/p/24966e1205f9), `'a'.charCodeAt()和String.fromCharCode(60)`
+- 新建一个指定长度的数组且初始化`[...Array(3)].map(i=>0)`, 如果没有 spread 展开, 那么`Array(3)`相当于`[,,,]`
 
 ## Object
 
 ---
+
+### null 与 undefined 的区别
+
+- null, 没有对象, 此处不应该有值
+- undefined, 应该有值但尚未定义
+
+> [来源](https://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
 ### isprototypeof()
 
@@ -81,7 +92,7 @@
 
 ---
 
-遍历可迭代对象的数据
+遍历可迭代对象的数据, 比如数组
 
 ## Array
 
@@ -95,6 +106,12 @@
   - 新的浅拷贝的数组实例
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+### map
+
+map 仅对数组中赋了值的索引调用回调函数, `new Array(3)`是空的
+
+- [JavaScript “new Array(n)” and “Array.prototype.map” weirdness](https://stackoverflow.com/questions/5501581/javascript-new-arrayn-and-array-prototype-map-weirdness)
 
 ## 正则
 
@@ -114,4 +131,16 @@
 
 ## toString
 
+---
+
 - [Number.prototype.toString()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/toString), 指定数字到字符串的转换基数, 2 到 36, 如果大于 10 会用字母来表示
+
+## try catch
+
+---
+
+### try catch return
+
+finally 是一定会执行的, 所以 catch 中的 return 会被 finally 的给覆盖
+
+> [来源](https://stackoverflow.com/questions/38050857/what-happen-to-return-statement-in-catch-block/38051153)

@@ -489,6 +489,8 @@ node 中事件循环的顺序, 执行完下面六个阶段算一个 tick
 
 > [来源](http://lynnelv.github.io/js-event-loop-nodejs)
 
+> [面试题：说说事件循环机制(满分答案来了)](https://www.zhihu.com/question/268004898/answer/434687563)
+
 ## 运算符优先级
 
 ---

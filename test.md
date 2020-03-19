@@ -98,11 +98,11 @@
 想玩奥日和要画画然后还有总结知识点纠结在一起, 所以三方争扯, 但我最多能容忍两个, 所以基本上就是找到知识点位置然后给个锚点就走了 😅
 
 - 开始堆积比较深入的文章了, 类别为**等不知道什么时候有空的有空再来看的文章**
-  - [css 硬件加速](http://localhost:3000/#/browser/performance?id=css-%e7%a1%ac%e4%bb%b6%e5%8a%a0%e9%80%9f)
-  - [浏览器渲染](http://localhost:3000/#/browser/browser?id=%e6%b5%8f%e8%a7%88%e5%99%a8%e6%b8%b2%e6%9f%93)
-  - [直播](http://localhost:3000/#/cn?id=rtmp)
-  - [如何测试首屏白屏时间](http://localhost:3000/#/browser/performance?id=%e5%a6%82%e4%bd%95%e6%b5%8b%e8%af%95%e9%a6%96%e5%b1%8f%e7%99%bd%e5%b1%8f%e6%97%b6%e9%97%b4)
-  - [css 层叠](http://localhost:3000/#/css?id=%e5%b1%82%e5%8f%a0%e4%b8%8a%e4%b8%8b%e6%96%87)
+  - [css 硬件加速](/browser/performance?id=css-%e7%a1%ac%e4%bb%b6%e5%8a%a0%e9%80%9f)
+  - [浏览器渲染](/browser/browser?id=%e6%b5%8f%e8%a7%88%e5%99%a8%e6%b8%b2%e6%9f%93)
+  - [直播](/basic/cn?id=rtmp)
+  - [如何测试首屏白屏时间](/browser/performance?id=%e5%a6%82%e4%bd%95%e6%b5%8b%e8%af%95%e9%a6%96%e5%b1%8f%e7%99%bd%e5%b1%8f%e6%97%b6%e9%97%b4)
+  - [css 层叠](/browser/css?id=%e5%b1%82%e5%8f%a0%e4%b8%8a%e4%b8%8b%e6%96%87)
   - JavaScript 正则迷你书
 
 ---
@@ -113,3 +113,9 @@
 - 插入 dom 与 css 的方法
 - 新增常见使用, 一般记录在方法(method)中
 - 更改了基础知识栏目, 后端栏目, 文档结构估计不会再有大的变化了
+- [2020 淘宝前端实习一面+二面](https://www.nowcoder.com/discuss/385685)
+- 大的框架打好了, **小的更新和细化应该也有一套规则**, 该考虑考虑了
+  - 最佳实践**等同于**常见使用, 业务功能如上传下载, 语法如新建指定长度且初始化的数组, 框架如通信状态同步
+  - 细化, 如 499 状态码, ca 证明过程, nodejs 多进程线程 demo 等等
+  - 新技术的实践, 如 serverless, 微前端, pwa
+  - 有意思的比如新技术的实践我可以单独写, 但是肯定要先把博客主题与插件搞定
