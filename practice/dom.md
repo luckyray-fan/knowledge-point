@@ -83,6 +83,12 @@ xhr.send();
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState)
 
+#### ajax 设置 http 头部
+
+能够设置部分头部, 有部分头部仅能由浏览器设置, 比如 cookie
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/setRequestHeader)
+
 #### fetch
 
 - 不支持 timeout

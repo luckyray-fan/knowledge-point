@@ -478,7 +478,7 @@ web worker 或者跨域的 iframe 都有自己的栈, 要通信需要 `postMessa
 
 node 的表现与浏览器差不多, 但是它依靠 v8 来解释 js, 用 libuv 引擎来实际执行
 
-node 中事件循环的顺序, 执行完下面六个阶段算一个 tick
+node 中事件循环的顺序, 执行完下面六个阶段算一个 tick, [首先检查 process.nextTick](https://zhuanlan.zhihu.com/p/37714012), 然后检查微服务队列里的 promise, 然后是下面的
 
 - timer, 检查定时器队列, 如 setTimeout
 - IO callback, 执行系统调用错误, 比如网络通信错误

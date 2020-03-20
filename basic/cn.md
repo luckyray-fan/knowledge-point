@@ -432,3 +432,13 @@ web real time communication, 源自网页即时通信, 支持浏览器进行实�
 webrtc 基于 srtp 和 udp, 可以实现点对点通信, 通信双方延时低, 可以连麦
 
 > [以上均来源于](https://www.zhihu.com/question/26038990)
+
+## socket
+
+[监听一个端口会经过](https://blog.csdn.net/jiyiqinlovexx/article/details/50959351):
+
+- 创建套接字 socket
+- 将套接字绑定到具体的地址和端口号
+- 调用 listen 开始监听
+
+主机间 tcp 通信由套接字分辨, 所以可以根据 tcp 数据包中得知属于哪个客户端, 服务端就能接收多个请求

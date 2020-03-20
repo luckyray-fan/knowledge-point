@@ -1,5 +1,19 @@
 ## 有趣的题目们
 
+### 正则
+
+#### 数字千分位切割
+
+> 字节
+
+```JavaScript
+function test(num){
+  return (num+'').replace(/(\d)(?=(?:\d{3})+$)/g,'$1,')
+}
+```
+
+> [来源](https://mrluo.life/article/detail/115)
+
 ### 原生 ajax
 
 ### 闭包
@@ -29,6 +43,16 @@
 ```
 
 ### promise
+
+#### sleep
+
+```JavaScript
+function sleep(ms){
+  return new Promise(res=>{
+    setTimeout(res,ms);
+  })
+}
+```
 
 #### 实现 shedule 调度
 
@@ -225,6 +249,24 @@ function coordinate(e) {
 
 #### 计算英文文章中出现最多的单词和次数
 
+```JavaScript
+function count(article){
+  var temArr = article.split(' ');
+  var obj = {},maxWord=temArr[0];
+  temArr.forEach(i=>{
+    if(obj[i]){
+      obj[i]+=1;
+      if(obj[i]>obj[maxword]){
+        maxword = i
+      }
+    }else{
+      obj[i]=1;
+    }
+  })
+  return {[maxword]:obj[maxword]}
+}
+```
+
 #### 二进制加法
 
 > [来源](http://zouyang1230.com/blog/archives/805)
@@ -243,6 +285,15 @@ function coordinate(e) {
 - 记住进位和数组长度
 
 > [来源](https://juejin.im/post/5d11bd7af265da1b8a4f2b27)
+
+#### 进制转换
+
+```javascript
+function test(num) {
+  var decimal = parseInt(num, 3);
+  return decimal.toString(6);
+}
+```
 
 ### 类型转换
 
@@ -428,3 +479,88 @@ for(var i = len-1;i>=0;i--){// 经典的概率论,
 ```
 
 > [来源](https://www.zhihu.com/question/27547892/answer/1064577220)
+
+### 合并乱序区间
+
+> 字节
+
+```JavaScript
+function test(intervals){
+if(intervals.length === 0||intervals.length===1)return intervals;
+  intervals = intervals.sort((i,j)=>i[0]-j[0]);
+  return intervals.slice(1).reduce((i,j)=>{
+    var last = i[i.length-1]
+   if(j[0]>last[1]){
+     i.push(j)
+   }else{
+     if(j[1]>last[1]){
+       i.pop()
+       i.push([last[0],j[1]])
+     }
+   }
+    return i;
+  },[intervals[0]])
+}
+```
+
+> [来源](https://leetcode-cn.com/problems/merge-intervals/)
+
+### 老师分饼干
+
+> 字节
+
+老师分饼干，每个孩子只能得到一块饼干，但每个孩子想要的饼干大小不尽相同。目标是尽量让更多的孩子满意。 如孩子的要求是 1, 3, 5, 4, 2，饼干是 1, 1，最多能让 1 个孩子满足。如孩子的要求是 10, 9, 8, 7, 6，饼干是 7, 6, 5，最多能让 2 个孩子满足。
+
+```javascript
+function test(cookie, children) {
+  cookie = cookie.sort();
+  children = children.sort();
+  var sum = 0,
+    i = cookie.length - 1,
+    j = children.length - 1;
+  while (i >= 0) {
+    while (j >= 0) {
+      if (cookie[i] >= children[j]) {
+        sum++;
+        i -= 1;
+        j -= 1;
+      } else {
+        j -= 1;
+      }
+    }
+  }
+  return sum;
+}
+```
+
+## 链表
+
+```JavaScript
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+```
+
+### 合并两个有序链表为一个有序
+
+> 字节
+
+```JavaScript
+function test(l1,12){
+  var tem = new ListNode();
+  var prev = tem;
+  while(l1!==null&&l2!==null){
+    if(l1.val<l2.val){
+      tem.next = l1;
+      l1 = l1.next;
+    }else{
+      tem.next = l2;
+      l2 = l2.next
+    }
+    tem = tem.next
+  }
+  tem.next = l1===null?l2:l1;
+  return prev.next;
+}
+```

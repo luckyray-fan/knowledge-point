@@ -119,3 +119,6 @@
   - 细化, 如 499 状态码, ca 证明过程, nodejs 多进程线程 demo 等等
   - 新技术的实践, 如 serverless, 微前端, pwa
   - 有意思的比如新技术的实践我可以单独写, 但是肯定要先把博客主题与插件搞定
+- [面试](https://github.com/Messiahhh/blog/tree/master/docs/mianshi)
+- [前端面试与进阶指南](https://www.cxymsg.com/guide/)
+- [字节跳动 核心广告部门 前端实习生一面](https://www.nowcoder.com/discuss/379621?type=0&order=0&pos=30&page=0)

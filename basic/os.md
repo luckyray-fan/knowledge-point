@@ -1,3 +1,11 @@
+## 内核
+
+内核管理硬件, io, 进程调度等, 而操作系统还有文件系统或者图形化界面还有用户交互等
+
+> [来源](https://www.ibm.com/developerworks/cn/linux/l-linux-kernel/)
+
+> [内核跟操作系统有什么区别](https://www.zhihu.com/question/24133268)
+
 ## 进程
 
 进程是分配资源的基本单位, 线程是独立运行和独立调度的基本单位
@@ -33,6 +41,12 @@ IPC, inter-process communication
 - 消息队列
 
 > [来源](https://www.jianshu.com/p/c1015f5ffa74)
+
+### 管道原理
+
+管道实际上是一种文件, 内容存在于内核管理中的一个缓冲区, 一端连接一个进程的输出另一端连接一个进程的输入, 如果没有信息输入端会等待, 如果满了输出端会暂停, 当两个进程都终结时管道也会自动消失
+
+> [来源](https://segmentfault.com/a/1190000009528245)
 
 ### 进程调度与线程调度
 

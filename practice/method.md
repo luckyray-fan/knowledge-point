@@ -1,10 +1,12 @@
 ## 常见使用
 
-- 进制转换, Number.prototype.toString
+- 进制转换, `Number.prototype.toString`
+  - 其他进制转十进制, `parseInt(x,2)`
 - 遍历属性`for in`, 遍历数组数据`for of`, 如果属性不想要原型链上的用`hasOwnProperty()`, [来源](https://juejin.im/post/5aea83c86fb9a07aae15013b)
 - 去重, `Array.from(new Set(arr))`
 - [字符与 ascii 编码转换](https://www.jianshu.com/p/24966e1205f9), `'a'.charCodeAt()和String.fromCharCode(60)`
 - 新建一个指定长度的数组且初始化`[...Array(3)].map(i=>0)`, 如果没有 spread 展开, 那么`Array(3)`相当于`[,,,]`
+- 对象私有变量,`obj[Symbol('test')]=1`, 这个属性是不可枚举的
 
 ## Object
 

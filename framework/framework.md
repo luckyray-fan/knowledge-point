@@ -45,3 +45,29 @@ jQuery.fn.init.prototype = jQuery.fn;
 - react, 跨平台, 组件化
 
 > [来源](https://www.jianshu.com/p/1a348132ba2a)
+
+## express
+
+**可以用来:**
+
+- 路由, 转发静态文件
+- 配置中间件, 指对请求进行处理, 比如 body-parser 处理请求体
+- 注册模板引擎
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/Introduction)
+
+### 与 koa 对比
+
+- express
+  - 文档完整, 资料多
+  - 但是还是用的 callback
+- koa
+  - 不用回调, 用 await
+
+> [来源](https://www.zhihu.com/question/38879363)
+
+### egg
+
+在 koa 基础上进一步的完善, 实现企业级的需求
+
+> [来源](https://www.zhihu.com/question/50526101)

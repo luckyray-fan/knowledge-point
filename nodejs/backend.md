@@ -1,22 +1,7 @@
-## express
+## node 源码阅读方法
 
-**可以用来:**
+熟悉 C/C++，然后了解 epoll、IOCP 使用，了解 socket 和多线程，然后边 debug 边看
 
-- 路由, 转发静态文件
-- 配置中间件, 指对请求进行处理, 比如 body-parser 处理请求体
-- 注册模板引擎
-
-> [来源](https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/Introduction)
-
-### 与 koa 对比
-
-- express
-  - 文档完整, 资料多
-  - 但是还是用的 callback
-- koa
-  - 不用回调, 用 await
-
-> [来源](https://www.zhihu.com/question/38879363)
 
 ## 爬虫
 
@@ -25,12 +10,6 @@
 - 代理池
 - 请求头
 - 下载队列
-
-## 异步模型
-
----
-
-nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的规范中规定了, 具体实现是留给了浏览器厂商
 
 ## 同构
 
@@ -92,9 +71,17 @@ nodejs 的异步是由 libuv 实现的, 浏览器中的异步模型在 html5 的
 
 ## 多进程
 
+node 用多进程单线程的形式, 为的是利用服务器的多核性能, 多进程主要特点如下:
+
+- 高性能
+- 线程安全
+- 异步非阻塞
+
 使用 cluster 模块来处理 cpu 密集型的任务, 使用`.on('message')`让父子进程通信
 
 > [来源](https://www.ibm.com/developerworks/cn/opensource/os-cn-nodejs-practice/index.html)
+
+> [js 的单线程和多进程](https://www.jianshu.com/p/1887d9b446b2)
 
 ### cluster 与 child_process
 
@@ -250,3 +237,15 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 ## crypto 加密
 
 > [来源](https://segmentfault.com/a/1190000016706501)
+
+## nginx
+
+理论上一个端口只能被一个进程监听, 如果有一个 nginx 服务器监听着 80 那么新开一个 apache 肯定不行, 但是如果 fork 一个进程那么相关的事件处理句柄 handler 也会被复制, 那么变相做到了多进程监听一个端口, nginx 就这样做到了热启动
+
+> [来源](https://zhuanlan.zhihu.com/p/34943332)
+
+> [使用 Nginx + Node.js 部署你的网站](https://www.jianshu.com/p/717f2b88d057)
+
+> [网络编程（六）：端口那些事儿](https://zhuanlan.zhihu.com/p/20365900)
+
+> [Nginx 为什么快到根本停不下来](https://zhuanlan.zhihu.com/p/108031600)
