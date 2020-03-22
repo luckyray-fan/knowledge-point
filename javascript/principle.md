@@ -474,6 +474,12 @@ web worker 或者跨域的 iframe 都有自己的栈, 要通信需要 `postMessa
 
 > [详解 JavaScript 中的 Event Loop（事件循环）机制](https://zhuanlan.zhihu.com/p/33058983)
 
+### 事件循环与浏览器渲染
+
+> [来源](https://juejin.im/entry/596d78ee6fb9a06bb752475c)
+
+#### requestAnimationFrame 的发生顺序
+
 ### node 与浏览器的区别
 
 node 的表现与浏览器差不多, 但是它依靠 v8 来解释 js, 用 libuv 引擎来实际执行

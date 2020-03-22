@@ -262,6 +262,10 @@ cookie 是由服务器生成, 保存在客户端本地的一个文件, 通过响
 
 > [这个也清晰](https://zhuanlan.zhihu.com/p/32513816)
 
+#### https 的发展过程
+
+> [来源](https://www.jianshu.com/p/c93612b3abac)
+
 #### 证书与 CA
 
 如果使用的证书没有 CA 签证, 或者未在浏览器受信用的 CA 签证, 会被提示连接的链接不是私密链接

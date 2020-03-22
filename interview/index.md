@@ -38,36 +38,31 @@ PCG 原本似乎是北京, 最近可能是看点之类的搬过来了, 深圳也
 
 #### 一面
 
-- 数组去重扁平化, 手写
+- es6, 从 6 到 10 都讲了
+- 数组去重扁平化, 都写了两种方案出来, 忘记 flat 了
 - flex, 有什么属性
-- position
-- 文本居中
-- canvas, 我说了 echart, 百度地图, 下载图片(这个我记不大清了)
-- js 继承
-- 排序, 将给入的对象数组按给定的属性排序, 值是 number 按升序, 是 string 按字母排序
-
-  ```JavaScript
-  arr.sort((i,j)=>{
-    return a.localeCompare(b);//字符串的比较
-  })
-  ```
-
-- 有什么要问的吗, 字节的技术栈, 用 node 吗
+- position, absolute 和 fixed 区别
+- 文本居中, flex 的和 line-height 的
+- canvas 的应用, 我说了 echart, 百度地图, 下载图片(这个我记不大清了)
+- js 继承, 手写了三种构造原型寄生组合
+- 排序, 将给入的对象数组按给定的属性排序, 值是 number 按升序, 是 string 按字母排序, 给定的属性用 eval 解决
+- 有什么要问的吗, 字节的技术栈, 后端有用 node 吗
 
 #### 二面
 
-- 找出数组中最大的连续子数组的和
+- 找出数组中最大的连续子数组的和, 写了点发现不太对面试官问我思路, 我慌忙改对了
 - 实现字符串的反转, [unicode 字符如何处理](http://www.alloyteam.com/2016/12/javascript-has-a-unicode-sinkhole/)
   - 因为 js 用 16 位来代表一个字符, 但是 utf-16 可以用四个字节, 所以一个 `'😀'.length == 2`, 解决方法是`Array.from(str)`
-- 二叉树结构和遍历
+- 二叉树结构和遍历, 前中后层次
 - ajax,post
-- content-type 有些什么属性, 分别在响应和请求
-- node express 如何处理 formdata
-- 中间件, koa 洋葱
+- content-type 分别在响应和请求有些什么属性
+- node express 如何处理 formdata, 扯了一下原生如何处理
+- 中间件, koa 洋葱与 express 的区别
+- webpack 概念
 - webpack loader/plugin
-- vue2 迁到 vue3 改成 proxy, 和原因
+- vue2 迁到 vue3 改成 proxy 原因
 - 问项目
-- 有什么要问的吗, node 的框架是怎样子的
+- 有什么要问的吗, 字节 node 的框架是怎样子的
 
 #### hr 面
 

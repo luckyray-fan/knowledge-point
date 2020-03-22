@@ -109,6 +109,16 @@
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
+- 能将字符串转为数组并且对 unicode 也有效 ([表情能被识别为一个字符而不是两个](http://www.alloyteam.com/2016/12/javascript-has-a-unicode-sinkhole/))
+
+### join
+
+- 对部分类型会将其转换
+- 索引仅对大于等于 0 有效
+- 类数组也可以通过 call 调用
+
+> [来源](https://mp.weixin.qq.com/s/b59DWLdnO1iy5HFD7VYJLA)
+
 ### map
 
 map 仅对数组中赋了值的索引调用回调函数, `new Array(3)`是空的

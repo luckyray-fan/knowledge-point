@@ -113,6 +113,12 @@ sourcemap 能定位 bug
 
 > [来源](https://juejin.im/post/5d0790996fb9a07f0052dbbb)
 
+### treeshaking
+
+> [来源](https://juejin.im/post/5a64724df265da3e5a575d65)
+
+> [es 和 commonjs 在 treeshaking 的不同表现](https://zhuanlan.zhihu.com/p/71098263)
+
 ## git
 
 ---
