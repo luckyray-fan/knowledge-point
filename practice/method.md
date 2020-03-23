@@ -12,6 +12,10 @@
 
 ---
 
+### v8 中的对象
+
+> [来源](https://zhuanlan.zhihu.com/p/26169639)
+
 ### null 与 undefined 的区别
 
 - null, 没有对象, 此处不应该有值
@@ -156,3 +160,7 @@ map 仅对数组中赋了值的索引调用回调函数, `new Array(3)`是空的
 finally 是一定会执行的, 所以 catch 中的 return 会被 finally 的给覆盖
 
 > [来源](https://stackoverflow.com/questions/38050857/what-happen-to-return-statement-in-catch-block/38051153)
+
+## javascript 与 unicode
+
+> [来源](https://flaviocopes.com/javascript-unicode/)

@@ -114,6 +114,8 @@ DOM 针对 HTML 和 XML 提供的 API, 也就是能够操作与 HTML 节点相�
 
 ### 元素位置
 
+- [Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+
 > [来源](https://www.cnblogs.com/dong-xu/p/7150715.html)
 
 ### 事件

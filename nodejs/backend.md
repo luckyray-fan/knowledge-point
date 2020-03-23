@@ -60,6 +60,36 @@
 
 > [来源](https://www.zhihu.com/question/28557115)
 
+### graphql 实践
+
+leetcode 的前后端交互就是通过 graphql, 他们的相关请求定义如下:
+
+```JavaScript
+//request
+{
+  operationName:'userStatus',
+  variables;{},
+  query:`query userStatus {
+      userStatus {
+            socketToken
+             __typename
+      }↵}↵`
+}
+//response
+{
+  data:{
+    userStatus:{
+      socketToken:'',
+      __typename:''
+    }
+  }
+}
+```
+
+可以看到查询和其结果拥有几乎一样的结构
+
+> [来源](https://graphql.cn/learn/)
+
 ## 中间件
 
 ---
@@ -248,3 +278,7 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 > [网络编程（六）：端口那些事儿](https://zhuanlan.zhihu.com/p/20365900)
 
 > [Nginx 为什么快到根本停不下来](https://zhuanlan.zhihu.com/p/108031600)
+
+## BFF
+
+[backend for frontend](https://zhuanlan.zhihu.com/p/115561839)

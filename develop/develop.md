@@ -1,5 +1,11 @@
 ## chrome devtool
 
+### debug
+
+可以 debug formatted 的 js
+
+如果 pause on subtree modifications 点选了, 那么 blackbox 就不会生效
+
 ### performance
 
 如果看到以前的文章提到 timeline, 现在改为了 performance

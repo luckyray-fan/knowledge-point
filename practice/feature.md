@@ -1,3 +1,41 @@
+## 图片懒加载
+
+- 监听视窗的高度, 到了就运行函数
+- 然后将图片的默认 src 改为需要的 src, [或者 lazyload 属性](https://juejin.im/entry/5bec354cf265da61407e77d9)
+- 注意节流
+
+> [来源](https://juejin.im/post/583b10640ce463006ba2a71a)
+
+## 拖拽
+
+[强制开启 layer 加速](https://www.jianshu.com/p/88278b1516fe)
+
+```JavaScript
+function() {
+      var leet = document.getElementsByClassName('lk-leetcode')[0];
+      var drag = false,
+        left,
+        top;
+      leet.addEventListener('mousedown', (e) => {
+        drag = true;
+        var moveElemRect = leet.getBoundingClientRect();
+        left = e.clientX - moveElemRect.left; //鼠标按下时的位置与鼠标与元素边界的位置
+        top = e.clientY - moveElemRect.top;
+      });
+      leet.addEventListener('mousemove', (e) => {
+        if (drag) {
+          var moveX = e.clientX - left,
+            moveY = e.clientY - top;
+          leet.style.transform = `translate3d(${moveX}px,${moveY}px,0)`;
+        }
+      });
+      leet.addEventListener('mouseup', (e) => {
+        drag = false;
+      });
+    }
+```
+
+> [来源](https://www.zhihu.com/question/55463211)
 
 ## 防抖节流
 
