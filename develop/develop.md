@@ -1,3 +1,7 @@
+## 常见使用
+
+- [代码覆盖率](https://juejin.im/post/5e796ec1e51d45271e2a9af9#heading-2)
+
 ## chrome devtool
 
 ### debug

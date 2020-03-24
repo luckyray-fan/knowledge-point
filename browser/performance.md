@@ -4,7 +4,11 @@
 
 > [来源](https://mp.weixin.qq.com/s/C2Zx3KPNPkgj-aHnOY43Iw)
 
+> [项目不知道如何做性能优化？不妨试一下代码分割](https://juejin.im/post/5e796ec1e51d45271e2a9af9)
+
 ## 优化手段
+
+//请假, 把时间放到一天 //去北京租房的时间 //全勤, 大小周 //中关村海淀
 
 ---
 

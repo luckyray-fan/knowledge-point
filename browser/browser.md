@@ -160,6 +160,10 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 > [JavaScript 是如何工作的: CSS 和 JS 动画底层原理及如何优化它们的性能](https://segmentfault.com/a/1190000017927665)
 
+### css transform 字体不清晰
+
+> [来源](https://blog.csdn.net/linysuccess/article/details/101213856)
+
 ## 回流重绘
 
 ---

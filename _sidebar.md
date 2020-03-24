@@ -35,3 +35,6 @@
   - [可能的回答](interview/nothing)
   - [算法](interview/algorithm)
 - [发展历程](test)
+- 生活
+  - [常识](life/common)
+  - [目标](life/heart)
