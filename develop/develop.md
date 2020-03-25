@@ -16,6 +16,12 @@
 
 > [来源](https://zhuanlan.zhihu.com/p/29879682)
 
+#### 火焰图
+
+通过查看图中函数的调用运行情况, 来查看 cpu 耗时在函数上的具体情况, 可用于判断性能问题
+
+> [来源](https://zhuanlan.zhihu.com/p/69165260)
+
 ### network
 
 - 请求比较多的情况下, 用[filter](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter)过滤部分, 使用`-png`就可以去掉带有 png 的文件, [is a way filter requests](https://stackoverflow.com/questions/14637278/is-there-a-way-to-filter-network-requests-using-google-chrome-developer-tools)

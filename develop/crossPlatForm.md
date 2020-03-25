@@ -54,6 +54,10 @@ chrome 原团队成员提出的跨平台的方案, 一套程序等于全平台
 
 > [来源](https://developer.mozilla.org/zh-CN/docs/WebAssembly)
 
+### 实践
+
+> [来源](https://zhuanlan.zhihu.com/p/112223727)
+
 ## pwa
 
 progressive web apps, 渐进式 web 应用, 就是跨平台可离线工作的 web 应用程序

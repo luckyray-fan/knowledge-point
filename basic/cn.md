@@ -129,6 +129,7 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
   - 499, 客户端主动断开连接, 可能是跨域请求被拦截, [也可能是服务器被攻击](https://segmentfault.com/q/1010000004193105)
 - 5xx, 代表服务器处理请求的过程中有错误, 也可能是无法完成请求的处理
   - [504 bad gateway](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/504), 代理服务器的上游没法在规定时间内给出响应
+  - [cloudflare 524](https://stackoverflow.com/questions/43489801/cloudflare-throws-524-an-error-on-my-server), cloudflare 可以请求到上游服务器但是上游服务器太长时间不应答, 超过了 timeout
 
 比较清晰具体的也可以看[菜鸟教程里的](https://www.runoob.com/http/http-status-codes.html)
 
@@ -153,6 +154,7 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
 - 地址
   - Host, 请求的服务器的域名
   - Origin, 发起请求的域名
+  - [referer](http://www.ruanyifeng.com/blog/2019/06/http-referer.html), 请求来源的网站地址, 可用于用户跟踪
 - 交换标准
   - Accept, 可以接受的媒体类型
   - Accept-Encoding, 接受的编码方法

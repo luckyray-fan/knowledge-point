@@ -89,6 +89,18 @@ IPC, inter-process communication
 
 > [多线程是否能加快处理速度](https://blog.csdn.net/zollty/article/details/53944539)
 
+### 线程安全
+
+线程操作数据需要从内存取出放入寄存器, 然后执行操作后放回内存, 如果执行的操作还没放回内存, 此时切换另一条线程, 那么数据就没有更新
+
+> [来源](https://blog.csdn.net/will130/article/details/48714343)
+
+## cpu
+
+### cpu 占用率计算方法
+
+> [来源](https://www.cnblogs.com/gatsby123/p/11127158.html)
+
 ## 字符编码
 
 ### 常见乱码

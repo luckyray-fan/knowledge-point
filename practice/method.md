@@ -7,6 +7,8 @@
 - [字符与 ascii 编码转换](https://www.jianshu.com/p/24966e1205f9), `'a'.charCodeAt()和String.fromCharCode(60)`
 - 新建一个指定长度的数组且初始化`[...Array(3)].map(i=>0)`, 如果没有 spread 展开, 那么`Array(3)`相当于`[,,,]`
 - 对象私有变量,`obj[Symbol('test')]=1`, 这个属性是不可枚举的
+- [js 判断空对象](https://blog.csdn.net/qq_38627581/article/details/77353015)
+  - json.stringify, Object.getownpropertyNames, Object.keys
 
 ## Object
 
@@ -35,6 +37,15 @@
 > [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
 
 ### Object.getOwnPropertyDescriptor()
+
+### getownpropertyNames()
+
+- 参数
+  - obj
+- 返回
+  - 给定对象的自身属性对应的字符串数组, 包括可枚举和不可枚举
+
+> [来源](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
 
 ### Object.defineProperty()
 
@@ -88,7 +99,7 @@
 
 ---
 
-以任意顺序遍历一个对象的除 `symbol` 外的可枚举属性, **包括原型上的**
+以任意顺序遍历一个对象的除 `symbol` 外的**可枚举**属性, **包括原型上的**
 
 如果仅迭代自身的属性, 使用 `hasOwnProperty()` 等
 

@@ -124,3 +124,4 @@
 - [字节跳动 核心广告部门 前端实习生一面](https://www.nowcoder.com/discuss/379621?type=0&order=0&pos=30&page=0)
 - [阿里前端攻城狮们写了一份前端面试题答案，请查收](https://juejin.im/post/5e7426d15188254967069c00)
 - [腾讯视频 Web 前端面经（一面、二面、HR 面）](https://www.nowcoder.com/discuss/388982?type=2)
+- [字节跳动 头条前端实习面经 3 技术+1hr 已拿 offer](https://www.nowcoder.com/discuss/373475?type=2)

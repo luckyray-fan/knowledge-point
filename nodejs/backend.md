@@ -282,3 +282,7 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 ## BFF
 
 [backend for frontend](https://zhuanlan.zhihu.com/p/115561839)
+
+## 分布式
+
+> [来源](https://zhuanlan.zhihu.com/p/41118827)
