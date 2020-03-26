@@ -8,3 +8,10 @@
 - 没有稳定的缴纳, 各个城市都转悠了, 回到户口所在地办理退休待遇
 
 > [来源](https://zhuanlan.zhihu.com/p/33379047)
+
+### BS CS 架构
+
+- BS, browser server 结构
+- CS, client server 结构
+
+> [来源](https://www.zhihu.com/question/21803672)

@@ -125,3 +125,7 @@
 - [阿里前端攻城狮们写了一份前端面试题答案，请查收](https://juejin.im/post/5e7426d15188254967069c00)
 - [腾讯视频 Web 前端面经（一面、二面、HR 面）](https://www.nowcoder.com/discuss/388982?type=2)
 - [字节跳动 头条前端实习面经 3 技术+1hr 已拿 offer](https://www.nowcoder.com/discuss/373475?type=2)
+- 预先学习一下 css 并深入准备写博客主题
+- [ ] [阿里淘系前端面经(五轮技术面)](https://juejin.im/post/5e7b47f65188255e205e8037)
+- [学习前端一些不错的教程](https://www.zhihu.com/question/22951927/answer/1071328169)
+  - css √, js, advanced css √, react, webpack, test, typescript √, nodejs
