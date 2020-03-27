@@ -571,4 +571,6 @@ function test(l1,12){
 
 > 阿里
 
+根据贪心, 再配上双指针
+
 > [来源](https://leetcode-cn.com/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode/)

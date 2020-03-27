@@ -129,3 +129,4 @@
 - [ ] [阿里淘系前端面经(五轮技术面)](https://juejin.im/post/5e7b47f65188255e205e8037)
 - [学习前端一些不错的教程](https://www.zhihu.com/question/22951927/answer/1071328169)
   - css √, js, advanced css √, react, webpack, test, typescript √, nodejs
+- [实习转正 1 个月了，记录下从实习到校招的面试历程](https://www.jianshu.com/p/836982579a06), 包含校招, 阿里, 腾讯, 网易, 美团实习

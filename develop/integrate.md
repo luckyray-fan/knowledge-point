@@ -154,6 +154,11 @@ sourcemap 能定位 bug
 
 > [前端异常监控解决方案研究](https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/)
 
+### 错误上报方案
+
+- 前端
+- 后端
+
 ## typescript
 
 短期理解就是提供了各种类型吧

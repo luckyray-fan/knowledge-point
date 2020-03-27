@@ -15,3 +15,11 @@
 - CS, client server 结构
 
 > [来源](https://www.zhihu.com/question/21803672)
+
+## 合同
+
+### 竞业协议
+
+在工作离职半年内不得跳槽到有竞争关系的公司, 一般有指定
+
+> [来源](https://zhuanlan.zhihu.com/p/75327767)
