@@ -130,3 +130,13 @@
 - [学习前端一些不错的教程](https://www.zhihu.com/question/22951927/answer/1071328169)
   - css √, js, advanced css √, react, webpack, test, typescript √, nodejs
 - [实习转正 1 个月了，记录下从实习到校招的面试历程](https://www.jianshu.com/p/836982579a06), 包含校招, 阿里, 腾讯, 网易, 美团实习
+- 增加 typescript 语言高亮支持
+- 差不多要入职了, 准备一下可能性
+  - 可能秋招还是会参加一下
+    - 调查秋招时有些什么样的东西是优势, 比如: 项目, github pr
+    - 保持每天刷 leetcode
+    - 调查应该深入了解一些什么东西
+  - 学习方面
+    - typescript, react 相关的所有东西
+    - 博客主题什么的用新学的东西重写一遍
+    - 其他什么项目先暂且放一边吧, 写些可以放在简历上的项目
