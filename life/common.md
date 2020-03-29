@@ -23,3 +23,14 @@
 在工作离职半年内不得跳槽到有竞争关系的公司, 一般有指定
 
 > [来源](https://zhuanlan.zhihu.com/p/75327767)
+
+## 工具
+
+### mac pro
+
+- 从 windows 到 mac
+  - 注册 apple id
+  - 同步 icloud 文件
+  - 更改用户名, 用户头像,背景
+  - 更改任务坞, 安装网易云, qq, vscode
+  - 各种快捷键, 文件夹位置等

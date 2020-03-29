@@ -202,7 +202,7 @@ babel 中的继承实现也就是寄生组合类
 ---
 
 - set, 类数组
-- map, 键值对, 键可以不是字符串,还可以是对象
+- [map](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map), 键值对, 键可以不是字符串,还可以是对象, 能记住插入的顺序
 - weakmap, 仅支持对象作为键值, 并且弱引用
 
 > [来源](https://juejin.im/post/5acc57eff265da237f1e9f7c)

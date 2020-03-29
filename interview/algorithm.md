@@ -132,3 +132,7 @@ next 数组中找到相应的前缀
 一般就是堆
 
 > 第 k 大的数
+
+### 单调栈
+
+> 最小栈 [来源](https://leetcode-cn.com/problems/min-stack/solution/shi-yong-fu-zhu-zhan-tong-bu-he-bu-tong-bu-python-/)

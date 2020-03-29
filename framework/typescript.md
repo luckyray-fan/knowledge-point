@@ -1,4 +1,4 @@
-> 整篇文章由 [understanding typescript](https://www.udemy.com/course/understanding-typescript/) 而来, 整个课程约为 14 小时, 预计在入职前学完, 仅记录部分关键内容
+> 整篇文章由 [understanding typescript](https://www.udemy.com/course/understanding-typescript/) 而来, 整个课程约为 14 小时, <del>预计在入职前学完</del> 预计一周内学完, 仅记录部分关键内容
 
 > 原文对于已经有基础的来说比较啰嗦, 所以我部分章节跳着看
 
@@ -120,14 +120,40 @@ add(n); //不会报错
 - never 类型
   - 用于函数, 对于不会执行到下一步的函数使用, 如抛出异常或者无限循环
 
-## typescript module
+## typescript 配置
 
 ### watch mode
 
 - 每次使用`tsc`重新编译太过于麻烦, 可以使用观察模式来进行编译 `tsc xx.ts --watch`, 缩写可以用`tsc -w`
-- [对整个项目进行编译](https://alligator.io/typescript/new-project/), 执行`tsc --init`
+- 对整个项目进行编译, 执行`tsc --init`
   - 生成 tsconfig.json
   - 指定包含或者排除的文件, tsconfig 中`exclude:[],include:[]`
     - 可以使用通配符, 路径也可以 `**/*.dev.ts`, node_modules 默认不包括
     - 如果使用 include, 不在名单上的都不会编译
   - 配置编译对象
+    - target
+    - module
+    - lib, ts 默认 es, dom, dom.iterable, scripthost
+  - 对其他 js 文件的处理, allowjs, checkjs, jsx 等
+  - sourcemap, 对应的 js 位置, 可用于 debug
+  - rootdir, outdir
+  - noemitonerror, 设置为 false 即使有 error 也会生成文件
+  - 严格编译, 包含许多小的字段
+  - 代码质量检测
+    - 未使用的局部变量
+    - 未使用的参数
+    - 包含隐式的返回, 即代码分支中有一条或多条没有明确指定返回的数值
+  - 实验字段
+- [tslint](https://alligator.io/typescript/new-project/)
+  - vscode 安装相关拓展, 同时`npm install -g tslint`
+  - 安装喜欢的风格并配置, 比如 airbnb
+  - 可以用 google typescript style 来新建一个 ts 项目
+- [和 webpack 集成](http://webpack.docschina.org/guides/typescript/)
+
+### debug
+
+- tscofig 中设置 sourcemap 为 true 就可以在 chrome 中 debug
+
+- sourcemap, 然后设置 vscode 的 debug 加上 chrome 扩展
+
+> 感觉

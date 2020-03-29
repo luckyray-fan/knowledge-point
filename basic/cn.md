@@ -151,9 +151,9 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
   - Content-Type
     - 请求的时候可以设置为 multiple/form-data, 注意此时 hearder 的头需要指定与 formData 相同的 boundary, 最好把 formData 的 headers 直接赋值给它, 否则上传的文件无法识别
   - Content-Disposition: 指示回复的内容该以何种形式展示
-- 地址
+- 地址, [三者的区别](https://www.jianshu.com/p/1f9c71850299)
   - Host, 请求的服务器的域名
-  - Origin, 发起请求的域名
+  - Origin, 发起请求的域名, 一般用来 cors 检测
   - [referer](http://www.ruanyifeng.com/blog/2019/06/http-referer.html), 请求来源的网站地址, 可用于用户跟踪
 - 交换标准
   - Accept, 可以接受的媒体类型
