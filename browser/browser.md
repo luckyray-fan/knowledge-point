@@ -356,6 +356,12 @@ the document obect model, 作为规范定义了 html 的操作的编程接口
   - 如果文件一秒内变了多次或者仅仅是打开查看了, 那么用 last-modified 就和期望行为不一致 , 而且如果采用了负载均衡, 不同服务器生成的 last-modified 也有可能不一致
 - 如果强制缓存生效直接缓存, 否则协商缓存, 如果服务器什么缓存也没设置, 浏览器可能会用响应头的 Date 减 last-modified 值的 10% 来作为缓存时间
 
+### 用户行为与缓存
+
+- 地址栏输入, 查找 disk cache, 没有就发出网络请求
+- 普通刷新, memory cache , 然后查找 disk cache
+- 强制刷新, 不适用浏览器缓存
+
 ### ajax 取消缓存
 
 - setRequestHeader("If-Modified-Since","0")

@@ -42,6 +42,8 @@ chrome 原团队成员提出的跨平台的方案, 一套程序等于全平台
 
 ### dart
 
+flutter 采用的编程语言
+
 > [来源](https://www.zhihu.com/question/268004898/answer/434687563)
 
 ## Hybrid
@@ -52,9 +54,11 @@ chrome 原团队成员提出的跨平台的方案, 一套程序等于全平台
 
 ## webassembly
 
+让其他语言编写的程序能以原生的速度运行在浏览器中, 与 js 共存
+
 > [来源](https://developer.mozilla.org/zh-CN/docs/WebAssembly)
 
-### 实践
+### webassembly 实践
 
 > [来源](https://zhuanlan.zhihu.com/p/112223727)
 
@@ -71,6 +75,8 @@ progressive web apps, 渐进式 web 应用, 就是跨平台可离线工作的 we
 ## 微前端
 
 > [来源](https://tech.meituan.com/2018/09/06/fe-tiny-spa.html)
+
+> [实践](https://juejin.im/post/5d8adb8ff265da5ba12cd173)
 
 ## react native
 

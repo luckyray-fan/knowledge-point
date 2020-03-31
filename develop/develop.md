@@ -69,3 +69,9 @@
 - `site:xxx.com`, 在指定的网站中搜索, 我看有些偷懒的网站没有自己的搜索系统, 就用用谷歌的
 
 > [Google Hacking————你真的会用 Google 吗](https://zhuanlan.zhihu.com/p/22161675)
+
+## 远程桌面
+
+- chrome remote desktop, 用浏览器来整这个活
+- microsoft remote desktop, 家庭版的 windows 不支持, rdpwrap 似乎不支持我的版本
+- teamviewer, 没用过

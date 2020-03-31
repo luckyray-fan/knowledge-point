@@ -235,6 +235,12 @@ var c1 = create(o); //这样就继承o了
 
 > [来源](https://github.com/mqyqingfeng/Blog/issues/9)
 
+#### 闭包与逃逸分析
+
+从当前函数外部课访问某个对象, 即该对象逃逸了
+
+> [来源](https://segmentfault.com/a/1190000011413430)
+
 ### 立即执行函数
 
 利用运算符的优先级, 将相邻的 js 语句运算, 运算的同时也就执行定义的匿名函数
