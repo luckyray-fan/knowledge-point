@@ -34,6 +34,11 @@ load 只触发在 window 上
 
 > [来源](https://jerryzou.com/posts/cookie-and-web-storage/)
 
+### localstorage 存储 js 文件
+
+> [来源](https://www.zhihu.com/question/28467444)
+> [利用localStorage本地储存js文件](https://segmentfault.com/a/1190000005770330)
+
 ## BOM
 
 浏览器对象模型, 针对的是浏览器, 能够控制浏览器的行为

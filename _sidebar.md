@@ -9,7 +9,8 @@
   - [ECMAScript](javascript/es6)
   - [对象与方法](javascript/method)
 - 后端
-  - [Nodejs](nodejs/backend)
+  - [Nodejs](backend/nodejs)
+  - [Linux](backend/nodejs)
 - 框架与库
   - [vue](framework/vue)
   - [react](framework/react)

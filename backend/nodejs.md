@@ -286,3 +286,18 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 ## 分布式
 
 > [来源](https://zhuanlan.zhihu.com/p/41118827)
+
+## npm
+
+### 配置文件
+
+可以配置 npm 安装时选择的仓库等
+
+- [npmrc](https://github.com/Kimi-Gao/Program-Blog/issues/135), npm install 时设置仓库
+- [npmignore](), 忽视文件, 发布 npm 包时不进行上传
+
+### nvm
+
+用于 node 切换版本, 如果出现 command not found, 那么使用 `source ~/.bash_profile` 来指定环境变量
+
+> [来源](https://github.com/nvm-sh/nvm/blob/master/README.md)

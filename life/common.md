@@ -34,3 +34,13 @@
   - 更改用户名, 用户头像,背景
   - 更改任务坞, 安装网易云, qq, vscode
   - 各种快捷键, 文件夹位置等
+
+### mac 终端美化
+
+- 主题设置
+- 颜色设置
+  - 可以设置输出的颜色和主机名字路径的颜色
+  - 设置好颜色后, 如果终端默认路径和用户路径不同, 需要 `source ~/.bash_profile` 让其生效
+
+> [来源](https://1ili.github.io/2018/04/19/my-terminal-confing/)
+> [让MacOS的终端靓起来，给MacOS终端CLI添加颜色](https://zhuanlan.zhihu.com/p/60880207)
