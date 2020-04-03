@@ -28,6 +28,29 @@
 
 > [Getting started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.html)
 
+### 分支
+
+如果要开发一个功能需要几天, 但是如果每天上传一次其他人就比较难以工作, 如果一次性上传那么有可能别人改动了部分内容 pull 的时候之前的就会全部丢失, 所以可以用一个分支
+
+- [brach](https://blog.csdn.net/u014540717/article/details/54314126), 列出当前的分支
+- checkout, 选择某一条分支, 切出一条分支
+
+> [来源](https://blog.csdn.net/YJG7D314/article/details/104551896#5__201)
+
+#### 整合不同分支
+
+- merge
+- [rebase](http://jartto.wang/2018/12/11/git-rebase/), 可以让 commit 记录比较干净
+  - 合并 commit
+  - 合并分支, 确保这条分支上只有自己用
+  - [git pull --rebase](https://www.cnblogs.com/wangiqngpei557/p/6056624.html)
+
+### 子模块
+
+- submodule, 在某个项目中工作的时候需要使用另一个 git 仓库时使用, 会生成一个 .gitmodules 文件来保存子模块的信息, 可用于新旧项目
+
+> [来源](https://www.jianshu.com/p/9000cd49822c)
+
 ## postman
 
 测试 api 接口

@@ -293,11 +293,48 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 可以配置 npm 安装时选择的仓库等
 
-- [npmrc](https://github.com/Kimi-Gao/Program-Blog/issues/135), npm install 时设置仓库
-- [npmignore](), 忽视文件, 发布 npm 包时不进行上传
+- [.npmrc](https://github.com/Kimi-Gao/Program-Blog/issues/135), npm install 时设置仓库
+- [.npmignore](https://zhuanlan.zhihu.com/p/31875370), 忽视文件, 发布 npm 包时不进行上传
 
 ### nvm
 
 用于 node 切换版本, 如果出现 command not found, 那么使用 `source ~/.bash_profile` 来指定环境变量
 
 > [来源](https://github.com/nvm-sh/nvm/blob/master/README.md)
+
+### npx
+
+- 运行时到 node_modules 的 .bin 文件和 \$path 环境变量中检查命令
+- 如果 npx 后面的模块无法找到就会下载一个同名的模块, 然后执行, 但是该模块必须要 package.json 和入口脚本
+
+> [来源](https://www.ruanyifeng.com/blog/2019/02/npx.html)
+
+### npm run
+
+执行 node 的 scripts, 会默认将 `.bin` 文件夹加入到环境变量中
+
+> [来源](https://www.cnblogs.com/HYZhou2018/p/12195670.html)
+
+### require 的查找规则
+
+- 如果是内部模块直接返回名字
+- 查找 node_modules 父文件夹的 node_modules
+- 找到的话返回 package.json 中 main 字段的路径
+
+
+> [来源](https://juejin.im/post/5d84456851882556f33d5fb0)
+
+#### require 内部实现
+
+
+### node_modules
+
+- [.bin](https://juejin.im/post/5ab3f77df265da2392364341#heading-16), 包含能够被执行的文件
+- [@scope](https://www.jianshu.com/p/ac5b5f65320b), 把相关模块放在一块组织到一起
+
+文件结构
+- npm3 之前, 每个依赖安装自己的依赖
+- 之后, 扁平化结构, 尽量将依赖包放到一级, 如果版本不同才会放在依赖文件夹下
+- npm5, 多了一个 package-lock.json 的文件, 用来锁定依赖安装的结构, 只要有这份文件就能安装一模一样的 node_modules
+
+> [来源](https://juejin.im/post/5ab3f77df265da2392364341#heading-4)

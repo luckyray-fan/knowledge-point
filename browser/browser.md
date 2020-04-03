@@ -215,6 +215,12 @@ img 标签默认是行内元素, 所以宽高取决于其本身大小, 处理方
 
 > [来源](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)
 
+### about:blank
+
+about 用来指代浏览器的内部, blank 指的是打开一个完全空白的页面, 该页面来自浏览器内部而非网络
+
+> [来源](https://www.howtogeek.com/656466/what-is-aboutblank-and-how-do-you-remove-it/)
+
 ## 跨域请求
 
 ---
