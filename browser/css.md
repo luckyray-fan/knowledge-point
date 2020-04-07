@@ -1,3 +1,36 @@
+## css 使用案例
+
+---
+
+- 禁用鼠标事件, pointer-events
+- 禁止用户选择, user-select
+- 条纹网络
+  - nth-child
+  - linear-gradient
+- 修改 chrome 记住密码后自动填充表单的黄色背景
+
+  ```css
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    background-color: rgb(250, 255, 189); /* #FAFFBD; */
+    background-image: none;
+    color: rgb(0, 0, 0);
+  }
+  ```
+
+- 让页面字体变清晰, 变细 `-webkit-font-smoothing: antialiased;`
+- 让 overflow:scroll 平滑滚动 `-webkit-overflow-scrolling: touch;`
+
+> [来源](https://juejin.im/post/5d8989296fb9a06b1f147070)
+
+- 高度随宽度等比例
+  - 隐藏图片
+  - 相同的单位 vmin
+  - padding-bottom
+
+> [来源](https://segmentfault.com/a/1190000006631310)
+
 ## css 视觉格式化模型
 
 ---
@@ -407,39 +440,6 @@ rem 相对于根元素的 font-size, 可以用 js 来动态控制
 link 属于 XHTML 标签, 页面加载时加载样式权重高于@import, @import 只能页面加载完后加载
 
 link 除了加载 css 还能定义 rss, 定义 rel 链接
-
-## css 使用案例
-
----
-
-- 禁用鼠标事件, pointer-events
-- 禁止用户选择, user-select
-- 条纹网络
-  - nth-child
-  - linear-gradient
-- 修改 chrome 记住密码后自动填充表单的黄色背景
-
-  ```css
-  input:-webkit-autofill,
-  textarea:-webkit-autofill,
-  select:-webkit-autofill {
-    background-color: rgb(250, 255, 189); /* #FAFFBD; */
-    background-image: none;
-    color: rgb(0, 0, 0);
-  }
-  ```
-
-- 让页面字体变清晰, 变细 `-webkit-font-smoothing: antialiased;`
-- 让 overflow:scroll 平滑滚动 `-webkit-overflow-scrolling: touch;`
-
-> [来源](https://juejin.im/post/5d8989296fb9a06b1f147070)
-
-- 高度随宽度等比例
-  - 隐藏图片
-  - 相同的单位 vmin
-  - padding-bottom
-
-> [来源](https://segmentfault.com/a/1190000006631310)
 
 ## css 变量
 

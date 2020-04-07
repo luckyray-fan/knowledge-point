@@ -172,3 +172,9 @@ sourcemap 能定位 bug
 - 纯手写
 - var, @import
 - 预处理器
+
+## lint 代码检查
+
+> [来源](https://segmentfault.com/a/1190000009546913)
+
+> [eslint+husky+prettier+lint-staged 提升前端应用质量](https://juejin.im/post/5c67fcaae51d457fcb4078c9)

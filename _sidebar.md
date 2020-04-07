@@ -23,7 +23,7 @@
   - [项目](practice/project)
 - 开发
   - [工程化](develop/integrate)
-  - [开发工具与插件](develop/develop)
+  - [开发工具与插件](develop/tool)
   - [跨平台](develop/crossplatform)
   - [最佳实践](develop/feature)
   - [设计模式](develop/designpattern)
