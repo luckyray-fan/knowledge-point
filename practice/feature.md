@@ -1,3 +1,14 @@
+## 前端异常检测
+
+## 前端录屏
+
+- 网页转换为 canvas 再传帧到后台
+- 记录事件, 重放
+
+> [来源](https://zhuanlan.zhihu.com/p/37182714)
+
+> [这个前端录屏原理是怎么实现的](https://www.v2ex.com/t/470507)
+
 ## 图片懒加载
 
 - 监听视窗的高度, 到了就运行函数
@@ -48,7 +59,7 @@ function() {
 ```javascript
 function debounce(fn, wait) {
   var timeout = null;
-  return function() {
+  return function () {
     if (timeout !== null) clearTimeout(timeout);
     timeout = setTimeout(fn.bind(this), wait, ...arguments);
   };
@@ -60,7 +71,7 @@ function debounce(fn, wait) {
 ```javascript
 function throttle(fn, wait) {
   var prev = Date.now();
-  return function() {
+  return function () {
     var now = Date.now();
     if (now - prev >= wait) {
       fn.apply(this, arguments);
