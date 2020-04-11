@@ -32,14 +32,32 @@
 
 > [Getting started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.html)
 
+### 查看 git 配置
+
+git config --global --list
+
+> [来源](https://www.cnblogs.com/merray/p/6006411.html)
+
 ### 分支
 
 如果要开发一个功能需要几天, 但是如果每天上传一次其他人就比较难以工作, 如果一次性上传那么有可能别人改动了部分内容 pull 的时候之前的就会全部丢失, 所以可以用一个分支
 
 - [brach](https://blog.csdn.net/u014540717/article/details/54314126), 列出当前的分支
 - checkout, 选择某一条分支, 切出一条分支
+- [pull origin/xxx,](https://blog.csdn.net/carfge/article/details/79691360) 拉取某个分支
 
 > [来源](https://blog.csdn.net/YJG7D314/article/details/104551896#5__201)
+
+#### git 中 origin 和 master 的含义
+
+- origin, 默认的远程仓库的名字
+- master, 默认的分支名字
+
+> [来源](https://www.zhihu.com/question/27712995)
+
+#### 分支合并
+
+> [来源](https://blog.csdn.net/wangjia55/article/details/8791195)
 
 #### 整合不同分支
 
@@ -64,6 +82,11 @@
 - gitlen
 - live server
 - prettier
+
+### 快捷键
+
+- [返回上一个光标](https://blog.csdn.net/M_N_N/article/details/84581840), 可以用来很方便的跳转
+- 左右括号跳转
 
 ## chrome devtool
 

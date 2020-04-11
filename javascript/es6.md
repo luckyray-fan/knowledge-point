@@ -128,6 +128,12 @@ a = (_readOnlyError("a"), 2);
 
 > [来源](https://bambielli.com/til/2017-04-04-let-transpilation/) 就讲了块作用域...
 
+#### import 后的变量名无法在 devtool 中 watch
+
+因为 babel 将 import 后的变量名转了个名字, 所以无法检测到
+
+> [来源](https://stackoverflow.com/questions/49903360/cant-see-watch-expression-in-chrome-dev-tools-with-import-module)
+
 ## class
 
 ---
@@ -170,7 +176,7 @@ let B = class B1 {
 - 可计算成员名称
 
 ```javascript
-let m = '123' + a;
+let m = "123" + a;
 class A {
   constructor() {}
   [m]() {}

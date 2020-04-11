@@ -9,6 +9,7 @@
 - 对象私有变量,`obj[Symbol('test')]=1`, 这个属性是不可枚举的
 - [js 判断空对象](https://blog.csdn.net/qq_38627581/article/details/77353015)
   - json.stringify, Object.getownpropertyNames, Object.keys
+- [去除数组中的某个元素](https://segmentfault.com/q/1010000011726114), filter 或者 findindex 然后 splice
 
 ## Object
 

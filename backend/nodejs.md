@@ -289,6 +289,10 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 ## npm
 
+### 常见使用
+
+- [查看全局安装的包](https://www.phpsong.com/2257.html), npm list -g --depth 0
+
 ### 配置文件
 
 可以配置 npm 安装时选择的仓库等
@@ -301,6 +305,10 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 用于 node 切换版本, 如果出现 command not found, 那么使用 `source ~/.bash_profile` 来指定环境变量
 
 > [来源](https://github.com/nvm-sh/nvm/blob/master/README.md)
+
+#### nvm 使用默认的 node 版本
+
+nvm alias default v5.0.0
 
 ### npx
 
@@ -321,11 +329,9 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 - 查找 node_modules 父文件夹的 node_modules
 - 找到的话返回 package.json 中 main 字段的路径
 
-
 > [来源](https://juejin.im/post/5d84456851882556f33d5fb0)
 
 #### require 内部实现
-
 
 ### node_modules
 
@@ -333,8 +339,13 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 - [@scope](https://www.jianshu.com/p/ac5b5f65320b), 把相关模块放在一块组织到一起
 
 文件结构
+
 - npm3 之前, 每个依赖安装自己的依赖
 - 之后, 扁平化结构, 尽量将依赖包放到一级, 如果版本不同才会放在依赖文件夹下
 - npm5, 多了一个 package-lock.json 的文件, 用来锁定依赖安装的结构, 只要有这份文件就能安装一模一样的 node_modules
 
 > [来源](https://juejin.im/post/5ab3f77df265da2392364341#heading-4)
+
+#### package-lock.json 应该提交吗
+
+> [来源](https://www.zhihu.com/question/264560841)
