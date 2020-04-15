@@ -1,5 +1,16 @@
 ## 常见使用
 
+### 新建项目统一规范
+
+- 代码检查, eslint
+- 代码格式化, prettier
+- git
+  - 提交, commitlizen
+  - 查看, gitlen 插件
+- [模板文件](https://zhuanlan.zhihu.com/p/128555320)
+  - [gitignore](https://github.com/github/gitignore)
+  - [readme](https://github.com/RichardLitt/standard-readme)
+
 ### webpack
 
 - [代码分割](https://juejin.im/post/5e796ec1e51d45271e2a9af9#heading-3)
@@ -14,6 +25,7 @@
 - AMD, 非同步, 依赖前置, 提前执行, requireJs, 没法按需加载
 - CMD, 非同步, 依赖就近, 延迟执行, seaJs, 按需加载
 - ES6, 非同步, 按需加载, 输入值的引用
+  - 如果有多个值可以用 `import * as xx from 'xxx'`
 
 commonJs 与 es6 的区别:
 
@@ -33,6 +45,21 @@ commonJs 与 es6 的区别:
 浏览器对 ES Module 标准原生支持, 可以使用 `<script type="module">` 引入模块, 默认情况是 defer
 
 > [来源](https://juejin.im/post/5b430a4be51d451925627119)
+
+#### 实践
+
+为了能用 vscode 的 d.ts 的代码检测
+
+```javascript
+//npm init -y
+//npm install three
+import * as thr from '../node_modules/three/three.module.js';
+// do something with thr
+```
+
+html 文件中用 script 的 type=module
+
+> [来源](https://juejin.im/post/5b1bc42551882513af6b755a)
 
 ## css 模块化
 
