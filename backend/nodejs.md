@@ -292,6 +292,7 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 ### 常见使用
 
 - [查看全局安装的包](https://www.phpsong.com/2257.html), npm list -g --depth 0
+- 更新包, 写好包的准确版本, 然后 npm update 加包名
 
 ### 配置文件
 
@@ -322,6 +323,13 @@ nvm alias default v5.0.0
 执行 node 的 scripts, 会默认将 `.bin` 文件夹加入到环境变量中
 
 > [来源](https://www.cnblogs.com/HYZhou2018/p/12195670.html)
+
+### npm 发包
+
+- 发布测试包可以用 alpha 的名字
+- npm version prerelease --preid=alpha
+
+> [来源](https://juejin.im/post/5d09054f51882563194b302c)
 
 ### require 的查找规则
 

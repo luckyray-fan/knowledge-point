@@ -6,6 +6,14 @@
 
 > [来源](https://juejin.im/post/583b10640ce463006ba2a71a)
 
+## 样式
+
+### 三角形箭头
+
+border+transparent
+
+> [来源](https://www.cnblogs.com/lhat/p/4800328.html)
+
 ## 拖拽
 
 [强制开启 layer 加速](https://www.jianshu.com/p/88278b1516fe)
@@ -48,7 +56,7 @@ function() {
 ```javascript
 function debounce(fn, wait) {
   var timeout = null;
-  return function() {
+  return function () {
     if (timeout !== null) clearTimeout(timeout);
     timeout = setTimeout(fn.bind(this), wait, ...arguments);
   };
@@ -60,7 +68,7 @@ function debounce(fn, wait) {
 ```javascript
 function throttle(fn, wait) {
   var prev = Date.now();
-  return function() {
+  return function () {
     var now = Date.now();
     if (now - prev >= wait) {
       fn.apply(this, arguments);
@@ -81,7 +89,7 @@ function throttle(fn, wait) {
 - set, 无法去除重复`{}`
 
 ```javascript
-(arr) => {
+arr => {
   return Array.from(new Set(arr));
 };
 ```
@@ -108,11 +116,11 @@ function unique(arr) {
 - 利用对象来判断
 
 ```javascript
-(arr) => {
+arr => {
   var obj = {};
-  return arr.filter((i) => {
-    if (typeof i === 'object') i = JSON.stringify(i);
-    return obj[i + ''] ? false : (obj[i + ''] = true);
+  return arr.filter(i => {
+    if (typeof i === "object") i = JSON.stringify(i);
+    return obj[i + ""] ? false : (obj[i + ""] = true);
   });
 };
 ```
@@ -149,7 +157,7 @@ function deepCopy(src) {
   var res = Array.isArray(obj) ? [] : {};
   for (let i in src) {
     if (src.hasOwnProperty(i)) {
-      if (Object.prototype.toString.call(i).includes('object')) {
+      if (Object.prototype.toString.call(i).includes("object")) {
         res[i] = deepCopy(src[i]);
       } else {
         res[i] = src[i];
