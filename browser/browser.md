@@ -221,6 +221,12 @@ about 用来指代浏览器的内部, blank 指的是打开一个完全空白的
 
 > [来源](https://www.howtogeek.com/656466/what-is-aboutblank-and-how-do-you-remove-it/)
 
+### 等待可用的套接字
+
+因为向同一域名发送请求有一定上线, 如果超过了就需要等待某个连接释放
+
+> [来源](https://www.jianshu.com/p/976246b24020)
+
 ## 跨域请求
 
 ---

@@ -27,6 +27,14 @@
 
 > [来源](https://www.bilibili.com/video/BV1L54y197vj)
 
+## 样式
+
+### 三角形箭头
+
+border+transparent
+
+> [来源](https://www.cnblogs.com/lhat/p/4800328.html)
+
 ## 拖拽
 
 [强制开启 layer 加速](https://www.jianshu.com/p/88278b1516fe)

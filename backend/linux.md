@@ -7,12 +7,26 @@
 
 ## 常见命令
 
+### alias
+
+生成命令的别名, `alias 新命令 '原命令 - 参数'`
+
+> [来源](https://man.linuxde.net/alias)
+
+### export
+
+用于设置或查看环境变量
+
+> [来源](https://www.runoob.com/linux/linux-comm-export.html)
+
 ### lsof
 
 打开 linux 中的文件
-- -i, 列出符合条件的进程, `:` 端口号 
+
+- -i, 列出符合条件的进程, `:` 端口号
 
 > [来源](https://www.cnblogs.com/peida/archive/2013/02/26/2932972.html)
+
 ### kill
 
 终止执行中的程序或工作

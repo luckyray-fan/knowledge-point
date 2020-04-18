@@ -43,8 +43,9 @@ git config --global --list
 如果要开发一个功能需要几天, 但是如果每天上传一次其他人就比较难以工作, 如果一次性上传那么有可能别人改动了部分内容 pull 的时候之前的就会全部丢失, 所以可以用一个分支
 
 - [brach](https://blog.csdn.net/u014540717/article/details/54314126), 列出当前的分支
-- checkout, 选择某一条分支, 切出一条分支
+- checkout -b, 选择某一条分支, 切出一条分支
 - [pull origin/xxx,](https://blog.csdn.net/carfge/article/details/79691360) 拉取某个分支
+- push origin xxx, 将当前分支推送到远程 xxx 分支
 
 > [来源](https://blog.csdn.net/YJG7D314/article/details/104551896#5__201)
 
@@ -58,6 +59,10 @@ git config --global --list
 #### 分支合并
 
 > [来源](https://blog.csdn.net/wangjia55/article/details/8791195)
+
+#### 推送到远程分支
+
+> [来源](https://www.cnblogs.com/springbarley/archive/2012/11/03/2752984.html)
 
 #### 整合不同分支
 

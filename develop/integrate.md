@@ -26,6 +26,8 @@
 - CMD, 非同步, 依赖就近, 延迟执行, seaJs, 按需加载
 - ES6, 非同步, 按需加载, 输入值的引用
   - 如果有多个值可以用 `import * as xx from 'xxx'`
+  - [有命名和默认两种](https://www.jianshu.com/p/edaf43e9384f), 命名可有多个, 默认只能一种
+  - 在导入时要加`{}`, export default 则不需要
 
 commonJs 与 es6 的区别:
 
@@ -152,6 +154,16 @@ sourcemap 能定位 bug
 
 > [es 和 commonjs 在 treeshaking 的不同表现](https://zhuanlan.zhihu.com/p/71098263)
 
+## 前端监控
+
+目的是获取用户行为数据和性能异常监测等
+
+- 代码埋点, 埋点指的是在相关地方嵌入代码
+- 可视化埋点
+- 无埋点, 全量埋点
+
+> [来源](https://juejin.im/post/5b62d68df265da0f9d1a1cd6)
+
 ## 异常监测
 
 ---
@@ -201,6 +213,13 @@ sourcemap 能定位 bug
 - 预处理器
 
 ## lint 代码检查
+
+每次 commit 的时候可以用 [commitlizen](https://juejin.im/post/5dff29646fb9a0160b638631) 来检查自己的 commit 的语句, 一般可以用
+
+- feat, 新功能
+- style, 样式调整
+- chore, 零碎的
+- fix, 解决 bug
 
 > [来源](https://segmentfault.com/a/1190000009546913)
 
