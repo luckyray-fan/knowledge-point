@@ -17,6 +17,16 @@
 
 > [来源](https://juejin.im/post/583b10640ce463006ba2a71a)
 
+## 侧边栏
+
+### 侧边栏拖拽
+
+- 设定宽高样式
+- 绑定拖拽事件
+- localstorage 宽度, 加载时赋值
+
+> [来源](https://www.bilibili.com/video/BV1L54y197vj)
+
 ## 拖拽
 
 [强制开启 layer 加速](https://www.jianshu.com/p/88278b1516fe)
