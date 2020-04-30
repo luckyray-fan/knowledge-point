@@ -144,3 +144,9 @@ let vm = new Vue({
 vue 生态中的对前端路由的封装, 使用观察者模式监听当前路由的变动, 然后调用设置的 hash 或 history 模型来处理路由变动
 
 > [来源](https://zhuanlan.zhihu.com/p/37730038)
+
+### props 驼峰命名
+
+在 vue 内部可将驼峰命名解析为短横线的方式来对应
+
+> [来源](https://segmentfault.com/a/1190000015681454)
