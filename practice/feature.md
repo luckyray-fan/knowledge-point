@@ -17,7 +17,11 @@
 
 > [来源](https://juejin.im/post/583b10640ce463006ba2a71a)
 
-## 侧边栏
+## 动画
+
+### 橡皮筋效果, 下拉
+
+> [来源](https://juejin.im/post/5b7ad44c518825430c7a5f9f)
 
 ### 侧边栏拖拽
 

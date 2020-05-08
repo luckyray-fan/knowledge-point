@@ -27,19 +27,21 @@ babel 对其进行编译
 
 ```javascript
 const element = <h1 className="greeting">Hello, world!</h1>;
-const element = React.createElement(
-  "h1",
-  { className: "greeting" },
-  "Hello, world!"
-);
+const element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 // 注意：这是简化过的结构
 const element = {
-  type: "h1",
+  type: 'h1',
   props: {
-    className: "greeting",
-    children: "Hello, world!",
+    className: 'greeting',
+    children: 'Hello, world!',
   },
 };
 ```
 
 > [来源](https://zh-hans.reactjs.org/docs/introducing-jsx.html)
+
+### react 全用 const 作为变量
+
+函数式写法, 为计算步骤取名字而非储存空间
+
+> [来源](https://www.zhihu.com/question/382468116/answer/1121663380)

@@ -20,6 +20,12 @@
 
 > [来源](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
 
+### push
+
+- git push -f, 强行将本地的历史覆盖远程的
+
+> [来源](https://www.jianshu.com/p/b03bb5f75250)
+
 ### .gitignore
 
 忽视掉里面的内容，不将其上传，但是如果上传过那么即使标记了也仍然会上传

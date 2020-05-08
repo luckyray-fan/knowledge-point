@@ -2,6 +2,10 @@
 
 - [插入 domstring 到 dom 中](https://stackoverflow.com/questions/7327056/appending-html-string-to-the-dom), `Element.insertAdjacentHTML()`
 - [将 html 解析为 dom](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMParser), `DOMParser()​​`
+- [dom 中动态的执行脚本](https://harttle.land/2017/01/16/dynamic-script-insertion.html)
+  - eval 执行内联
+  - 创建 script element, innerHTML 不会执行
+  - document.write
 
 ## 加载完毕事件
 
@@ -36,8 +40,7 @@ load 只触发在 window 上
 
 ### localstorage 存储 js 文件
 
-> [来源](https://www.zhihu.com/question/28467444)
-> [利用localStorage本地储存js文件](https://segmentfault.com/a/1190000005770330)
+> [来源](https://www.zhihu.com/question/28467444) > [利用 localStorage 本地储存 js 文件](https://segmentfault.com/a/1190000005770330)
 
 ## BOM
 
@@ -67,7 +70,7 @@ cors 跨域的话, 字段带上 withCredentials 就能把当前的域的 cookie 
 ```javascript
 var xhr = new XMLHttpRequest();
 xhr.open('get', './xxx?' + args, async);
-xhr.onreadystatechange = function() {
+xhr.onreadystatechange = function () {
   //onload
   if (xhr.readyState === 4 && xhr.status === 200) {
     //do something xhr.responseText
