@@ -78,6 +78,12 @@ git config --global --list
   - 合并分支, 确保这条分支上只有自己用
   - [git pull --rebase](https://www.cnblogs.com/wangiqngpei557/p/6056624.html)
 
+#### rebase
+
+相比于 merge, 使用 rebase 可以获得一条干净的 commit 线, 可以更清晰的看到版本更替
+
+> [来源](https://www.jianshu.com/p/3081e33a6136)
+
 ### 子模块
 
 - submodule, 在某个项目中工作的时候需要使用另一个 git 仓库时使用, 会生成一个 .gitmodules 文件来保存子模块的信息, 可用于新旧项目

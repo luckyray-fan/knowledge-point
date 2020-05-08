@@ -29,7 +29,7 @@
 
 ### kill
 
-终止执行中的程序或工作
+终止执行中的程序或工作, kill -9 pid 彻底杀死某条进程
 
 > [来源](https://www.runoob.com/linux/linux-comm-kill.html)
 
@@ -65,7 +65,7 @@ source 命令会强制执行文本中的命令, 而不管其权限, 常用于环
 
 ### touch
 
-修改文件的时间属性, 如果文件不存在则创建一个
+修改文件的时间属性, 如果文件不存在则创建一个, touch xxx.xx
 
 > [来源](https://www.runoob.com/linux/linux-comm-touch.html)
 

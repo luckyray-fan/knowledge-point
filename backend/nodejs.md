@@ -354,6 +354,32 @@ nvm alias default v5.0.0
 
 > [来源](https://juejin.im/post/5ab3f77df265da2392364341#heading-4)
 
+### package-lock.json
+
+- 如果没有 lock 文件, 按照 package.json 语义版本下载当前大版本下最新的包
+- 如果有 lock 文件, 文件版本对应相同, 按照 lock 下载, 不会下载语义版本最新的包
+- 如果有 lock 文件, 文件版本不同, 按照 package.json 下载
+
+> [来源](https://www.zhihu.com/question/62331583/answer/275248129)
+
+`0.` 开头的版本第二个数字才是主版本号
+
+> [什么是语义版本](https://juejin.im/post/5ab3f77df265da2392364341#heading-10)
+
 #### package-lock.json 应该提交吗
 
+应该
+
 > [来源](https://www.zhihu.com/question/264560841)
+
+### yarn
+
+#### yarn offline 安装
+
+可以设置一个 yarn 的离线安装库, 然后用 `.yarnrc` 文件指定其离线安装的文件夹
+
+这个文件夹内的内容全是压缩包, 可以上传入 git 中
+
+运行 yarn install --offline 即可
+
+> [来源](https://segmentfault.com/a/1190000013501659)
