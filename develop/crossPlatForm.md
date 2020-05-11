@@ -72,6 +72,11 @@ progressive web apps, 渐进式 web 应用, 就是跨平台可离线工作的 we
 
 > [来源](https://juejin.im/post/5d42945ff265da03a715b2f0)
 
+### 相关实践
+
+- [搭建博客系统](https://juejin.im/post/5de470a55188256e885f4fb7)
+- [搭建留言板](https://github.com/hustcc/clz)
+
 ## 微前端
 
 > [来源](https://tech.meituan.com/2018/09/06/fe-tiny-spa.html)
