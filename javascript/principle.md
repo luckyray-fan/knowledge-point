@@ -271,15 +271,15 @@ var c1 = create(o); //这样就继承o了
 - 显式, call,apply,bind
 - new, 构造函数
 
-| 场景             | 指向的对象                                                                              |
-| ---------------- | --------------------------------------------------------------------------------------- |
-| 普通调用函数     | 非严格 window,严格 undefined                                                            |  | 对象调用 | 调用函数的对象 |
-| call,apply,bind  | 参数中的第一个值, 非严格模式下指定 undefined, null 为 window,指定基本值会转为其包装对象 |
-| 构造函数调用     | 指向生成的新对象                                                                        |
-| 原型链调用       | 指向生成的对象                                                                          |
-| 箭头函数         | 没有自己的 this, 找上一个作用域的                                                       |
-| dom 事件处理函数 | 一般是绑定事件的元素, 古老 ie 指向 widnow                                               |
-| setTimeout       | 一般指向全局对象                                                                        |
+| 场景 | 指向的对象 |
+| --- | --- |
+| 普通调用函数 | 非严格 window,严格 undefined |  | 对象调用 | 调用函数的对象 |
+| call,apply,bind | 参数中的第一个值, 非严格模式下指定 undefined, null 为 window,指定基本值会转为其包装对象 |
+| 构造函数调用 | 指向生成的新对象 |
+| 原型链调用 | 指向生成的对象 |
+| 箭头函数 | 没有自己的 this, 找上一个作用域的 |
+| dom 事件处理函数 | 一般是绑定事件的元素, 古老 ie 指向 widnow |
+| setTimeout | 一般指向全局对象 |
 
 > [来源](https://alexzhong22c.github.io/2017/08/07/js-this/) > [有机会认真看看](https://github.com/mqyqingfeng/Blog/issues/7)
 
@@ -561,8 +561,8 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Oper
 
 ### 函数里有的
 
-| 名称     | 含义                                                                                                                       |
-| -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 名称 | 含义 |
+| --- | --- |
 | [[Call]] | 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个 this 值和一个包含通过调用表达式传递给函数的参数的列表 |
 
 ## 类数组
@@ -661,11 +661,14 @@ type 可以是 number 或者 string
 
 > [来点题目](https://juejin.im/post/5a7172d9f265da3e3245cbca)
 
-## 操作符
+## 运算符
 
 ---
 
-- `||`
+- `||`, 如果前面为否那么就返回后面的
+- `&&`, 如果前面为否那么返回前面的否则返回后面的
+- `~~`, [按位取反](https://www.jeffjade.com/2015/05/31/2015-05-31-javascript-operational%EF%BC%8Dsymbol/)
+  - 取整, 或将 nan 转为-1, `if(!~this.className.indexOf(str)){//do some thing…..};` 如果不包含这个 class 那么 do something
 
 ## 异步
 
