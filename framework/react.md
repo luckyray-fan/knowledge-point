@@ -27,7 +27,11 @@ babel 对其进行编译
 
 ```javascript
 const element = <h1 className="greeting">Hello, world!</h1>;
-const element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
+const element = React.createElement(
+  'h1',
+  { className: 'greeting' },
+  'Hello, world!'
+);
 // 注意：这是简化过的结构
 const element = {
   type: 'h1',
@@ -45,3 +49,11 @@ const element = {
 函数式写法, 为计算步骤取名字而非储存空间
 
 > [来源](https://www.zhihu.com/question/382468116/answer/1121663380)
+
+## react 路由
+
+### 路由原理
+
+根据 url 的变化来选择展现不同的组件
+
+使用 history 来监听 url 的变化, 然后解析为 location 对象, router 得到这个对象后渲染相应的组件

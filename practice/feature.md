@@ -5,6 +5,7 @@
 - 扫码登录
 - 验证码登录
 - 手机验证号登录
+- [JWT 保证](https://zhuanlan.zhihu.com/p/107759530)
 
 ### 与登录鉴权有关的 aop
 
@@ -128,7 +129,7 @@ function throttle(fn, wait) {
 - set, 无法去除重复`{}`
 
 ```javascript
-(arr) => {
+arr => {
   return Array.from(new Set(arr));
 };
 ```
@@ -155,11 +156,11 @@ function unique(arr) {
 - 利用对象来判断
 
 ```javascript
-(arr) => {
+arr => {
   var obj = {};
-  return arr.filter((i) => {
-    if (typeof i === 'object') i = JSON.stringify(i);
-    return obj[i + ''] ? false : (obj[i + ''] = true);
+  return arr.filter(i => {
+    if (typeof i === "object") i = JSON.stringify(i);
+    return obj[i + ""] ? false : (obj[i + ""] = true);
   });
 };
 ```
@@ -196,7 +197,7 @@ function deepCopy(src) {
   var res = Array.isArray(obj) ? [] : {};
   for (let i in src) {
     if (src.hasOwnProperty(i)) {
-      if (Object.prototype.toString.call(i).includes('object')) {
+      if (Object.prototype.toString.call(i).includes("object")) {
         res[i] = deepCopy(src[i]);
       } else {
         res[i] = src[i];
