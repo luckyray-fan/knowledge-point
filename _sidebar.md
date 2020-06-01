@@ -25,8 +25,8 @@
 - 开发
   - [工程化](develop/integrate)
   - [开发工具与插件](develop/tool)
-  - [跨平台](develop/crossplatform)
-  - [最佳实践](develop/feature)
+  - [跨平台](develop/crossPlatform)
+  - [最佳实践](practice/feature)
   - [设计模式](develop/designpattern)
   - [安全](develop/security)
 - 基础
