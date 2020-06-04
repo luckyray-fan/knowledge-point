@@ -11,7 +11,7 @@
   - [对象与方法](javascript/method)
 - 后端
   - [Nodejs](backend/nodejs)
-  - [Linux](backend/nodejs)
+  - [Linux](backend/linux)
 - 框架与库
   - [vue](framework/vue)
   - [react](framework/react)
