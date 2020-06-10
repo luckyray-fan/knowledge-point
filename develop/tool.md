@@ -20,6 +20,15 @@
 
 > [来源](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
 
+### 远程分支
+
+- remote -v, 查看状态
+- rm origin 去掉远程分支
+
+> [来源](https://help.github.com/cn/github/using-git/removing-a-remote)
+
+> [来源](https://stackoverflow.com/questions/16330404/how-to-remove-remote-origin-from-git-repo)
+
 ### push
 
 - git push -f, 强行将本地的历史覆盖远程的
