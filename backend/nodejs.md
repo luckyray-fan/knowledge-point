@@ -315,7 +315,8 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 ### 常见使用
 
 - [查看全局安装的包](https://www.phpsong.com/2257.html), npm list -g --depth 0
-- 更新包, 写好包的准确版本, 然后 npm update 加包名
+- 更新包, 写好包的准确版本, 然后 npm update 加包名, **可以直接npm install**
+- [windows 更新npm](https://www.npmjs.com/package/npm-windows-upgrade), npm-windows-upgrade
 
 ### 配置文件
 

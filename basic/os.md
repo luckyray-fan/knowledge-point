@@ -103,7 +103,7 @@ IPC, inter-process communication
 
 ## 字符编码
 
-### 常见乱码
+### 常见有意思的编码
 
 - 烫烫烫, c 系语言中数组没初始化就输出了, 未初始化的栈内存为 0xcc, 这个是中断指令, debug 的情况下执行此处会停下来
 - 屯屯屯, malloc 申请堆内存后没有初始化, 然后输出这里
@@ -111,6 +111,13 @@ IPC, inter-process communication
 - 锘锘锘, 用一些标记来表示这个字节流是 UTF 编码, 又称 BOM, Byte Order Mark, 转为 GBk 时出现
 
 > [来源](https://blog.csdn.net/sinat_27382047/article/details/72810390)
+
+- 有声调符号, 可以叠在字符上面, 泰文
+- unicode 控制字符, 控制后续字符从右到左显示, 阿语
+
+> [来源](https://www.bilibili.com/read/cv6317411)
+
+- 类英文字符, 常见于网名
 
 ### utf8 与 gbk 区别
 
