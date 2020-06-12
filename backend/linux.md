@@ -137,6 +137,12 @@ source 命令会强制执行文本中的命令, 而不管其权限, 常用于环
 
 > [来源](http://smilejay.com/2012/03/linux_shebang/)
 
+### screen
+
+多个进程复用一个命令行, 可以关闭后恢复会话
+
+> [来源](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)
+
 ## sh 脚本
 
 ### 参数

@@ -279,6 +279,29 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 > [Nginx 为什么快到根本停不下来](https://zhuanlan.zhihu.com/p/108031600)
 
+> [最佳实践](https://juejin.im/post/5ea931866fb9a043815146fb)
+### proxy_pass
+
+如果末尾带有斜杠, location 所匹配的部分会被删掉, 然后进行转发
+
+> [来源](https://blog.csdn.net/zhongzh86/article/details/70173174)
+
+### rewrite
+
+如果带有 http:// 则会让浏览器进行重定向
+
+> [来源](https://www.cnblogs.com/tugenhua0707/p/10798762.html)
+
+### location 匹配规则
+
+^ 代表用正则, = 代表精确匹配到后不继续匹配
+
+> [来源](https://segmentfault.com/a/1190000013267839)
+
+### 日志输出
+
+> [来源](https://www.cnblogs.com/hukey/p/10502346.html)
+
 ## BFF
 
 [backend for frontend](https://zhuanlan.zhihu.com/p/115561839)

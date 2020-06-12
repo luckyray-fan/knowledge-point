@@ -13,7 +13,11 @@
 
 ### webpack
 
+- [path, publicpath, contentBase](https://juejin.im/post/5bb085dd6fb9a05cd24da5cf)
+
 - [代码分割](https://juejin.im/post/5e796ec1e51d45271e2a9af9#heading-3)
+
+> [原理讲解](https://juejin.im/post/5df884ad6fb9a0164e7f979d)
 
 ## 模块化
 

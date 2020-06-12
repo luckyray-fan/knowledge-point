@@ -380,6 +380,8 @@ UDP 对实时性要求严格时, 可以用自定义重传机制, 能将延迟降
 
 > [来源](https://www.zhihu.com/question/24723688)
 
+- 如果代理服务器没连接上, 返回的是 net::ERR_PROXY_CONNECTION_FAILED
+
 ## websocket
 
 ---
