@@ -31,9 +31,8 @@
 
 ### push
 
-- git push -f, 强行将本地的历史覆盖远程的
-
-> [来源](https://www.jianshu.com/p/b03bb5f75250)
+- [git push -f](https://www.jianshu.com/p/b03bb5f75250), 强行将本地的历史覆盖远程的
+- [push -u](https://www.zhihu.com/question/20019419),  推上远程并且建立联系, 下次可以直接push 不带参数
 
 ### .gitignore
 
@@ -99,6 +98,15 @@ git config --global --list
 
 > [来源](https://www.jianshu.com/p/9000cd49822c)
 
+### github
+
+commit 时保存着本地用户名和电子邮件, push 到远程仓库时会验证权限, http 会通过存储在 credential.helper 的账户和密码来确认, 一般默认用 manager, 存放在 Windows 的凭据管理器
+
+ssh 方式的话需要提交ssh密钥到github中
+
+> [github 提交多用户方法](https://www.jianshu.com/p/0ad3d88c51f4)
+
+> [github电子文档](https://help.github.com/cn/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
 ## postman
 
 测试 api 接口, 也可用于写爬虫时测试
@@ -191,3 +199,9 @@ git config --global --list
 - chrome remote desktop, 用浏览器来整这个活
 - microsoft remote desktop, 家庭版的 windows 不支持, rdpwrap 似乎不支持我的版本
 - teamviewer, 没用过
+
+## ssh
+
+常用于认证身份, 只要第一次连的服务器正确就不用担心中间人攻击
+
+> [来源](https://zhuanlan.zhihu.com/p/43113969)
