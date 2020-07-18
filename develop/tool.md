@@ -4,6 +4,7 @@
 
 ## git
 
+
 ---
 
 首先, git init 的时候, git 会创建一个`.git`目录, 这个目录包含所有 git 存储和操作的对象, 如果想要备份或者复制一个版本库, 可以直接将该目录复制就行, 刚创建的目录中有以下比较重要的条目:
@@ -19,6 +20,34 @@
 - 更改文件内容后会重复上面的步骤
 
 > [来源](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
+
+### 工作中遇见的
+- [git 相关操作, 一个游戏两小时](https://zhuanlan.zhihu.com/p/84916207)
+  - 本地的 branch 操作
+  - 与远程相关的操作
+- [Git ammend](https://www.jianshu.com/p/a8a2ac58f37d), 修改补充上一次自己的 commit,如果已经 push 了那就得 merge 才能 再push
+- [Git submodule](https://www.jianshu.com/p/9000cd49822c), 在一个git项目中使用另一个git 项目
+- [No newline at end of file](https://stackoverflow.com/questions/5813311/no-newline-at-end-of-file), 如果更改前没换行符更改后有换行符的时候会出现
+- [Git 合并原理](https://mp.weixin.qq.com/s/QZudrJM5d6pTaZBMuwgqAw), 三向合并
+- [Git --set-upstream](Git --set-upstream), 设置默认对应的远程分支
+- Github 相关
+  - [Fork 后与原仓库同步](Fork 后与原仓库同步), 查看信息用 gitremote -v
+  - [关联远程分支](https://blog.csdn.net/wd2014610/article/details/79637503), git remote add
+- [Git hooks](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90), 常见的--no-verify 也就是对应着pre-commit 钩子
+- [Git 合作方法](https://blog.csdn.net/qq_41230365/article/details/86766005), contributor, fork 代码然后pr, collaborator, 仓库里开发分支, 再加个[详细的](https://developer.aliyun.com/article/762030)
+- [Vscode 相关](https://mp.weixin.qq.com/s/vUxdba5A0PX-JgYq9564FA)
+  - 插件 highlight matching tag, 更好的显示匹配到对应的括号
+  - Version lens, 显示当前包的最新版本(能拉到bnpm, 目测应该是读取了 registry)
+  - 快捷键
+    - 打开上一个关闭的文件 command+shift+t, 快速跳转到某个文件 command+p, 搜索下一个选中文字匹配项目 command+d, 左右括号跳转 command+shift+\, 左右文件跳转command+option+[ 或者 ]
+    - command+p连按两下可以快速切换到之前的文件
+  - [快速切换窗口](https://geek-docs.com/vscode/vscode-tutorials/vscode-workspace-switch.html), ctrl +w
+  - Render help 占用 cpu,
+    - command+shift+p,  输入 developer: open process explorer, 看看哪个高关一下, 一般是扩展
+    - 关闭设置 search.followSymlinks ：false；
+  - [编写配置文件时](https://juejin.im/post/5d274420f265da1bb2775c97), 可以使用 jsdoc 的@type, 或者 json schema 来获得配置相关的提示
+  - Debug
+    - [在启动之前运行 task](https://code.visualstudio.com/docs/editor/tasks)
 
 ### 远程分支
 
@@ -205,3 +234,10 @@ ssh 方式的话需要提交ssh密钥到github中
 常用于认证身份, 只要第一次连的服务器正确就不用担心中间人攻击
 
 > [来源](https://zhuanlan.zhihu.com/p/43113969)
+
+## Docker,
+- [Bind mount](https://deepzz.com/post/the-docker-volumes-basic.html)
+- [Docker 网络类型](https://deepzz.com/post/the-docker-volumes-basic.html)
+- [Docker 核心原理](https://draveness.me/docker/), 镜像可以共享, 并且只读, 容器才是 writeable
+  - 文件系统隔离, 网络空间地址使用 bridge 独有ip
+  - [容器共享操作系统](https://www.jianshu.com/p/7a58ad7fade4), 虚拟机独有操作系统

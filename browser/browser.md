@@ -1,3 +1,6 @@
+## 工作中遇见的
+- [History](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API), pushstate 新建一个状态, replacestate 替换当前状态
+
 ## 浏览器
 
 ---

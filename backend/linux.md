@@ -42,7 +42,8 @@
 
 一行命令关闭监听指定端口的程序
 
-kill \`netstat -nlp | grep :3306 | awk '{print $7}' | awk -F"/" '{ print $1 }' \` 
+- kill \`netstat -nlp | grep :3306 | awk '{print $7}' | awk -F"/" '{ print $1 }' \`
+- kill \`lsof -i:xxx -t\`, 这个命令最近天天敲, 当然是用历史命令敲, 但也挺熟了😆
 
 > [来源](https://blog.csdn.net/baidu_29701003/article/details/83009156)
 ### make

@@ -1,3 +1,39 @@
+## 工作中遇见的
+- [Rpc 框架](https://www.zhihu.com/question/25536695)
+  - 调用映射 call id, 序列化参数, 网络传输
+  - 和 restful 不同, 一般不用 http, 只是传据, 没必要用文本传输协议
+  - [Restful 与 b/s 架构](https://www.jianshu.com/p/2accc2840a1b), 浏览器发出请求, 用get/post 等手段向特定接口与服务器交互
+  - [Graphql](https://www.infoq.cn/article/LVQGuC3vQX-T3PpVCkHt), 前端手动查询相关的数据, 后端返相应数据, 不多不少, [详细解释](https://juejin.im/post/5c87b1776fb9a049ac7a0247)
+  - [Thrift, idl](https://segmentfault.com/a/1190000004610166), 接口描述语言, 作为客户端和务端不同语言时交流的中间语言
+- Unpkg 国际化部署 & CDN 测速对比
+  - 解析 dns 时间+与 ip 地址建立 tcp 的连接间+下载完成时间
+- [tos 与 cdn 关系](https://www.jianshu.com/p/45292bb46bda), cdn 分发回源到 tos, tos存储非结构化数据
+- [Refer 与 refer policy](https://www.jianshu.com/p/1be1f97167f8), 规范什么情况下发送refer
+- [Preflight request](https://developer.mozilla.org/zh-CN/docs/Glossary/Preflight_request), 预检请求, 检测服务器否支持 cors 或者 put, delete 等 http 方法
+- [Chrome 信任根证书](https://www.jianshu.com/p/35c31b865bb9), 未读
+- [127.0.0.1 和 0.0.0.0 的区别](https://www.jianshu.com/p/ba8abad56ba9), 监听127 的外部的无法访问, 监听 0.0.0.0 的话都可以访问,甚至是所有的网卡的 ip
+- 状态码
+  - [204](https://blog.csdn.net/hherima/article/details/45217205), form 表单提交, 仅表示成功, 不跳转
+  - [200 from cache, 304](https://blog.csdn.net/u014452812/article/details/79131676), 304 和服务器确认一下, etag 之类的
+  - 302, 临时重定向
+  - [502 和 504](https://github.com/zhangyachen/zhangyachen.github.io/issues/89), 502, nginx等代理无法收到上服务器的相应, 504, nginx 无法及时收到上游务器相应, [500](http://hxd.best/2019/04/03/Http-500%E7%AD%89%E9%94%99%E8%AF%AF%E5%8F%8A%E6%8E%92%E6%9F%A5%E6%96%B9%E6%A1%88/), 服务器内部错误
+- [并发网络技术发展](https://mp.weixin.qq.com/s/mqpsOqc58D9StjlRoBIQug), 未读
+- [Http 代理与 https 的区别](https://lilywei739.github.io/2017/01/25/principle_for_http_https.html), 未读
+- 连接已重置, [tcp rst](https://zhuanlan.zhihu.com/p/30791159), 一般目标端口未监听, 者防火墙
+- [Chrome timeline](https://foio.github.io/chrome-stalled/), stalled, tcp 建立完成到正可以传数据的时间
+- [关于网络问题最后查到 chromium 再查到服务器废话超多的有趣的文章](https://fex.baidu.com/blog/2015/01/chrome-stalled-problem-resolving-process/)
+- [请求被 canceled 的原因](https://stackoverflow.com/questions/12009423/what-does-status-canceled-for-a-resource-mean-in-chrome-developer-tools), img 发出请求, 但马上删掉了这个节点, 发出一系列请求, 但是第一请求返回了 400 之类的结果, 后续的都撤销
+- [Httpbin](https://xuanwo.io/2016/11/12/httpbin-intro/), 根据访问的路径返回相应的 http 请的信息
+- [Httpdns](https://juejin.im/post/5dc14f096fb9a04a6b204c6f#heading-17) , 使用 http 协议向 dns 服务器求, 从而避开运营商的 localdns 请求
+  - [DOH](https://mp.weixin.qq.com/s/2_dF6sR9o-Bs7WWwrqe7Rg?from=from_parent_docs), dns over https, 在 https 上跑的dns 服务
+  - [Esni](https://zhuanlan.zhihu.com/p/47407337) , doh 查询到 ip 后, 通过这个 ip 接, 这样就不会暴露域名
+- [Csp](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP), 内容安全策略, 未读
+- [域前置](https://evi1cg.me/archives/Domain_Fronting.html), 未读
+- [Content-type, form-data, x-www-formxxx](https://javarevisited.blogspot.com/2017/06/difference-between-applicationx-www-form-urlencoded-vs-multipart-form-data.html)
+  - [Postman form-data, raw 等参数的区别](https://stackoverflow.com/questions/26723467/postman-chrome-what-is-the-difference-between-form-data-x-www-form-urlencoded)
+  - [Chrome, payload, formdata, json](https://segmentfault.com/a/1190000018774494) 或者formdata, 那么后端取值方式会不同
+- [Consul](https://www.jianshu.com/p/f8746b81d65d) , 服务发现, 注册后可以通过服务名获ip+port
+
 ## OSI 七层参考模型
 
 - 应用层
@@ -168,6 +204,9 @@ time to live, 即域名解析记录在 dns 服务器中的留存时间
 ### HTTP 1.1
 
 - 持久连接, 本质上指的是 TCP 的长连接, 也就是说节省了 TCP 握手和挥手的时间
+- 需要服务器和客户端的请求头上 Connection 都带有 keep-alive
+
+> [来源](https://www.jianshu.com/p/3fc3646fad80)
 
 ### HTTP 2
 

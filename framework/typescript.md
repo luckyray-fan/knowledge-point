@@ -157,3 +157,17 @@ add(n); //不会报错
 - sourcemap, 然后设置 vscode 的 debug 加上 chrome 扩展
 
 > 感觉
+
+## 工作中遇到的
+
+- [非空断言](http://semlinker.com/ts-non-null-assertion-operator/), 不执行严格空值 null, undefined 检查
+- [类型断言](https://ts.xcatliu.com/basics/type-assertion), 定义变量为可选的类型中的某一个
+- 强制转, 先as unknow再as其他
+- [给自己的库发布声明文件](https://ts.xcatliu.com/basics/declaration-files#fa-bu-sheng-ming-wen-jian)
+  - 在 types/typing 字段中指定 index.d.ts 文件
+- [Ts-node](https://riptutorial.com/zh-CN/typescript/example/28089/%E4%BD%BF%E7%94%A8ts%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8Ctypescript), 不用 tsc 编译直接可以运行
+- [Usestate typed](https://www.carlrippon.com/typed-usestate-with-typescript/), 给 hooks 加上 ts, usestate<xxx|undefined>(), 可以用as 来改变空对象的属性, 就可以不用初始一个值了
+- [索引类型](https://stackoverflow.com/questions/43396522/what-does-the-type-key-string-boolean-mean), 标志一个 key/value structure, [key:string]:boolean
+- [Type 和 interface 区别](https://juejin.im/post/5c2723635188252d1d34dc7d), 区别不大建议一般用 interface
+- [Using class as interface](https://www.typescriptlang.org/docs/handbook/classes.html#using-a-class-as-an-interface), 使用 class 作为 interface
+- [Tslint ignore flag](https://palantir.github.io/tslint/usage/rule-flags/),  tslint:disable-line

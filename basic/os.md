@@ -1,3 +1,8 @@
+## 工作中遇见的
+- [Repl](https://zh.wikipedia.org/wiki/%E8%AF%BB%E5%8F%96%EF%B9%A3%E6%B1%82%E5%80%BC%EF%B9%A3%E8%BE%93%E5%87%BA%E5%BE%AA%E7%8E%AF), 交互式开发环境, 比如 python, nodejs等常有的一个
+- [Progressive jpg](https://www.jianshu.com/p/e1b9d9aa9fc0), 图片从模糊到清晰
+- [排队论](https://queue-it.com/blog/queuing-theory/), 未读
+
 ## 内核
 
 内核管理硬件, io, 进程调度等, 而操作系统还有文件系统或者图形化界面还有用户交互等

@@ -1,3 +1,6 @@
+## 工作中遇见的
+- [可选链运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E5%8F%AF%E9%80%89%E9%93%BE), 当连接的属性可能是 null 或者undefined 的时候更好的调用, xxx?.() 相当于xxx&&xxx()
+- [空值合并可选运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator), 仅对 undefined 和null, 相比 `||` 更有针对性
 ## 从 ES6 到 10
 
 ---

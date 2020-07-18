@@ -25,20 +25,20 @@
 - 开发
   - [工程化](develop/integrate)
   - [开发工具与插件](develop/tool)
-  - [跨平台](develop/crossPlatform)
+  - [跨平台](develop/crossPlatForm)
   - [最佳实践](practice/feature)
   - [设计模式](develop/designpattern)
   - [安全](develop/security)
 - 基础
   - [计算机网络](basic/cn)
-  - [操作系统](basic/os)
+  - [计算机科学](basic/os)
 - 面试
   - [记录](interview/index)
   - [笔试之类的题目](interview/write)
   - [可能的回答](interview/nothing)
   - [算法](interview/algorithm)
-- 教程
-  - [Build Responsive Real World Websites with HTML5 and CSS3 ](lecture/brrwww)
+<!-- - 教程
+  - [Build Responsive Real World Websites with HTML5 and CSS3 ](lecture/brrwww) -->
 - 生活
   - [常识](life/common)
   - [目标](life/heart)

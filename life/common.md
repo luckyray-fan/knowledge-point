@@ -1,3 +1,13 @@
+## 部分总结的
+- [时间记录方法](https://www.mifengtd.cn/articles/lyubishchev-time-management-intro.html), 仅记录做了什么和持续多长时间,只做关键记忆
+- 理解应用事务, 首先知道是什么, 然后知道可以来干什么
+- [技术文章配图指南](https://draveness.me/sketch-and-sketch/), 当用语言较难描述时, 或需强调时用图片来说明非常非常合适
+  - 工具, sketch/figma, draw.io/processonlucidchart
+  - [配色](https://coolors.co/), 选择某几种喜欢的固定风格, 字号, 长宽
+- [Mac 字体和 windows 字体区别原因](https://sspai.com/post/52557), 未读
+  - [css 像素, retina 等等](https://github.com/jawil/blog/issues/21)
+- [桑基图](https://github.com/jawil/blog/issues/21), 未读
+- [console.log 字符画](https://mp.weixin.qq.com/s/o31sT6cSfi_GZPcAIiGloA), %c 来施加 css, 再找网站调试好字符串即可
 ## 社保
 
 缴纳一定资金然后会在一定情况下返回, 比如退休

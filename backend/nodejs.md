@@ -1,3 +1,23 @@
+# 工作中遇见的
+- [node_modules 困境](https://mp.weixin.qq.com/s/FHQRQ2fhwEcHnccxEUrf_w), 未读完
+  - 从嵌套到铺平, 全局冲突解决方式
+  - 使用非 depencies 情况导致的 Phantom(灵) dependency, 用户没有安装 devdepency 错
+  - 语义 semver 规范, typescript 就没遵守
+    - 写死版本, 但不能保证依赖的依赖也是写的, 所以有了 lock, 但 lock 也有无法覆盖情况
+- [Cross-env](https://segmentfault.com/a/1190000005811347) 配置 node_env
+  - 提供以 linux 的方式设置 windows 上的环变量
+- Import
+  - [Import as](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import), 导入时重命名
+- [Max-old-space](https://stackoverflow.com/questions/48387040/nodejs-recommended-max-old-space-size/48392705), 指定 node 的 v8 引擎可用最大内存, 一般用于编译, 64 位默认 1g
+- [修饰器](https://segmentfault.com/a/1190000011479378), 包装函数, 使用类似 @xxx 的语法,es7 提出的语法
+- [Promisify](https://juejin.im/post/59f99d916fb9a0450b65b538), 将 callback 转为 promise 的式, 需要满足 nodecallback 的形式, 也就是参中回调函数在最末尾, 传入回调的参数, err 在第个
+- Npm
+  - [Packagejson main 字段](https://github.com/SunshowerC/blog/issues/8), 用来指定 require时的入口
+  - [Npm link](https://github.com/atian25/blog/issues/17), 可以方便的测试本地的包
+  - [Peerdependency](https://www.cnblogs.com/wonyun/p/9692476.html), 为防install 时在内部install 不同的版本, 所以要求使用这个包的项有满足相应要求的依赖的库, 比如一些 ui 库会求宿主安装 react 之类的
+  - [Node-sass](https://segmentfault.com/q/1010000011726800), 用来 load sass/scss 文件包, 一般 webpack 集成的
+  - [Yarn workspace](https://classic.yarnpkg.com/zh-Hans/docs/workspaces/), 安装一个路径下所有package.json 中涉及到的依赖
+
 ## node 源码阅读方法
 
 熟悉 C/C++，然后了解 epoll、IOCP 使用，了解 socket 和多线程，然后边 debug 边看
@@ -165,6 +185,7 @@ node 使用两种线程, eventloop 的主线程和 worker pool 中的辅助线�
   - 服务端验证成功后返回一个 Token
   - 客户端将 Token 放在 cookie 或者 localStorage, 每次请求带上它
   - 一般用 JWT 加密 Token 防止被纂改
+    - [jwt结构](https://juejin.im/post/5a437441f265da43294e54c3), Header, playload, signature
 - OAuth, 允许用户授权第三方网站访问存储的数据
 
 ### Token 与 session 区别
@@ -407,3 +428,4 @@ nvm alias default v5.0.0
 运行 yarn install --offline 即可
 
 > [来源](https://segmentfault.com/a/1190000013501659)
+

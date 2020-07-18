@@ -1,6 +1,30 @@
+## 工作中遇见的
+- [ci/cd](https://juejin.im/post/5d074d3c6fb9a07ece67d034), 未读完, CI是CICD的第一步-持续继承是在每个merge request里都自动跑一次测试 可是任何测试, 比如 typescript 的检测
+- [Eslint](https://luckyray-fan.github.io/knowledge-point/#/article/lint), eslint 原理, 可以通过 eslintrc 配置 eslint, 在 webpack 中 loader 添加它就以用上了, 也可以是 commit 时用 hucky 的lint-staged 来使用
+  - [Eslint 不检查分号](https://blog.csdn.net/csdn_yudong/article/details/78445273), 设为 0
+  - [Eslint 同作用域同名变量](https://cn.eslint.org/docs/rules/no-shadow), shadow named
+- Webpack
+  - [Alias](https://juejin.im/post/5ec381215188256d776342cd), 未读, 一般用来替换资源
+  - [--progress](https://webpack.js.org/api/cli/#debug-options), 显示打包进度以百分比
+  - [多页面打包](https://zhuanlan.zhihu.com/p/109527475)
+  - [Dev server](https://webpack.js.org/configuration/dev-server/)
+    - [Watchoptions](https://webpack.js.org/configuration/watch/), Webpack devserver 监消耗大量 cpu
+    - [hmr 和 inline 原理](https://juejin.im/post/5c86ec276fb9a04a10301f5b), inline, bundle 插入 socket, 通过 websocket 通知浏览器用 reload;hmr, 通过比较 chunk, 然后替更新的 chunk, 只更新部分模块
+      - [再补充一个 hmr](https://juejin.im/post/5d4d3e5ce51d4561f64a07d1), 未读, 重要
+    - [Inline](https://webpack.js.org/configuration/dev-server/#devserverinline), 打包完成后刷新浏览器
+      - [Sockjs](https://segmentfault.com/q/1010000005045512), inline 配置后用来刷新浏览的, 和 path 等设置有关系, [可以用sockpath, sockport 等进行配置, 这篇章讲的更好](https://webpack.js.org/configuration/dev-server/#devserversockport)
+    - [Proxy](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy), 背后作转发的是[http-proxy-middleware](https://www.jianshu.com/p/a248b146c55a)
+    - [打包后文件都在内存里](https://segmentfault.com/q/1010000009393240/a-1020000009393882), 背后用的是webpack-dev-middleware
+    - [Husky](https://zhuanlan.zhihu.com/p/35913229), 通过在 .git 的 hooks 中插入脚来达到想要的效果
+  - [Sourcemap](https://webpack.docschina.org/configuration/devtool/) , 不同 sourcemap 模式, 有不的效果, 未读
+- 测试
+  - [ab 测试](https://www.zhihu.com/question/20045543), 确定哪个方案更好
+  - [unit 测试和e2e 测试](https://www.jianshu.com/p/ffd6d319f05b), unit 测试看每个逻的结果对不对, e2e
+- [Devops](https://www.zhihu.com/question/24413538) , 就是我们 scm 然后 tce 那套, 把动部署给省掉了
+
 ## 常见使用
 
-### 新建项目统一规范
+## 新建项目统一规范
 
 - 代码检查, eslint
 - 代码格式化, prettier

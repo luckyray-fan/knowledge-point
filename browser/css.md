@@ -1,3 +1,12 @@
+## 工作中遇见的
+- [Less no-descending-specificity](https://stackoverflow.com/questions/34434268/nesting-css-selectors-without-increasing-specificity), 特性降级编译报错
+- [Css specificity](https://dev.to/emmabostian/css-specificity-1kca)  , 计算方法
+    - 属性-id-class/伪类/[xxx=xxx]-tag, 生效依据从大到小, 例如 0-1-1-2 > 0-0-2-1
+- flex
+  - [父元素上的属性](https://juejin.im/post/5b0d344df265da08f860989e), justify-content 来控制间距
+  - [子元素宽度与 width 不一致](https://blog.csdn.net/weixin_40365953/article/details/83895848), flex-shrink来控制
+- [First-child, first-of-type](https://segmentfault.com/q/1010000000141546), 第一个子元素和第一个这种类型的子元素
+
 ## css 使用案例
 
 ---
@@ -442,6 +451,10 @@ link 属于 XHTML 标签, 页面加载时加载样式权重高于@import, @impor
 link 除了加载 css 还能定义 rss, 定义 rel 链接
 
 ## module
+
+通过使用哈希类名, 使其全局唯一
+
+> [来源](https://juejin.im/post/5b8373b2e51d4538e6332dbb)
 
 ## css 变量
 
