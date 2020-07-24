@@ -674,6 +674,10 @@ type 可以是 number 或者 string
 
 ---
 
+- 异步实际上是js的运行时, 如浏览器或者nodejs提供的能力
+- 本质是使用操作系统的挂起的能力
+
+> [来源](https://www.zhihu.com/question/390859209/answer/1185880057)
 ## 严格模式
 
 ---

@@ -1,18 +1,3 @@
-## 登录
-
-- [正常登录](https://zhuanlan.zhihu.com/p/62336927)
-- [单点登录](https://juejin.im/post/5cdd42f9518825693f1ebf8d)
-- 扫码登录
-- 验证码登录
-- 手机验证号登录
-- [JWT 保证](https://zhuanlan.zhihu.com/p/107759530)
-
-### 与登录鉴权有关的 aop
-
-一种编程范式, 相当于动态代理, 根据不同的 url 选择不同的方法来鉴权
-
-> [来源](https://www.zhihu.com/question/24863332)
-
 ## 前端异常检测
 
 ## 前端录屏

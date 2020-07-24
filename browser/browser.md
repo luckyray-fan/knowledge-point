@@ -14,6 +14,9 @@
 
 > [来源](https://developers.google.com/web/updates/2018/09/inside-browser-part1) 掘金有相关翻译, 搜索现代浏览器揭秘即可, 等不知道什么时候有空的有空再来看 )
 
+> [这个更清晰](https://zhuanlan.zhihu.com/p/102128787)
+
+> [这个更详细](https://segmentfault.com/a/1190000012925872), 以上两个都暂时用不到, 部分未读
 ### chrome 采用多进程的原因
 
 指的是标签页 tab 沙箱, 一个 tag 一个进程, 彼此不会影响

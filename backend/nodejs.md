@@ -22,6 +22,24 @@
 
 熟悉 C/C++，然后了解 epoll、IOCP 使用，了解 socket 和多线程，然后边 debug 边看
 
+## 登录
+
+- [正常登录](https://zhuanlan.zhihu.com/p/62336927), session
+- [单点登录](https://juejin.im/post/5cdd42f9518825693f1ebf8d), sso
+- [JWT 保证](https://zhuanlan.zhihu.com/p/107759530)
+- [session 一致性](https://www.cnblogs.com/goodAndyxublog/p/13327412.html)
+  - session 复制, 不适合大量机器
+  - jwt, 信息放在前端cookie, 缺点占用带宽
+  - session 粘滞, nginx负载均衡时将ip分发到相同机器上
+  - 后端集中存储, 用redis来存储
+
+
+### 与登录鉴权有关的 aop
+
+一种编程范式, 相当于动态代理, 根据不同的 url 选择不同的方法来鉴权
+
+> [来源](https://www.zhihu.com/question/24863332)
+
 ## 爬虫
 
 ---
