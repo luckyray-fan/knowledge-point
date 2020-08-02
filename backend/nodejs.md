@@ -343,7 +343,14 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 ## BFF
 
+- 过去只需要向部署在同一台机器, 同一个域名下的后端发送请求
+- 现在需要请求多个资源, 多个后端, 当web端, 移动端有不同字段的需求时需要分别适配
+- 可以用node来做一层接口聚合, 权限控制, 应用缓存, 让下层服务更加纯粹
+- 第三方sdk进行交互时, 也可以放在bff
+
 [backend for frontend](https://zhuanlan.zhihu.com/p/115561839)
+
+> [来源](https://www.jianshu.com/p/eb1875c62ad3)
 
 ## 分布式
 
@@ -447,3 +454,8 @@ nvm alias default v5.0.0
 
 > [来源](https://segmentfault.com/a/1190000013501659)
 
+## 文件上传
+
+- 一般大文件上传分片, 多个http请求进行上传, 是为了减轻内存的压力
+- 文件上传大小的限制, 是因为int 32 最大支持2gb, 而http的content-length可以支持16个字节, 根本不虚
+> [来源](https://www.zhihu.com/question/39593108)

@@ -15,6 +15,7 @@
   - spread 操作符
   - 对象属性简写
   - promise
+    - [promise 并发限制](https://segmentfault.com/a/1190000016389127)
   - let const
 - ES7
   - includes
