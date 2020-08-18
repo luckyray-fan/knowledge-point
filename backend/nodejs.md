@@ -302,6 +302,8 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 > [深入理解 Stream 和 Buffer](https://billyhu.com/post/learning-stream-and-buffer/)
 
+> [图片流转存](https://zhuanlan.zhihu.com/p/25367269)
+
 ## crypto 加密
 
 > [来源](https://segmentfault.com/a/1190000016706501)
@@ -358,6 +360,8 @@ select * from a_table a left join b_table b on a.a_id = b.b_id
 
 ## npm
 
+
+> [发展过程](https://segmentfault.com/a/1190000021335004)
 ### 常见使用
 
 - [查看全局安装的包](https://www.phpsong.com/2257.html), npm list -g --depth 0
@@ -459,3 +463,14 @@ nvm alias default v5.0.0
 - 一般大文件上传分片, 多个http请求进行上传, 是为了减轻内存的压力
 - 文件上传大小的限制, 是因为int 32 最大支持2gb, 而http的content-length可以支持16个字节, 根本不虚
 > [来源](https://www.zhihu.com/question/39593108)
+
+
+## 长连接
+
+- 通过设置字段, 复用tcp
+- 可以通过返回来查看tcp, dns等耗时
+- 并行请求走一个tcp, http2 单一长连接
+
+> [来源](https://juejin.im/post/6844903788684247047)
+
+> [http2 开启](https://stackoverflow.com/questions/58156747/how-to-send-a-http-2-0-request-with-node-js)
