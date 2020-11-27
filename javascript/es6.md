@@ -20,7 +20,7 @@
   - let const
 - ES7
   - includes
-  - 指数操作符, 相对于`Math.pow()`
+  - 指数操作符, 相对于`Math.pow   ()`
 - ES8
   - await
   - `Object.getOwnPropertyDescriptors()`返回自身属性的所有描述符
