@@ -16,6 +16,7 @@
   - 对象属性简写
   - promise
     - [promise 并发限制](https://segmentfault.com/a/1190000016389127)
+    - [batch 限制, pool 限制](https://stackoverflow.com/a/58686835/9950564)
   - let const
 - ES7
   - includes

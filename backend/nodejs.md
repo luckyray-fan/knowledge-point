@@ -474,3 +474,11 @@ nvm alias default v5.0.0
 > [来源](https://juejin.im/post/6844903788684247047)
 
 > [http2 开启](https://stackoverflow.com/questions/58156747/how-to-send-a-http-2-0-request-with-node-js)
+
+## 百万并发连接
+
+- socket, 发送和接收的最小缓存区的大小
+- 启用的文件描述符最大限制
+- 多个虚拟ip加端口来达到单客户端发起100万请求
+
+> [来源](https://www.jianshu.com/p/e0b52dc702d6)
